@@ -13,11 +13,12 @@ class AttendanceStatus {
   }
 
 
-  String checkInAt;
-  String checkOutAt;
-  int productiveTimeInMin;
+  dynamic checkInAt;
+  dynamic checkOutAt;
+  dynamic productiveTimeInMin;
 
-  Map<String, dynamic>? toJson() {
+  Map<String, dynamic>? toJson() 
+  {
     final map = <String, dynamic>{};
     map['check_in_at'] = checkInAt;
     map['check_out_at'] = checkOutAt;

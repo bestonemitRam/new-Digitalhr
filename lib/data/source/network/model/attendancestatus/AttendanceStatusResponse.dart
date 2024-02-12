@@ -22,7 +22,7 @@ class AttendanceStatusResponse {
   }
 
   bool status;
-  String message;
+  dynamic message;
   int statusCode;
   AttendanceStatus data;
   Map<String, dynamic>? toJson() {

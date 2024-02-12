@@ -22,7 +22,8 @@ class LeaveCalendarProvider with ChangeNotifier {
     return _employeeLeaveByDayList;
   }
 
-  Future<Employeeleavecalendarresponse> getLeaves() async {
+  Future<Employeeleavecalendarresponse> getLeaves() async 
+  {
     var uri = Uri.parse(Constant.LEAVE_CALENDAR_API);
 
     Preferences preferences = Preferences();

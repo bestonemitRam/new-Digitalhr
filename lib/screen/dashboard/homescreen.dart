@@ -118,17 +118,20 @@ class HomeScreenState extends State<HomeScreen> {
     var fcm = await FirebaseMessaging.instance.getToken();
     print(fcm);
     try {
-      final dashboardResponse =
+      // final dashboardResponse =
+      //     await Provider.of<DashboardProvider>(context, listen: false)
+      //         .getDashboard();
+      final dashboardProvider =
           await Provider.of<DashboardProvider>(context, listen: false)
-              .getDashboard();
+              .getDashboardData();
 
-      final user = dashboardResponse.data.user;
-      Provider.of<PrefProvider>(context, listen: false).saveBasicUser(User(
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          username: user.username,
-          avatar: user.avatar));
+      // final user = dashboardResponse.data.user;
+      // Provider.of<PrefProvider>(context, listen: false).saveBasicUser(User(
+      //     id: user.id,
+      //     name: user.name,
+      //     email: user.email,
+      //     username: user.username,
+      //     avatar: user.avatar));
       return 'loaded';
     } catch (e) {
       print(e);

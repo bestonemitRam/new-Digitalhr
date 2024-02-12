@@ -1,5 +1,7 @@
 import 'package:cnattendance/provider/profileUserProvider.dart';
+import 'package:cnattendance/provider/shopprovider.dart';
 import 'package:cnattendance/provider/taskprovider.dart';
+import 'package:cnattendance/screen/distributors/distributor_screen.dart';
 import 'package:cnattendance/screen/profile/aboutscreen.dart';
 import 'package:cnattendance/screen/profile/changepasswordscreen.dart';
 import 'package:cnattendance/screen/profile/companyrulesscreen.dart';
@@ -12,6 +14,7 @@ import 'package:cnattendance/screen/profile/payslipscreen.dart';
 import 'package:cnattendance/screen/profile/profilescreen.dart';
 import 'package:cnattendance/screen/profile/supportscreen.dart';
 import 'package:cnattendance/screen/profile/teamsheetscreen.dart';
+import 'package:cnattendance/screen/shop_module/shop_listing_screen.dart';
 import 'package:cnattendance/screen/tadascreen/TadaScreen.dart';
 import 'package:cnattendance/widget/headerprofile.dart';
 import 'package:cnattendance/widget/radialDecoration.dart';
@@ -53,6 +56,19 @@ class MoreScreen extends StatelessWidget {
                         create: (BuildContext context) => ProfileUserProvider(),
                         child: ProfileScreenActivity())),
                 // Services('Profile', Icons.password, ProfileScreen()),
+                Services(
+                    'Shops',
+                    Icons.shop,
+                    ChangeNotifierProvider<ShopProvider>(
+                        create: (BuildContext context) => ShopProvider(),
+                        child: ShopListingScreen())),
+
+                Services(
+                    'Distributors',
+                    Icons.takeout_dining_outlined,
+                    ChangeNotifierProvider<ShopProvider>(
+                        create: (BuildContext context) => ShopProvider(),
+                        child: DistributorScreen())),
 
                 Services(
                     'Change Password', Icons.password, ChangePasswordScreen()),

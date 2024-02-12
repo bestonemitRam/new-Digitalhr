@@ -29,8 +29,7 @@ class Auth with ChangeNotifier {
       };
 
       print("Login Request is :$Requestbody");
-      final response =
-          await http.post(uri, headers: headers, body: Requestbody);
+      final response = await http.post(uri, headers: headers, body: Requestbody);
       print("Login Response is  :$response");
       final responseData = json.decode(response.body);
       if (response.statusCode == 200) {

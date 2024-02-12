@@ -6,7 +6,8 @@ class Holidays {
     required this.description,
   });
 
-  factory Holidays.fromJson(dynamic json) {
+  factory Holidays.fromJson(dynamic json)
+   {
     return Holidays(
       id: json['id'],
       event: json['event'].toString() ?? "",

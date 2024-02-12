@@ -1,4 +1,3 @@
-
 import 'package:cnattendance/data/source/network/model/attendancereport/EmployeeAttendance.dart';
 import 'package:cnattendance/data/source/network/model/attendancereport/EmployeeTodayAttendance.dart';
 import 'package:cnattendance/model/employeeattendancereport.dart';
@@ -50,11 +49,11 @@ class AttendanceReportProvider with ChangeNotifier {
     isLoading = true;
     try {
       final responseJson = await repository.getAttendanceReport(selectedMonth);
-        isLoading = false;
-        makeTodayReport(responseJson.data.employeeTodayAttendance);
-        makeAttendanceReport(responseJson.data.employeeAttendance);
-        getProdHour(responseJson.data.employeeTodayAttendance.checkInAt,
-            responseJson.data.employeeTodayAttendance.checkOutAt);
+      isLoading = false;
+      makeTodayReport(responseJson.data.employeeTodayAttendance);
+      makeAttendanceReport(responseJson.data.employeeAttendance);
+      getProdHour(responseJson.data.employeeTodayAttendance.checkInAt,
+          responseJson.data.employeeTodayAttendance.checkOutAt);
     } catch (error) {
       isLoading = false;
       throw error;
@@ -95,8 +94,8 @@ class AttendanceReportProvider with ChangeNotifier {
       startDate = DateTime(current.year, current.month, current.day,
           startDate.hour, startDate.minute, startDate.second);
 
-      endDate = DateTime(current.year, current.month, current.day,
-          endDate.hour, endDate.minute, endDate.second);
+      endDate = DateTime(current.year, current.month, current.day, endDate.hour,
+          endDate.minute, endDate.second);
 
       var value = endDate.difference(startDate).inMinutes;
       double second = value * 60.toDouble();
@@ -104,11 +103,9 @@ class AttendanceReportProvider with ChangeNotifier {
       int minGone = (min % 60).toInt();
       int hour = min ~/ 60;
       _todayReport['production_hour'] = "$hour hr $minGone min";
-
       double hours = value / 60;
       var hrPercent = hours / Constant.TOTAL_WORKING_HOUR;
       _todayReport['production_percent'] = hrPercent > 1.0 ? 1.0 : hrPercent;
-
       notifyListeners();
       return;
     }

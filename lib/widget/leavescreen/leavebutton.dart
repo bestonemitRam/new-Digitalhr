@@ -17,9 +17,10 @@ class LeaveButton extends StatelessWidget {
             child: Padding(
           padding: EdgeInsets.only(right: 5),
           child: TextButton(
-              style:
-              TextButton.styleFrom(backgroundColor: HexColor("#036eb7"),shape: ButtonBorder()),
-              onPressed: () {
+              style: TextButton.styleFrom(
+                  backgroundColor: HexColor("#036eb7"), shape: ButtonBorder()),
+              onPressed: ()
+               {
                 showModalBottomSheet(
                     elevation: 0,
                     context: context,
@@ -29,7 +30,8 @@ class LeaveButton extends StatelessWidget {
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20))),
-                    builder: (context) {
+                    builder: (context)
+                     {
                       return Padding(
                         padding: MediaQuery.of(context).viewInsets,
                         child: IssueLeaveSheet(),
@@ -39,7 +41,7 @@ class LeaveButton extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  'Issue Leave',
+                  'Request Leave',
                   style: TextStyle(color: Colors.white),
                 ),
               )),
@@ -48,11 +50,12 @@ class LeaveButton extends StatelessWidget {
             child: Padding(
           padding: EdgeInsets.only(left: 5),
           child: TextButton(
-              style:
-              TextButton.styleFrom(backgroundColor: HexColor("#036eb7"),shape: ButtonBorder()),
+              style: TextButton.styleFrom(
+                  backgroundColor: HexColor("#036eb7"), shape: ButtonBorder()),
               onPressed: () {
                 if (provider.attendanceList['check-in'] != '-' &&
-                    provider.attendanceList['check-out'] == '-') {
+                    provider.attendanceList['check-out'] == '-') 
+                    {
                   showModalBottomSheet(
                       elevation: 0,
                       context: context,
@@ -69,8 +72,8 @@ class LeaveButton extends StatelessWidget {
                         );
                       });
                 } else {
-                  NavigationService()
-                      .showSnackBar("Leave Alert","You are not bound to office time");
+                  NavigationService().showSnackBar(
+                      "Leave Alert", "You are not bound to office time");
                 }
               },
               child: Padding(

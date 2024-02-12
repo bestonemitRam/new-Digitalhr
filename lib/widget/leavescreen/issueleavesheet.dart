@@ -41,6 +41,7 @@ class IssueLeaveSheetState extends State<IssueLeaveSheet> {
           return;
         }
         dismissLoader();
+        Navigator.of(context).pop();
         Navigator.pop(context);
         isLoading = false;
         showDialog(
@@ -134,7 +135,7 @@ class IssueLeaveSheetState extends State<IssueLeaveSheet> {
                           ),
                         ],
                       ),
-                      items: provider.leaveList
+                      items: provider.selectleaveList
                           .where((element) => element.status)
                           .map((item) => DropdownMenuItem<Leave>(
                                 value: item,

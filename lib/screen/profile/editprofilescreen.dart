@@ -551,6 +551,7 @@ class EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                 ),
+             
               ],
             ),
           ),

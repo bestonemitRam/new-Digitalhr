@@ -44,7 +44,7 @@ class LeaveTypeIssueLeaveState extends State<LeaveTypeIssueLeave>{
             ),
           ],
         ),
-        items: provider.leaveList
+        items: provider.selectleaveList
             .map((item) => DropdownMenuItem<Leave>(
                   value: item,
                   child: Text(

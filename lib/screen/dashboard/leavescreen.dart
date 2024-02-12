@@ -31,20 +31,23 @@ class LeaveScreenState extends State<LeaveScreen> {
 
   Future<String> initialState() async {
     final leaveProvider = Provider.of<LeaveProvider>(context, listen: false);
+     leaveProvider.selectLeaveType();
     final leaveData = await leaveProvider.getLeaveType();
+   
 
     if (!mounted) {
       return "Loaded";
     }
     if (leaveData.statusCode != 200) {
-      showToast(leaveData.message);
+      showToast(leaveData!.message!);
     }
 
     getLeaveDetailList();
     return "Loaded";
   }
 
-  void getLeaveDetailList() async {
+  void getLeaveDetailList() async 
+  {
     final leaveProvider = Provider.of<LeaveProvider>(context, listen: false);
     final detailResponse = await leaveProvider.getLeaveTypeDetail();
 
@@ -53,13 +56,13 @@ class LeaveScreenState extends State<LeaveScreen> {
     }
     if (detailResponse.statusCode == 200) {
       isVisible = true;
-      if (detailResponse.data.isEmpty) {
+      if (detailResponse.data!.leaveList!.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             padding: EdgeInsets.all(20), content: Text('No data found')));
       }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          padding: EdgeInsets.all(20), content: Text(detailResponse.message)));
+          padding: EdgeInsets.all(20), content: Text(detailResponse.message!)));
     }
   }
 
@@ -90,7 +93,7 @@ class LeaveScreenState extends State<LeaveScreen> {
                       )),
                   LeaveListDashboard(),
                   Visibility(
-                    visible: isVisible,
+                    visible: true,
                     child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         child: LeaveButton()),
@@ -122,15 +125,16 @@ class LeaveScreenState extends State<LeaveScreen> {
                               child: Column(
                                 children: [
                                   Visibility(
-                                    visible: isVisible,
+                                    visible: true,
                                     child: Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 20.0, vertical: 10),
                                         child: LeavetypeFilter()),
                                   ),
                                   Visibility(
-                                      visible: isVisible,
+                                      visible: true,
                                       child: LeaveListdetailDashboard()),
+                              
                                 ],
                               ),
                             ),
@@ -139,7 +143,7 @@ class LeaveScreenState extends State<LeaveScreen> {
                       ),
                       Align(
                         child: Visibility(
-                          visible: isVisible,
+                          visible: true,
                           child: Padding(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 10),

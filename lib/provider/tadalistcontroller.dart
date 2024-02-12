@@ -12,38 +12,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class TadaListController extends GetxController {
   final tadaList = <Tada>[].obs;
   TadaRepository repository = TadaRepository();
 
   Future<String> getTadaList() async {
-    try {
-      EasyLoading.show(
-          status: 'Loading, Please Wait...',
-          maskType: EasyLoadingMaskType.black);
+    bool result = await InternetConnectionChecker().hasConnection;
 
-      print("djfhgfdgdfh ${await repository.getTadaListdata()}");
+    if (result) {
+      try {
+        EasyLoading.show(
+            status: 'Loading, Please Wait...',
+            maskType: EasyLoadingMaskType.black);
 
-      final response = await repository.getTadaListdata();
+        final list = <Tada>[];
 
-      print("fdhdgdfg  ${response}");
+        final response = await repository.getTadaListdata();
 
-      EasyLoading.dismiss(animation: true);
+        EasyLoading.dismiss(animation: true);
 
-      final list = <Tada>[];
+        for (var tada in response.data!.tadaList!) {
+          list.add(Tada.list(tada.id!, tada.title!, tada.totalExpense!,
+              tada.status!, tada.title!, ''));
+        }
 
-      for (var tada in response.data!.tadaList!) {
-        list.add(Tada.list(tada.id!, tada.title!, tada.totalExpense!,
-            tada.status!, tada.title!, ''));
+        tadaList.value = list;
+
+        return "Loaded";
+      } catch (e) {
+        print(e);
+        throw e;
       }
-
-      tadaList.value = list;
-
-      return "Loaded";
-    } catch (e) {
-      print(e);
-      throw e;
+    } else {
+      return "No Internet";
     }
   }
 

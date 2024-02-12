@@ -4,6 +4,7 @@ import 'package:cnattendance/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:cnattendance/widget/buttonborder.dart';
 
@@ -25,8 +26,7 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
             status: "Requesting...", maskType: EasyLoadingMaskType.black);
       });
       var status = await provider.getCheckInStatus();
-      if (status)
-      {  print("jdfhggd");
+      if (status) {
         final response = await provider.checkOutAttendance();
         isEnabled = true;
         if (!mounted) {
@@ -36,30 +36,34 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
           EasyLoading.dismiss(animation: true);
           Navigator.pop(context);
           isLoading = false;
-          showDialog(context: context, builder: (context) {
-            return Dialog(
-              child: CustomAlertDialog(response.message),
-            );
-          },);
+          showDialog(
+            context: context,
+            builder: (context) {
+              return Dialog(
+                child: CustomAlertDialog(response.message),
+              );
+            },
+          );
         });
       }
     } catch (e) {
-      setState(()
-      {
+      setState(() {
         EasyLoading.dismiss(animation: true);
         isLoading = false;
         Navigator.pop(context);
-        showDialog(context: context, builder: (context) {
-          return Dialog(
-            child: CustomAlertDialog(e.toString()),
-          );
-        },);
+        showDialog(
+          context: context,
+          builder: (context) {
+            return Dialog(
+              child: CustomAlertDialog(e.toString()),
+            );
+          },
+        );
       });
     }
   }
 
-  void onCheckIn() async
-  {
+  void onCheckIn() async {
     final provider = Provider.of<DashboardProvider>(context, listen: false);
     try {
       isLoading = true;
@@ -68,36 +72,63 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
             status: "Requesting...", maskType: EasyLoadingMaskType.black);
       });
       var status = await provider.getCheckInStatus();
-      if (status) {
-        //final response = await provider.checklocation();
-        final response = await provider.checkInAttendance();
-        isEnabled = true;
-        if (!mounted) {
-          return;
-        }
-        setState(() {
-          EasyLoading.dismiss(animation: true);
-          Navigator.pop(context);
-          isLoading = false;
-          showDialog(context: context, builder: (context) {
-            return Dialog(
-              child: CustomAlertDialog(response.message),
+      if (status)
+       {
+        bool result = await InternetConnectionChecker().hasConnection;
+
+        if (result) 
+        {
+          final response = await provider.checkInAttendance();
+          print("hgghhghghgh  ${response}");
+          isEnabled = true;
+          if (!mounted) 
+          {
+            return;
+          }
+          setState(() {
+            EasyLoading.dismiss(animation: true);
+            Navigator.pop(context);
+            isLoading = false;
+            showDialog(
+              context: context,
+              builder: (context) {
+                return Dialog(
+                  child: CustomAlertDialog(response.message),
+                );
+              },
             );
-          },);
           });
+        } 
+        else {
+          setState(() {
+            EasyLoading.dismiss(animation: true);
+            Navigator.pop(context);
+            isLoading = false;
+            showDialog(
+              context: context,
+              builder: (context) {
+                return Dialog(
+                  child: CustomAlertDialog("No Internet connection!"),
+                );
+              },
+            );
+          });
+        }
       }
     } catch (e) {
       print(e);
-      setState(()
-      {
+      setState(() {
         EasyLoading.dismiss(animation: true);
         Navigator.pop(context);
         isLoading = false;
-        showDialog(context: context, builder: (context) {
-          return Dialog(
-            child: CustomAlertDialog(e.toString()),
-          );
-        },);
+        showDialog(
+          context: context,
+          builder: (context) {
+            return Dialog(
+              child: CustomAlertDialog(e.toString()),
+            );
+          },
+        );
       });
     }
   }
@@ -105,7 +136,7 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async{
+      onWillPop: () async {
         return !isLoading;
       },
       child: Container(
@@ -145,8 +176,7 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
                             style: TextButton.styleFrom(
                                 backgroundColor: HexColor("#036eb7"),
                                 shape: ButtonBorder()),
-                            onPressed: () async
-                            {
+                            onPressed: () async {
                               isEnabled ? onCheckIn() : null;
                               isEnabled = false;
                             },
@@ -166,8 +196,7 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
                             style: TextButton.styleFrom(
                                 backgroundColor: HexColor("#036eb7"),
                                 shape: ButtonBorder()),
-                              onPressed: ()
-                              {
+                            onPressed: () {
                               isEnabled ? onCheckOut() : null;
                               isEnabled = false;
                             },
@@ -178,15 +207,15 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
                                 style: TextStyle(color: Colors.white),
                               ),
                             )),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                 )
-              ],
-            ),
-         ),
-       ),
-     );
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

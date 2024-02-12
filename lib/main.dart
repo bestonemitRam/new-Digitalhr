@@ -52,26 +52,26 @@ const getLocation = "getLocation";
 const checkLocationEnabled = "checkLocationEnabled";
 final dbHelper = DatabaseHelper();
 
-@pragma('vm:entry-point')
-void callbackDispatcher(BuildContext ctx) {
-  Workmanager().executeTask((task, inputData) async {
-    print("Native called background task: $task");
-    switch (task) {
-      case getLocation:
-        // bgLocationTask();
-        break;
-      case checkLocationEnabled:
-        hasUserClosedLocation(ctx);
-        break;
-      case fetchBackground:
-        print("Getting user locaton");
-        // Position userLocation = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-        //onStart();
-        break;
-    }
-    return Future.value(true);
-  });
-}
+// @pragma('vm:entry-point')
+// void callbackDispatcher(BuildContext ctx) {
+//   Workmanager().executeTask((task, inputData) async {
+//     print("Native called background task: $task");
+//     switch (task) {
+//       case getLocation:
+//         // bgLocationTask();
+//         break;
+//       case checkLocationEnabled:
+//         hasUserClosedLocation(ctx);
+//         break;
+//       case fetchBackground:
+//         print("Getting user locaton");
+//         // Position userLocation = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+//         //onStart();
+//         break;
+//     }
+//     return Future.value(true);
+//   });
+// }
 
 late SharedPreferences sharedPref;
 void main() async {
@@ -80,23 +80,24 @@ void main() async {
   // initializeService();
   //BackgroundLocation.startLocationService();
   //initBackgroundLocation();
-  Workmanager().initialize(
-      callbackDispatcher, // The top level function, aka callbackDispatcher
-      isInDebugMode:
-          true // If enabled it will post a notification whenever the task is running. Handy for debugging tasks
-      );
 
-  Workmanager().registerPeriodicTask(
-    "getLocation",
-    getLocation,
-    frequency: Duration(seconds: 2),
-  );
+  // Workmanager().initialize(
+  //     callbackDispatcher, // The top level function, aka callbackDispatcher
+  //     isInDebugMode:
+  //         true // If enabled it will post a notification whenever the task is running. Handy for debugging tasks
+  //     );
 
-  Workmanager().registerPeriodicTask(
-    "checkLocationEnabled",
-    checkLocationEnabled,
-    frequency: Duration(seconds: 5),
-  );
+  // Workmanager().registerPeriodicTask(
+  //   "getLocation",
+  //   getLocation,
+  //   frequency: Duration(seconds: 2),
+  // );
+
+  // Workmanager().registerPeriodicTask(
+  //   "checkLocationEnabled",
+  //   checkLocationEnabled,
+  //   frequency: Duration(seconds: 5),
+  // );
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FirebaseMessaging.onBackgroundMessage(_messageHandler);
@@ -171,9 +172,10 @@ void main() async {
         ),
         context: NavigationService.navigatorKey.currentState!.context,
       );
-    } catch (e) {
+    } catch (e)
+     {
       print(e);
-    }
+     }
   });
 
   FirebaseMessaging.onMessageOpenedApp.listen((message) {
@@ -255,7 +257,8 @@ void configLoading() {
 //   }
 // }
 
-void initBackgroundLocation() {
+void initBackgroundLocation()
+ {
   print("dkfgkjdfhgjk");
   BackgroundLocation.startLocationService();
   BackgroundLocation.getLocationUpdates((location) {
@@ -513,14 +516,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                         primarySwatch: Colors.blue,
                       ),
                       initialRoute: '/',
-                      routes: {
+                      routes:
+                       {
                         '/': (_) => SplashScreen(),
                         LoginScreen.routeName: (_) => LoginScreen(),
                         DashboardScreen.routeName: (_) => DashboardScreen(),
                         ProfileScreen.routeName: (_) => ProfileScreen(),
                         EditProfileScreen.routeName: (_) => EditProfileScreen(),
                         MeetingDetailScreen.routeName: (_) =>
-                            MeetingDetailScreen(),
+                         MeetingDetailScreen(),
                         PaySlipDetailScreen.routeName: (_) =>
                             PaySlipDetailScreen(),
                       },

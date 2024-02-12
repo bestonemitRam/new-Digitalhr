@@ -41,24 +41,28 @@ class OverviewDashboard extends StatelessWidget {
                   value: _overview['leave']!,
                   icon: Icons.person_off),
               CardOverView(
-                  type: 'Request',
-                  value: _overview['request']!,
-                  icon: Icons.pending)
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CardOverView(
-                  type: 'Projects',
-                  value: _overview['total_project']!,
-                  icon: Icons.work_history_outlined),
-              CardOverView(
                   type: 'Tasks',
                   value: _overview['total_task']!,
                   icon: Icons.outlined_flag_sharp)
+              // CardOverView(
+              //     type: 'Request',
+              //     value: _overview['request']!,
+              //     icon: Icons.pending)
             ],
           ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //     CardOverView(
+          //         type: 'Projects',
+          //         value: _overview['total_project']!,
+          //         icon: Icons.work_history_outlined),
+          //     CardOverView(
+          //         type: 'Tasks',
+          //         value: _overview['total_task']!,
+          //         icon: Icons.outlined_flag_sharp)
+          //   ],
+          // ),
         ],
       ),
     );

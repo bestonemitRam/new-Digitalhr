@@ -4,6 +4,8 @@ import 'package:cnattendance/widget/holiday/toggleholiday.dart';
 import 'package:cnattendance/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:provider/provider.dart';
 
 class HolidayScreen extends StatelessWidget {
@@ -39,7 +41,7 @@ class HolidayState extends State<Holiday> {
   Future<String> loadHolidays() async {
     setState(() async {
       isLoading = true;
-      EasyLoading.show(status: "Loading",maskType: EasyLoadingMaskType.black);
+      EasyLoading.show(status: "Loading", maskType: EasyLoadingMaskType.black);
       await Provider.of<HolidayProvider>(context, listen: false).getHolidays();
       isLoading = false;
       EasyLoading.dismiss(animation: true);
@@ -51,7 +53,7 @@ class HolidayState extends State<Holiday> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async{
+      onWillPop: () async {
         return !isLoading;
       },
       child: Container(
@@ -59,10 +61,24 @@ class HolidayState extends State<Holiday> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            title: Text('Holidays'),
-          ),
+              backgroundColor: Colors.transparent,
+              //automaticallyImplyLeading: true,
+              leading: InkWell(
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                ),
+                onTap: ()
+                 {
+                  Get.back();
+                },
+              ),
+              title: Center(
+                child: Text(
+                  "Holidays",
+                  style: TextStyle(color: Colors.white),
+                ),
+              )),
           body: RefreshIndicator(
             onRefresh: () {
               return loadHolidays();

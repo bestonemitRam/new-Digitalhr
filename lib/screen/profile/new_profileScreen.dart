@@ -2,10 +2,12 @@ import 'dart:io';
 
 import 'package:cnattendance/provider/profileUserProvider.dart';
 import 'package:cnattendance/screen/profile/editprofilescreen.dart';
+import 'package:cnattendance/utils/check_internet_connectvity.dart';
 import 'package:cnattendance/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -73,198 +75,205 @@ class _ProfileScreenActivityState extends State<ProfileScreenActivity> {
             ),
           ),
           resizeToAvoidBottomInset: true,
-          body: Consumer<ProfileUserProvider>(
-              builder: ((context, profileUserProvider, child) {
-            return profileUserProvider.datanotfound
-                ? SingleChildScrollView(
-                    child: Container(
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            CircleAvatar(
-                              radius: 6.5.h,
-                              backgroundColor: Colors.white,
-                              child: CircleAvatar(
-                                radius: 6.h,
-                                backgroundColor: Colors.grey.withOpacity(0.3),
-                                child: GestureDetector(
-                                  onTap: () {},
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.grey,
-                                    radius: 5.5.h,
-                                    backgroundImage: profileUserProvider
-                                                .profileuserList[0].avatar !=
-                                            null
-                                        ? NetworkImage(profileUserProvider
-                                            .profileuserList[0].avatar!)
-                                        : AssetImage(
-                                            'assets/images/dummy_avatar.png',
-                                          ) as ImageProvider,
+          body: Provider.of<InternetConnectionStatus>(context) ==
+                  InternetConnectionStatus.disconnected
+              ? InternetNotAvailable()
+              : Consumer<ProfileUserProvider>(
+                  builder: ((context, profileUserProvider, child) {
+                  return profileUserProvider.datanotfound
+                      ? SingleChildScrollView(
+                          child: Container(
+                            child: Center(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 6.5.h,
+                                    backgroundColor: Colors.white,
+                                    child: CircleAvatar(
+                                      radius: 6.h,
+                                      backgroundColor:
+                                          Colors.grey.withOpacity(0.3),
+                                      child: GestureDetector(
+                                        onTap: () {},
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.grey,
+                                          radius: 5.5.h,
+                                          backgroundImage: profileUserProvider
+                                                      .profileuserList[0]
+                                                      .avatar !=
+                                                  null
+                                              ? NetworkImage(profileUserProvider
+                                                  .profileuserList[0].avatar!)
+                                              : AssetImage(
+                                                  'assets/images/dummy_avatar.png',
+                                                ) as ImageProvider,
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  Padding(
+                                      padding: const EdgeInsets.all(5),
+                                      child: Text(
+                                        profileUserProvider
+                                                .profileuserList.isNotEmpty
+                                            ? profileUserProvider
+                                                    .profileuserList[0].fullName
+                                                    .toString() ??
+                                                ''
+                                            : '',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 20),
+                                      )),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 5),
+                                    child: Text(
+                                      profileUserProvider
+                                              .profileuserList.isNotEmpty
+                                          ? profileUserProvider
+                                                  .profileuserList[0].mail ??
+                                              ''
+                                          : '',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 15),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            Padding(
-                                padding: const EdgeInsets.all(5),
-                                child: Text(
-                                  profileUserProvider.profileuserList.isNotEmpty
-                                      ? profileUserProvider
-                                              .profileuserList[0].fullName
-                                              .toString() ??
-                                          ''
-                                      : '',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
-                                )),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5),
-                              child: Text(
-                                profileUserProvider.profileuserList.isNotEmpty
-                                    ? profileUserProvider
-                                            .profileuserList[0].mail ??
-                                        ''
-                                    : '',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                : Center(
-                    child: CircularProgressIndicator(
-                      color: Colors.white,
-                    ),
-                  );
+                          ),
+                        )
+                      : Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.white,
+                          ),
+                        );
 
-            // Center(
-            //   child: Padding(
-            //     padding: EdgeInsets.only(top: 8.h),
-            //     child: Container(
-            //       width: double.infinity,
-            //       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            //       decoration: BoxDecoration(
-            //         color: Theme.of(context).cardTheme.color,
-            //         borderRadius: BorderRadius.only(
-            //           topLeft: Radius.circular(30),
-            //           topRight: Radius.circular(30),
-            //         ),
-            //       ),
-            //       child: Padding(
-            //         padding: EdgeInsets.only(top: 1.h),
-            //         child: Column(
-            //           children: [
-            //             profileUserProvider.profileuserList.isNotEmpty
-            //                 ? Row(
-            //                     children: [
-            //                       CircleAvatar(
-            //                         radius: 6.5.h,
-            //                         backgroundColor: Colors.white,
-            //                         child: CircleAvatar(
-            //                           radius: 6.h,
-            //                           backgroundColor:
-            //                               Colors.grey.withOpacity(0.3),
-            //                           child: GestureDetector(
-            //                             onTap: () {},
-            //                             child: CircleAvatar(
-            //                               backgroundColor: Colors.grey,
-            //                               radius: 5.5.h,
-            //                               backgroundImage:
-            // profileUserProvider
-            //                                           .profileuserList[0]
-            //                                           .avatar !=
-            //                                       null
-            //                                   ? NetworkImage(profileUserProvider
-            //                                       .profileuserList[0].avatar!)
-            //                                   : AssetImage(
-            //                                       'assets/images/dummy_avatar.png',
-            //                                     ) as ImageProvider,
-            //                             ),
-            //                           ),
-            //                         ),
-            //                       ),
-            //                     ],
-            //                   )
-            //                 : Container(),
-            //             Padding(
-            //                 padding: EdgeInsets.only(bottom: 1.h),
-            //                 child: profileUserProvider
-            //                         .profileuserList.isNotEmpty
-            //                     ? Row(
-            //                         mainAxisAlignment: MainAxisAlignment.start,
-            //                         children: [
-            //                           Container(
-            //                             //  width: 250,
-            //                             //height: .h,
-            //                             padding: EdgeInsets.only(left: 35.w),
-            //                             child: Row(
-            //                               mainAxisAlignment:
-            //                                   MainAxisAlignment.spaceAround,
-            //                               children: [
-            //                                 Column(
-            //                                   mainAxisAlignment:
-            //                                       MainAxisAlignment.center,
-            //                                   crossAxisAlignment:
-            //                                       CrossAxisAlignment.start,
-            //                                   children: [
-            //                                     Row(
-            //                                       children: [
-            //                                         Container(
-            //                                           width: 55.w,
-            //                                           child: Text(
-            //                                             profileUserProvider
-            //                                                     .profileuserList
-            //                                                     .isNotEmpty
-            //                                                 ? profileUserProvider
-            //                                                         .profileuserList[
-            //                                                             0]
-            //                                                         .fullName
-            //                                                         .toString() ??
-            //                                                     ''
-            //                                                 : '',
-            //                                             overflow: TextOverflow
-            //                                                 .ellipsis,
-            //                                             maxLines: 2,
-            //                                           ),
-            //                                         ),
-            //                                       ],
-            //                                     ),
-            //                                     Text(
-            //                                       profileUserProvider
-            //                                               .profileuserList
-            //                                               .isNotEmpty
-            //                                           ? profileUserProvider
-            //                                                   .profileuserList[
-            //                                                       0]
-            //                                                   .mail ??
-            //                                               ''
-            //                                           : '',
-            //                                     ),
-            //                                   ],
-            //                                 ),
-            //                               ],
-            //                             ),
-            //                           ),
-            //                         ],
-            //                       )
-            //                     : Container()),
-            //             SizedBox(
-            //               height: 1.h,
-            //             ),
-            //             const Divider(
-            //               color: Colors.black12,
-            //               thickness: 1,
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // );
-          }))),
+                  // Center(
+                  //   child: Padding(
+                  //     padding: EdgeInsets.only(top: 8.h),
+                  //     child: Container(
+                  //       width: double.infinity,
+                  //       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  //       decoration: BoxDecoration(
+                  //         color: Theme.of(context).cardTheme.color,
+                  //         borderRadius: BorderRadius.only(
+                  //           topLeft: Radius.circular(30),
+                  //           topRight: Radius.circular(30),
+                  //         ),
+                  //       ),
+                  //       child: Padding(
+                  //         padding: EdgeInsets.only(top: 1.h),
+                  //         child: Column(
+                  //           children: [
+                  //             profileUserProvider.profileuserList.isNotEmpty
+                  //                 ? Row(
+                  //                     children: [
+                  //                       CircleAvatar(
+                  //                         radius: 6.5.h,
+                  //                         backgroundColor: Colors.white,
+                  //                         child: CircleAvatar(
+                  //                           radius: 6.h,
+                  //                           backgroundColor:
+                  //                               Colors.grey.withOpacity(0.3),
+                  //                           child: GestureDetector(
+                  //                             onTap: () {},
+                  //                             child: CircleAvatar(
+                  //                               backgroundColor: Colors.grey,
+                  //                               radius: 5.5.h,
+                  //                               backgroundImage:
+                  // profileUserProvider
+                  //                                           .profileuserList[0]
+                  //                                           .avatar !=
+                  //                                       null
+                  //                                   ? NetworkImage(profileUserProvider
+                  //                                       .profileuserList[0].avatar!)
+                  //                                   : AssetImage(
+                  //                                       'assets/images/dummy_avatar.png',
+                  //                                     ) as ImageProvider,
+                  //                             ),
+                  //                           ),
+                  //                         ),
+                  //                       ),
+                  //                     ],
+                  //                   )
+                  //                 : Container(),
+                  //             Padding(
+                  //                 padding: EdgeInsets.only(bottom: 1.h),
+                  //                 child: profileUserProvider
+                  //                         .profileuserList.isNotEmpty
+                  //                     ? Row(
+                  //                         mainAxisAlignment: MainAxisAlignment.start,
+                  //                         children: [
+                  //                           Container(
+                  //                             //  width: 250,
+                  //                             //height: .h,
+                  //                             padding: EdgeInsets.only(left: 35.w),
+                  //                             child: Row(
+                  //                               mainAxisAlignment:
+                  //                                   MainAxisAlignment.spaceAround,
+                  //                               children: [
+                  //                                 Column(
+                  //                                   mainAxisAlignment:
+                  //                                       MainAxisAlignment.center,
+                  //                                   crossAxisAlignment:
+                  //                                       CrossAxisAlignment.start,
+                  //                                   children: [
+                  //                                     Row(
+                  //                                       children: [
+                  //                                         Container(
+                  //                                           width: 55.w,
+                  //                                           child: Text(
+                  //                                             profileUserProvider
+                  //                                                     .profileuserList
+                  //                                                     .isNotEmpty
+                  //                                                 ? profileUserProvider
+                  //                                                         .profileuserList[
+                  //                                                             0]
+                  //                                                         .fullName
+                  //                                                         .toString() ??
+                  //                                                     ''
+                  //                                                 : '',
+                  //                                             overflow: TextOverflow
+                  //                                                 .ellipsis,
+                  //                                             maxLines: 2,
+                  //                                           ),
+                  //                                         ),
+                  //                                       ],
+                  //                                     ),
+                  //                                     Text(
+                  //                                       profileUserProvider
+                  //                                               .profileuserList
+                  //                                               .isNotEmpty
+                  //                                           ? profileUserProvider
+                  //                                                   .profileuserList[
+                  //                                                       0]
+                  //                                                   .mail ??
+                  //                                               ''
+                  //                                           : '',
+                  //                                     ),
+                  //                                   ],
+                  //                                 ),
+                  //                               ],
+                  //                             ),
+                  //                           ),
+                  //                         ],
+                  //                       )
+                  //                     : Container()),
+                  //             SizedBox(
+                  //               height: 1.h,
+                  //             ),
+                  //             const Divider(
+                  //               color: Colors.black12,
+                  //               thickness: 1,
+                  //             ),
+                  //           ],
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // );
+                }))),
     );
   }
 }

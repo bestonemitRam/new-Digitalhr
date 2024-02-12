@@ -17,7 +17,8 @@ class ToggleHoliday extends StatelessWidget{
         minHeight: 45,
         initialLabelIndex: provider.toggleValue,
         totalSwitches: 2,
-        onToggle: (index) {
+        onToggle: (index) 
+        {
           provider.toggleValue = index!;
           provider.holidayListFilter();
         },

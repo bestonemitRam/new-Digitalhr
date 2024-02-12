@@ -34,17 +34,19 @@ class Holidaycard extends StatelessWidget {
                 elevation: 0,
                 color: Colors.blueAccent,
                 child: Container(
-                  width: 50,
-                  height: 50,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        day,
-                        style: TextStyle(color: Colors.white, fontSize: 25),
-                      ),
-                      Text(month, style: TextStyle(color: Colors.white)),
-                    ],
+                  height: 60,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          day,
+                          style: TextStyle(color: Colors.white, fontSize: 15),
+                        ),
+                        Text(month, style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
                   ),
                 ),
               ),

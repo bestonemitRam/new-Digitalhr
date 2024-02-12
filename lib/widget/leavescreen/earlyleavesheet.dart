@@ -41,17 +41,23 @@ class EarlyLeaveSheetState extends State<EarlyLeaveSheet> {
         isLoading = false;
         dismissLoader();
         Navigator.pop(context);
-        showDialog(context: context, builder: (context) {
-          return Dialog(
-            child: CustomAlertDialog(response.message),
-          );
-        },);
+        showDialog(
+          context: context,
+          builder: (context) {
+            return Dialog(
+              child: CustomAlertDialog(response.message),
+            );
+          },
+        );
       } catch (e) {
-        showDialog(context: context, builder: (context) {
-          return Dialog(
-            child: CustomAlertDialog(e.toString()),
-          );
-        },);
+        showDialog(
+          context: context,
+          builder: (context) {
+            return Dialog(
+              child: CustomAlertDialog(e.toString()),
+            );
+          },
+        );
         isLoading = false;
         dismissLoader();
       }
@@ -78,7 +84,7 @@ class EarlyLeaveSheetState extends State<EarlyLeaveSheet> {
   Widget build(BuildContext context) {
     final provider = Provider.of<LeaveProvider>(context);
     return WillPopScope(
-      onWillPop: () async{
+      onWillPop: () async {
         return !isLoading;
       },
       child: Container(
@@ -159,7 +165,11 @@ class EarlyLeaveSheetState extends State<EarlyLeaveSheet> {
                       buttonWidth: 160,
                       buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                       buttonDecoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10)),
                         color: HexColor("#FFFFFF"),
                       ),
                       buttonElevation: 0,
@@ -168,7 +178,11 @@ class EarlyLeaveSheetState extends State<EarlyLeaveSheet> {
                       dropdownMaxHeight: 200,
                       dropdownPadding: null,
                       dropdownDecoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(0),topRight: Radius.circular(10),bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(0),
+                            topRight: Radius.circular(10),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10)),
                         color: HexColor("#FFFFFF"),
                       ),
                       dropdownElevation: 8,
@@ -192,13 +206,29 @@ class EarlyLeaveSheetState extends State<EarlyLeaveSheet> {
                   fillColor: Colors.white24,
                   filled: true,
                   enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                   focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                   focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                   errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                 ),
                 readOnly: true,
                 //set it true, so that user will not able to edit text
@@ -209,8 +239,8 @@ class EarlyLeaveSheetState extends State<EarlyLeaveSheet> {
                     initialEntryMode: TimePickerEntryMode.dial,
                   );
                   var current = DateTime.now();
-                  current = DateTime.utc(current.year, current.month, current.day,
-                      timeOfDay!.hour, timeOfDay.minute);
+                  current = DateTime.utc(current.year, current.month,
+                      current.day, timeOfDay!.hour, timeOfDay.minute);
                   time.text = DateFormat('yyyy-MM-dd HH:mm:ss').format(current);
                 },
               ),
@@ -231,13 +261,29 @@ class EarlyLeaveSheetState extends State<EarlyLeaveSheet> {
                   fillColor: Colors.white24,
                   filled: true,
                   enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                   focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                   focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                   errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10))),
                 ),
               ),
               gaps(20),

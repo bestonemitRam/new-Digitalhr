@@ -13,8 +13,21 @@ class CreateTadaScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.transparent,
-          title: Text("Create TADA"),
+          title: Text(
+            "Create Tada",
+            style: TextStyle(color: Colors.white),
+          ),
+          leading: InkWell(
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+            onTap: () {
+              Get.back();
+            },
+          ),
         ),
         bottomNavigationBar: SafeArea(
           child: Container(

@@ -14,12 +14,11 @@ class LeavetypeFilter extends StatelessWidget {
     final provider = Provider.of<LeaveProvider>(context);
 
     void onToggleChanged() async {
-
       final detailResponse = await provider.getLeaveTypeDetail();
 
       if (!mounted) return;
       if (detailResponse.statusCode == 200) {
-        if (detailResponse.data.isEmpty) {
+        if (detailResponse.data!.leaveList!.isEmpty) {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               behavior: SnackBarBehavior.floating,
               padding: EdgeInsets.all(20),
@@ -29,7 +28,7 @@ class LeavetypeFilter extends StatelessWidget {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             behavior: SnackBarBehavior.floating,
             padding: const EdgeInsets.all(20),
-            content: Text(detailResponse.message)));
+            content: Text(detailResponse.message!)));
       }
     }
 
@@ -66,7 +65,7 @@ class LeavetypeFilter extends StatelessWidget {
                 ),
               ],
             ),
-            items: provider.leaveList
+            items: provider.selectleaveList
                 .map((item) => DropdownMenuItem<Leave>(
                       value: item,
                       child: Text(
@@ -98,7 +97,11 @@ class LeavetypeFilter extends StatelessWidget {
             buttonWidth: 160,
             buttonPadding: const EdgeInsets.only(left: 14, right: 14),
             buttonDecoration: BoxDecoration(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10)),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(10)),
               color: HexColor("#FFFFFF"),
             ),
             buttonElevation: 0,
@@ -107,7 +110,11 @@ class LeavetypeFilter extends StatelessWidget {
             dropdownMaxHeight: 200,
             dropdownPadding: null,
             dropdownDecoration: BoxDecoration(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(0),topRight: Radius.circular(10),bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(10),
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10)),
               color: HexColor("#FFFFFF"),
             ),
             dropdownElevation: 8,
