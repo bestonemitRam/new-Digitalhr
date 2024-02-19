@@ -22,7 +22,7 @@ class CreateShopScreenState extends State<CreateShopScreen> {
 
   bool isLoading = false;
 
-   final _nameController = TextEditingController();
+  final _nameController = TextEditingController();
   final _ownerController = TextEditingController();
   final _addressController = TextEditingController();
   final _form = GlobalKey<FormState>();
@@ -273,8 +273,7 @@ class CreateShopScreenState extends State<CreateShopScreen> {
                                     bottomRight: Radius.circular(10))),
                           ),
                         ),
-                     
-                         gaps(20),
+                        gaps(20),
                         Container(
                           width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.only(left: 5),
@@ -285,7 +284,7 @@ class CreateShopScreenState extends State<CreateShopScreen> {
                                 shape: ButtonBorder(),
                               ),
                               onPressed: () {
-                               // issueLeave();
+                                // issueLeave();
                               },
                               child: Padding(
                                 padding: const EdgeInsets.all(20.0),

@@ -3,7 +3,7 @@ import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/att
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AttachmentSection extends StatelessWidget{
+class AttachmentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ProjectDetailController model = Get.find();
@@ -15,7 +15,8 @@ class AttachmentSection extends StatelessWidget{
             isScrollControlled: true,
             ignoreSafeArea: true);
       },
-      child: Obx(() => Column(
+      child: Obx(
+        () => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 10),
@@ -66,5 +67,4 @@ class AttachmentSection extends StatelessWidget{
       ),
     );
   }
-
 }

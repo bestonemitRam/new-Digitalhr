@@ -25,20 +25,18 @@ class LeaveDetailRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
-    void onLeaveCancelledClicked(int id){
-
-        showModalBottomSheet(
-            context: context,
-            useRootNavigator: true,
-            builder: (context) {
-              return CancelLeaveBottomSheet(id);
-            });
+    void onLeaveCancelledClicked(int id) {
+      showModalBottomSheet(
+          context: context,
+          useRootNavigator: true,
+          builder: (context) {
+            return CancelLeaveBottomSheet(id);
+          });
     }
 
     return ClipRRect(
-      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
       child: Container(
         color: Colors.white12,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -82,7 +80,7 @@ class LeaveDetailRow extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      if(status.toLowerCase() == "pending"){
+                      if (status.toLowerCase() == "pending") {
                         onLeaveCancelledClicked(id);
                       }
                     },

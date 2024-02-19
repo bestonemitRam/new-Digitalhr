@@ -79,8 +79,9 @@ class CommentList extends StatelessWidget {
                               elevation: 0,
                               child: InkWell(
                                 onTap: () {
-                                  Get.to(EmployeeDetailScreen(),
-                                      arguments: {"employeeId": mention.userId.toString()});
+                                  Get.to(EmployeeDetailScreen(), arguments: {
+                                    "employeeId": mention.userId.toString()
+                                  });
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -229,7 +230,7 @@ class CommentList extends StatelessWidget {
                                                 elevation: 0,
                                                 child: Padding(
                                                   padding: const EdgeInsets
-                                                          .symmetric(
+                                                      .symmetric(
                                                       horizontal: 5,
                                                       vertical: 3),
                                                   child: Text(

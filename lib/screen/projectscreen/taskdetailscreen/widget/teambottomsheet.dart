@@ -48,8 +48,8 @@ class TeamBottomSheet extends StatelessWidget {
                   primary: false,
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                   itemCount: members.length,
-                  itemBuilder: (ctx, i) =>
-                      Padding(padding: EdgeInsets.all(5), child: teamCard(members[i]))),
+                  itemBuilder: (ctx, i) => Padding(
+                      padding: EdgeInsets.all(5), child: teamCard(members[i]))),
             ],
           ),
         ),
@@ -87,8 +87,7 @@ class TeamBottomSheet extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     SizedBox(height: 5),
-                    Text(member.post,
-                        style: TextStyle(color: Colors.white70)),
+                    Text(member.post, style: TextStyle(color: Colors.white70)),
                   ],
                 ),
               ),

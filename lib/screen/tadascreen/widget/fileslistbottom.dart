@@ -8,8 +8,8 @@ class FilesListBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final attachList = <Attachment>[];
-    for(var attach in attachments){
-      if(attach.type == "file"){
+    for (var attach in attachments) {
+      if (attach.type == "file") {
         attachList.add(attach);
       }
     }

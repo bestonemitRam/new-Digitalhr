@@ -27,17 +27,18 @@ class TaskDetailScreen extends StatelessWidget {
                 )),
           ),
           bottomNavigationBar: Obx(
-            () => controller.taskDetail.value.has_checklist == false && controller.taskDetail.value.status != "Completed"
+            () => controller.taskDetail.value.has_checklist == false &&
+                    controller.taskDetail.value.status != "Completed"
                 ? SafeArea(
-                  child: Padding(
+                    child: Padding(
                       padding: const EdgeInsets.all(20),
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  bottomRight: Radius.circular(10))),
-                        ),
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(10))),
+                          ),
                           onPressed: () {
                             showModalBottomSheet(
                                 context: context,
@@ -51,7 +52,7 @@ class TaskDetailScreen extends StatelessWidget {
                             child: Text("Mark as Finish"),
                           )),
                     ),
-                )
+                  )
                 : SizedBox.shrink(),
           ),
           body: Obx(
@@ -71,18 +72,36 @@ class TaskDetailScreen extends StatelessWidget {
                             children: [
                               HeaderSection(),
                               DescriptionSection(),
-                              SizedBox(height: 10,),
-                              Divider(color: Colors.white54,),
-                              SizedBox(height: 10,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Colors.white54,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
                               TeamSection(),
-                              SizedBox(height: 10,),
-                              Divider(color: Colors.white54,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Colors.white54,
+                              ),
                               AttachmentSection(),
-                              SizedBox(height: 10,),
-                              Divider(color: Colors.white54,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Colors.white54,
+                              ),
                               CommentSection(),
-                              SizedBox(height: 10,),
-                              Divider(color: Colors.white54,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Colors.white54,
+                              ),
                               CheckListSection()
                             ],
                           ),

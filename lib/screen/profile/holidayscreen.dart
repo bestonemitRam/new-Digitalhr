@@ -68,8 +68,7 @@ class HolidayState extends State<Holiday> {
                   Icons.arrow_back_ios,
                   color: Colors.white,
                 ),
-                onTap: ()
-                 {
+                onTap: () {
                   Get.back();
                 },
               ),

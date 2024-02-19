@@ -80,8 +80,8 @@ class EmployeeDetailScreen extends StatelessWidget {
                                   children: [
                                     CardTitle(
                                         'Fullname', model.profile.value.name),
-                                    CardTitle(
-                                        'Username', model.profile.value.username),
+                                    CardTitle('Username',
+                                        model.profile.value.username),
                                     CardTitle(
                                         'Phone', model.profile.value.phone),
                                     CardTitle('Post', model.profile.value.post),

@@ -24,15 +24,17 @@ class SupportListScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(
-                        10),bottomRight: Radius.circular(10))),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10))),
                     color: Colors.white12,
                     elevation: 0,
                     margin: EdgeInsets.symmetric(horizontal: 20),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Obx(
-                            () => SingleChildScrollView(
+                        () => SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -168,15 +170,18 @@ class SupportListScreen extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text(
                                               support.day,
                                               style: TextStyle(
-                                                  color: Colors.white, fontSize: 25),
+                                                  color: Colors.white,
+                                                  fontSize: 25),
                                             ),
                                             Text(support.month,
-                                                style: TextStyle(color: Colors.white)),
+                                                style: TextStyle(
+                                                    color: Colors.white)),
                                           ],
                                         ),
                                       ),
@@ -186,14 +191,17 @@ class SupportListScreen extends StatelessWidget {
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Text(
                                             softWrap: true,
                                             support.title,
                                             style: TextStyle(
-                                                color: Colors.white, fontSize: 18),
+                                                color: Colors.white,
+                                                fontSize: 18),
                                           ),
                                           SizedBox(
                                             height: 5,
@@ -203,7 +211,8 @@ class SupportListScreen extends StatelessWidget {
                                             softWrap: true,
                                             "Issue to: ${support.requested_department}",
                                             style: TextStyle(
-                                                color: Colors.white, fontSize: 12),
+                                                color: Colors.white,
+                                                fontSize: 12),
                                           ),
                                           SizedBox(
                                             height: 5,
@@ -213,12 +222,15 @@ class SupportListScreen extends StatelessWidget {
                                             softWrap: true,
                                             support.status,
                                             style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                                color: support.status == "Pending"
-                                            ? Colors.deepOrange
-                                                : support.status == "In Progress"
-                                            ? Colors.orangeAccent
-                                                : Colors.green, fontSize: 12),
+                                                fontWeight: FontWeight.bold,
+                                                color: support.status ==
+                                                        "Pending"
+                                                    ? Colors.deepOrange
+                                                    : support.status ==
+                                                            "In Progress"
+                                                        ? Colors.orangeAccent
+                                                        : Colors.green,
+                                                fontSize: 12),
                                           ),
                                         ],
                                       ),

@@ -149,7 +149,10 @@ class WeeklyReportChartState extends State<WeeklyReportChart> {
                         show: false,
                       ),
                       barGroups: provider.showingBarGroups,
-                      gridData: FlGridData(show: false,horizontalInterval: 2,verticalInterval: 2),
+                      gridData: FlGridData(
+                          show: false,
+                          horizontalInterval: 2,
+                          verticalInterval: 2),
                     ),
                   ),
                 ),

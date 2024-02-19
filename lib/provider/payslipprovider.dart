@@ -32,10 +32,10 @@ class PaySlipProvider with ChangeNotifier {
     return [..._earningList];
   }
 
-  double getTotalEarning(){
+  double getTotalEarning() {
     var value = 0.0;
 
-    for(var item in _earningList){
+    for (var item in _earningList) {
       value += item.value;
     }
 
@@ -53,10 +53,10 @@ class PaySlipProvider with ChangeNotifier {
     return [..._deductionList];
   }
 
-  double getTotalDeduction(){
+  double getTotalDeduction() {
     var value = 0.0;
 
-    for(var item in _deductionList){
+    for (var item in _deductionList) {
       value += item.value;
     }
 

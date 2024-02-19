@@ -19,7 +19,7 @@ import '../../../model/attachment.dart';
 
 class TaskDetailController extends GetxController {
   var taskDetail =
-      (Task.all(0, "", "", "", "", "", "", "", 0, 0,false, [], [], [])).obs;
+      (Task.all(0, "", "", "", "", "", "", "", 0, 0, false, [], [], [])).obs;
 
   var memberImages = [].obs;
   var leaderImages = [].obs;
@@ -142,10 +142,8 @@ class TaskDetailController extends GetxController {
     }
   }
 
-
   Future<bool> checkListTaskToggle(String taskId) async {
-    var uri = Uri.parse(
-        Constant.UPDATE_TASK_TOGGLE_URL + "/" + taskId);
+    var uri = Uri.parse(Constant.UPDATE_TASK_TOGGLE_URL + "/" + taskId);
 
     Preferences preferences = Preferences();
     String token = await preferences.getToken();
@@ -157,7 +155,7 @@ class TaskDetailController extends GetxController {
 
     debugPrint(uri.toString());
     try {
-      EasyLoading.show(status: "Loading",maskType: EasyLoadingMaskType.black);
+      EasyLoading.show(status: "Loading", maskType: EasyLoadingMaskType.black);
       final response = await http.get(
         uri,
         headers: headers,
@@ -168,7 +166,6 @@ class TaskDetailController extends GetxController {
       final responseData = json.decode(response.body);
 
       if (response.statusCode == 200) {
-
         Get.back();
         showToast("Task completed");
         return true;
@@ -183,9 +180,9 @@ class TaskDetailController extends GetxController {
     }
   }
 
-
   Future<void> launchUrls(String _url) async {
-    if (!await launchUrl(Uri.parse(_url),mode: LaunchMode.externalApplication)) {
+    if (!await launchUrl(Uri.parse(_url),
+        mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $_url');
     }
   }

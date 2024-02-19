@@ -22,7 +22,7 @@ class CompanyRulesState extends State<CompanyRules> {
 
   @override
   void didChangeDependencies() {
-    if(initial){
+    if (initial) {
       Provider.of<CompanyRulesProvider>(context).getContent();
       initial = false;
     }

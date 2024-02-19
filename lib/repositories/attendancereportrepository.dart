@@ -22,8 +22,7 @@ class AttendanceReportRepository {
           headers);
 
       final responseData = json.decode(response.body);
-      if (response.statusCode == 200) 
-      {
+      if (response.statusCode == 200) {
         print(responseData.toString());
 
         final responseJson = AttendanceReportResponse.fromJson(responseData);

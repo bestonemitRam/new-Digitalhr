@@ -31,8 +31,8 @@ class Reply {
       created_by_name: json['created_by_name'],
       description: json['description'],
       mentioned: (json['mentioned'] as List)
-              .map((i) => MentionedX.fromJson(i))
-              .toList(),
+          .map((i) => MentionedX.fromJson(i))
+          .toList(),
       reply_id: json['reply_id'],
       username: json['username'],
     );

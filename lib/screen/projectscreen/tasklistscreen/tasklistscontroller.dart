@@ -9,18 +9,18 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-class TaskListController extends GetxController{
+class TaskListController extends GetxController {
   final taskList = <Task>[].obs;
   final filteredList = <Task>[].obs;
   final selected = "All".obs;
 
-  void filterList(){
+  void filterList() {
     filteredList.clear();
-    if(selected.value == "All"){
+    if (selected.value == "All") {
       filteredList.addAll(taskList);
-    }else{
-      for(var project in taskList){
-        if(project.status == selected.value){
+    } else {
+      for (var project in taskList) {
+        if (project.status == selected.value) {
           filteredList.add(project);
         }
       }
@@ -39,7 +39,7 @@ class TaskListController extends GetxController{
     };
 
     try {
-      EasyLoading.show(status: "Loading",maskType: EasyLoadingMaskType.black);
+      EasyLoading.show(status: "Loading", maskType: EasyLoadingMaskType.black);
       final response = await http.get(
         uri,
         headers: headers,

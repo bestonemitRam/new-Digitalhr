@@ -140,13 +140,29 @@ class ChangePasswordState extends State<ChangePassword> {
                     fillColor: Colors.white24,
                     filled: true,
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     focusedErrorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     suffixIcon: InkWell(
                       onTap: _toggle,
                       child: Icon(
@@ -187,13 +203,29 @@ class ChangePasswordState extends State<ChangePassword> {
                     fillColor: Colors.white24,
                     filled: true,
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     focusedErrorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     suffixIcon: InkWell(
                       onTap: _toggle,
                       child: Icon(
@@ -235,13 +267,29 @@ class ChangePasswordState extends State<ChangePassword> {
                     fillColor: Colors.white24,
                     filled: true,
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     focusedErrorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(10))),
                     suffixIcon: InkWell(
                       onTap: _toggle,
                       child: Icon(

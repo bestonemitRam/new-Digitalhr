@@ -50,21 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDbjU0JPWd0JRfs-cyKR1-xr8fzFuGpgrM',
-    appId: '1:255239208693:android:413d129fac171d66b2cfbc',
-    messagingSenderId: '255239208693',
-    projectId: 'cn-attendance',
-    storageBucket: 'cn-attendance.appspot.com',
+    apiKey: 'AIzaSyBIuKQ7_uogBVz4suvjlLwn6QhlkLRc6Qs',
+    appId: '1:934018612864:android:d095cb4d57e87bb60bb065',
+    messagingSenderId: '934018612864',
+    projectId: 'digitalhrm-7e9ae',
+    storageBucket: 'digitalhrm-7e9ae.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCEVUNnmMmZq2Qj50G5eoTkVPTq647FdNg',
-    appId: '1:255239208693:ios:046d16ffdacc1892b2cfbc',
-    messagingSenderId: '255239208693',
-    projectId: 'cn-attendance',
-    storageBucket: 'cn-attendance.appspot.com',
-    androidClientId: '255239208693-2fgtmshl1unui0gk8ae7sgi4jq22hsrn.apps.googleusercontent.com',
-    iosClientId: '255239208693-tb85071e42euubun43d2qm1k6jtna9ur.apps.googleusercontent.com',
-    iosBundleId: 'com.cninfotech.digitalhrs',
+    apiKey: 'AIzaSyDo8KnOjQ7TthLaMwhonr3WeQWw4UA117o',
+    appId: '1:934018612864:ios:a19a0676e936edfb0bb065',
+    messagingSenderId: '934018612864',
+    projectId: 'digitalhrm-7e9ae',
+    storageBucket: 'digitalhrm-7e9ae.appspot.com',
+    androidClientId: '',
+    iosClientId: '',
+    iosBundleId: 'com.app.cnattendance',
   );
 }

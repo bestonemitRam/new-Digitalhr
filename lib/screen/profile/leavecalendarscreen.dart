@@ -26,8 +26,7 @@ class LeaveCalendarState extends State<LeaveCalendar> {
 
   @override
   void didChangeDependencies() {
-    if (initial)
-     {
+    if (initial) {
       getLeaves();
       getLeaveByDate();
       initial = false;
@@ -35,13 +34,11 @@ class LeaveCalendarState extends State<LeaveCalendar> {
     super.didChangeDependencies();
   }
 
-  void getLeaves() async 
-  {
+  void getLeaves() async {
     await Provider.of<LeaveCalendarProvider>(context).getLeaves();
   }
 
-  void getLeaveByDate() async 
-  {
+  void getLeaveByDate() async {
     var inputDate = DateTime.now();
     var outputFormat = DateFormat('yyyy-MM-dd');
     var outputDate = outputFormat.format(inputDate);
@@ -78,5 +75,4 @@ class LeaveCalendarState extends State<LeaveCalendar> {
       ),
     );
   }
-
 }

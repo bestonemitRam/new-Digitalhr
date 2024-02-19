@@ -1,4 +1,3 @@
-
 // import 'LeaveType.dart';
 
 // class Leavetyperesponse {
@@ -21,7 +20,7 @@
 //   bool status;
 //   String message;
 //   int statusCode;
-  import 'package:cnattendance/data/source/network/model/leavetype/LeaveType.dart';
+import 'package:cnattendance/data/source/network/model/leavetype/LeaveType.dart';
 
 //List<LeaveType> data;
 
@@ -34,7 +33,6 @@
 //     return map;
 //   }
 // }
-
 
 class Leavetyperesponse {
   String? message;
@@ -63,8 +61,7 @@ class Leavetyperesponse {
   }
 }
 
-class Data 
-{
+class Data {
   List<LeaveType>? leaveTypeData;
 
   Data({this.leaveTypeData});

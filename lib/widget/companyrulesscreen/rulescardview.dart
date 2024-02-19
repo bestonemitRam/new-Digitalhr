@@ -16,7 +16,7 @@ class RulesCardView extends StatelessWidget {
       elevation: 0,
       color: Colors.white12,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         child: ExpandableTheme(
           data: const ExpandableThemeData(
             iconPadding: EdgeInsets.all(0),
@@ -35,7 +35,10 @@ class RulesCardView extends StatelessWidget {
               collapsed: Html(
                 shrinkWrap: true,
                 style: {
-                  "body": Style(color: Colors.white, fontSize: FontSize.medium,maxLines: 1)
+                  "body": Style(
+                      color: Colors.white,
+                      fontSize: FontSize.medium,
+                      maxLines: 1)
                 },
                 data: description,
               ),
@@ -45,8 +48,7 @@ class RulesCardView extends StatelessWidget {
                   "body": Style(color: Colors.white, fontSize: FontSize.medium)
                 },
                 data: description,
-              )
-          ),
+              )),
         ),
       ),
     );

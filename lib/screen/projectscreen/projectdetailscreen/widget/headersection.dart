@@ -23,7 +23,9 @@ class HeaderSection extends StatelessWidget {
             child: Text(
               model.project.value.name,
               style: TextStyle(
-                  color: Colors.white, fontSize: 21, fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 21,
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),

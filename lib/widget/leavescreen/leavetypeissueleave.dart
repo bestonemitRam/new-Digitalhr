@@ -6,12 +6,11 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 
 class LeaveTypeIssueLeave extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => LeaveTypeIssueLeaveState();
 }
 
-class LeaveTypeIssueLeaveState extends State<LeaveTypeIssueLeave>{
+class LeaveTypeIssueLeaveState extends State<LeaveTypeIssueLeave> {
   Leave? selectedValue;
 
   @override
@@ -62,9 +61,7 @@ class LeaveTypeIssueLeaveState extends State<LeaveTypeIssueLeave>{
         onChanged: (value) {
           selectedValue = value as Leave?;
           if (selectedValue != null) {
-            setState(() {
-
-            });
+            setState(() {});
           }
         },
         icon: const Icon(

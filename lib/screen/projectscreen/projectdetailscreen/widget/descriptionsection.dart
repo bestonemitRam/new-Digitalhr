@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:html/parser.dart';
 import 'package:readmore/readmore.dart';
 
-class DescriptionSection extends StatelessWidget{
+class DescriptionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ProjectDetailController model = Get.find();
@@ -20,7 +20,8 @@ class DescriptionSection extends StatelessWidget{
         SizedBox(
           height: 10,
         ),
-        Obx(() =>ReadMoreText(
+        Obx(
+          () => ReadMoreText(
             parse(model.project.value.description).body!.text,
             trimLines: 4,
             colorClickableText: Colors.blue,
@@ -40,5 +41,4 @@ class DescriptionSection extends StatelessWidget{
       ],
     );
   }
-
 }

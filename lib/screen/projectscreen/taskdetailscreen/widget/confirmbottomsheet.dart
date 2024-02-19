@@ -44,16 +44,15 @@ class ConfirmBottomSheet extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
               const Padding(
-                padding: EdgeInsets.only(bottom: 8.0,left: 10,right: 10),
+                padding: EdgeInsets.only(bottom: 8.0, left: 10, right: 10),
                 child: Text(
                   'Are you sure you want to mark this task as completed?',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8.0,left: 10,right: 10),
+                padding: const EdgeInsets.only(top: 8.0, left: 10, right: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -66,7 +65,8 @@ class ConfirmBottomSheet extends StatelessWidget {
                                 shape: ButtonBorder()),
                             onPressed: () async {
                               Get.back();
-                              controller.checkListTaskToggle(controller.taskDetail.value.id.toString());
+                              controller.checkListTaskToggle(
+                                  controller.taskDetail.value.id.toString());
                             },
                             child: Container(
                               padding: const EdgeInsets.symmetric(vertical: 10),

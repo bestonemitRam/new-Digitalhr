@@ -87,6 +87,7 @@ class DashboardProvider with ChangeNotifier {
     String token = await preferences.getToken();
     print("Dasboard API token is - :$token");
     var fcm = await FirebaseMessaging.instance.getToken();
+
     Map<String, String> headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json; charset=UTF-8',
@@ -139,6 +140,8 @@ class DashboardProvider with ChangeNotifier {
     String token = await preferences.getToken();
 
     var fcm = await FirebaseMessaging.instance.getToken();
+
+    print('FirebaseFCMToken    ${fcm}');
 
     int getUserID = await preferences.getUserId();
 
@@ -306,6 +309,8 @@ class DashboardProvider with ChangeNotifier {
       final attendanceResponse =
           AttendanceStatusResponse.fromJson(responseData);
 
+      print(
+          "check data response >>>  ${attendanceResponse.data.checkInAt}  ${attendanceResponse.data.checkOutAt}  ${attendanceResponse.data.productiveTimeInMin}");
       if (responseData['status'] == true) {
         bgLocationTask();
 

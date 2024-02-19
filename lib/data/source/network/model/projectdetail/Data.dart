@@ -20,21 +20,22 @@ class Data {
   String start_date;
   String status;
 
-  Data({required this.assigned_member,
-    required this.assigned_task_count,
-    required this.assigned_task_detail,
-    required this.attachments,
-    required this.client_name,
-    required this.cover_pic,
-    required this.deadline,
-    required this.description,
-    required this.id,
-    required this.name,
-    required this.priority,
-    required this.progress_percent,
-    required this.project_leader,
-    required this.start_date,
-    required this.status});
+  Data(
+      {required this.assigned_member,
+      required this.assigned_task_count,
+      required this.assigned_task_detail,
+      required this.attachments,
+      required this.client_name,
+      required this.cover_pic,
+      required this.deadline,
+      required this.description,
+      required this.id,
+      required this.name,
+      required this.priority,
+      required this.progress_percent,
+      required this.project_leader,
+      required this.start_date,
+      required this.status});
 
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(

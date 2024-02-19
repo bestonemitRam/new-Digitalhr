@@ -14,8 +14,8 @@ class MentionBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var filteredList = <Member>[];
-    for(var member in members){
-      if(!model.mentionList.contains(member)){
+    for (var member in members) {
+      if (!model.mentionList.contains(member)) {
         filteredList.add(member);
       }
     }
@@ -43,11 +43,14 @@ class MentionBottomSheet extends StatelessWidget {
                   primary: false,
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                   itemCount: filteredList.length,
-                  itemBuilder: (ctx, i) =>
-                      Padding(padding: EdgeInsets.all(5), child: InkWell(onTap: () {
-                        model.mentionList.add(filteredList[i]);
-                        Get.back();
-                      },child: teamCard(filteredList[i])))),
+                  itemBuilder: (ctx, i) => Padding(
+                      padding: EdgeInsets.all(5),
+                      child: InkWell(
+                          onTap: () {
+                            model.mentionList.add(filteredList[i]);
+                            Get.back();
+                          },
+                          child: teamCard(filteredList[i])))),
             ],
           ),
         ),
@@ -85,8 +88,7 @@ class MentionBottomSheet extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     SizedBox(height: 5),
-                    Text(member.post,
-                        style: TextStyle(color: Colors.white70)),
+                    Text(member.post, style: TextStyle(color: Colors.white70)),
                   ],
                 ),
               ),

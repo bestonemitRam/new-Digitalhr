@@ -19,8 +19,7 @@ class LeaveButton extends StatelessWidget {
           child: TextButton(
               style: TextButton.styleFrom(
                   backgroundColor: HexColor("#036eb7"), shape: ButtonBorder()),
-              onPressed: ()
-               {
+              onPressed: () {
                 showModalBottomSheet(
                     elevation: 0,
                     context: context,
@@ -30,8 +29,7 @@ class LeaveButton extends StatelessWidget {
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20))),
-                    builder: (context)
-                     {
+                    builder: (context) {
                       return Padding(
                         padding: MediaQuery.of(context).viewInsets,
                         child: IssueLeaveSheet(),
@@ -54,8 +52,7 @@ class LeaveButton extends StatelessWidget {
                   backgroundColor: HexColor("#036eb7"), shape: ButtonBorder()),
               onPressed: () {
                 if (provider.attendanceList['check-in'] != '-' &&
-                    provider.attendanceList['check-out'] == '-') 
-                    {
+                    provider.attendanceList['check-out'] == '-') {
                   showModalBottomSheet(
                       elevation: 0,
                       context: context,

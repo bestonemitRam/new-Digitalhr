@@ -29,8 +29,8 @@ class ProjectDetailScreen extends StatelessWidget {
                 physics: AlwaysScrollableScrollPhysics(),
                 child: Obx(
                   () => Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 20),
                     child: model.project.value.id == 0
                         ? SizedBox()
                         : Column(
@@ -38,14 +38,26 @@ class ProjectDetailScreen extends StatelessWidget {
                             children: [
                               HeaderSection(),
                               DescriptionSection(),
-                              SizedBox(height: 10,),
-                              Divider(color: Colors.white54,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Colors.white54,
+                              ),
                               TeamSection(),
-                              SizedBox(height: 10,),
-                              Divider(color: Colors.white54,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Colors.white54,
+                              ),
                               AttachmentSection(),
-                              SizedBox(height: 10,),
-                              Divider(color: Colors.white54,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Colors.white54,
+                              ),
                               Obx(() => model.project.value.tasks.length != 0
                                   ? TaskSection()
                                   : SizedBox())

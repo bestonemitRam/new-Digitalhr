@@ -28,7 +28,7 @@ class ProjectListScreenController extends GetxController {
     };
 
     try {
-      EasyLoading.show(status: "Loading",maskType: EasyLoadingMaskType.black);
+      EasyLoading.show(status: "Loading", maskType: EasyLoadingMaskType.black);
       final response = await http.get(
         uri,
         headers: headers,
@@ -63,7 +63,7 @@ class ProjectListScreenController extends GetxController {
               project.progress_percent,
               project.assigned_task_count,
               members,
-              leaders,[]));
+              leaders, []));
         }
 
         filterList();
@@ -80,18 +80,17 @@ class ProjectListScreenController extends GetxController {
     }
   }
 
-  void filterList(){
+  void filterList() {
     filteredList.clear();
-    if(selected.value == "All"){
+    if (selected.value == "All") {
       filteredList.addAll(projectList);
-    }else{
-      for(var project in projectList){
-        if(project.status == selected.value){
+    } else {
+      for (var project in projectList) {
+        if (project.status == selected.value) {
           filteredList.add(project);
         }
       }
     }
-
   }
 
   void onProjectClicked(Project value) {

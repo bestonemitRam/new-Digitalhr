@@ -166,7 +166,6 @@ class CommentScreenController extends GetxController {
     mentionList.clear();
     final response = await http.post(uri, headers: headers, body: body);
 
-
     log(response.body.toString());
 
     final responseData = json.decode(response.body);
@@ -177,7 +176,7 @@ class CommentScreenController extends GetxController {
       commentId.value = 0;
       mentionList.clear();
 
-      if(hasComment(comment.data.id)){
+      if (hasComment(comment.data.id)) {
         for (var oldComment in commentList.value) {
           if (oldComment.id == comment.data.id) {
             var commentMentions = <Mention>[];
@@ -210,11 +209,12 @@ class CommentScreenController extends GetxController {
                 commentMentions,
                 replies);
 
-            final index = commentList.indexWhere((element) => element.id == newComment.id);
+            final index = commentList
+                .indexWhere((element) => element.id == newComment.id);
             commentList[index] = newComment;
           }
         }
-      }else{
+      } else {
         var commentMentions = <Mention>[];
         for (var mention in comment.data.mentioned) {
           commentMentions.add(Mention(mention.id.toString(), mention.name));
@@ -235,15 +235,17 @@ class CommentScreenController extends GetxController {
               reply.created_at,
               mentions));
         }
-        commentList.insert(0,Comment(
-            comment.data.id,
-            comment.data.description,
-            comment.data.created_by_name,
-            comment.data.created_by_id.toString(),
-            comment.data.avatar,
-            comment.data.created_at,
-            commentMentions,
-            replies));
+        commentList.insert(
+            0,
+            Comment(
+                comment.data.id,
+                comment.data.description,
+                comment.data.created_by_name,
+                comment.data.created_by_id.toString(),
+                comment.data.avatar,
+                comment.data.created_at,
+                commentMentions,
+                replies));
       }
 
       commentList.refresh();

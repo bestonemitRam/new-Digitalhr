@@ -28,7 +28,9 @@ class Reply {
       created_by_id: json['created_by_id'],
       created_by_name: json['created_by_name'],
       description: json['description'],
-      mentioned: (json['mentioned'] as List).map((i) => Mentioned.fromJson(i)).toList(),
+      mentioned: (json['mentioned'] as List)
+          .map((i) => Mentioned.fromJson(i))
+          .toList(),
       reply_id: json['reply_id'],
     );
   }

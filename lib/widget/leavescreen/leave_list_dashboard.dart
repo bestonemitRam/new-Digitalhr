@@ -20,13 +20,10 @@ class LeaveListDashboard extends StatelessWidget {
               childAspectRatio: 3.5 / 2,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10),
-          itemBuilder: (ctx, i) => 
-          ChangeNotifierProvider.value(
+          itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
                 value: leaves[i],
-                child: LeaveRow(leaves[i].id, 
-                leaves[i].name,
-                    leaves[i].allocated, 
-                    leaves[i].total),
+                child: LeaveRow(leaves[i].id, leaves[i].name,
+                    leaves[i].allocated, leaves[i].total),
               ));
     } else {
       return Padding(

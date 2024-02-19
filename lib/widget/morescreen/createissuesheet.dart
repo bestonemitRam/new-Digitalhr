@@ -10,8 +10,6 @@ class CreateIssueSheet extends StatefulWidget {
 }
 
 class CreateIssueSheetState extends State<CreateIssueSheet> {
-
-
   bool isLoading = false;
 
   TextEditingController title = TextEditingController();
@@ -39,7 +37,10 @@ class CreateIssueSheetState extends State<CreateIssueSheet> {
       child: Container(
         decoration: RadialDecoration(),
         padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom,top: 10,left: 20,right: 20),
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+            top: 10,
+            left: 20,
+            right: 20),
         child: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -152,9 +153,7 @@ class CreateIssueSheetState extends State<CreateIssueSheet> {
                       padding: EdgeInsets.zero,
                       shape: ButtonBorder(),
                     ),
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Text(

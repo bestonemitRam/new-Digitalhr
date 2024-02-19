@@ -27,8 +27,8 @@ class TaskComment {
       description: json['description'],
       id: json['id'],
       mentioned: (json['mentioned'] as List)
-              .map((i) => Mentioned.fromJson(i))
-              .toList(),
+          .map((i) => Mentioned.fromJson(i))
+          .toList(),
     );
   }
 

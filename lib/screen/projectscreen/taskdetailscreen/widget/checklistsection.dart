@@ -50,14 +50,13 @@ class CheckListSection extends StatelessWidget {
                       color: Colors.white10,
                       child: InkWell(
                         onTap: () async {
-                          final response =
-                              await controller.checkListToggle(
-                              checklist.id.toString());
+                          final response = await controller
+                              .checkListToggle(checklist.id.toString());
 
                           if (response) {
                             state.value = !state.value;
                             checklist.isCompleted =
-                            state.value == false ? "0" : "1";
+                                state.value == false ? "0" : "1";
                           }
                         },
                         child: Container(
@@ -67,9 +66,7 @@ class CheckListSection extends StatelessWidget {
                             children: [
                               Obx(
                                 () => GestureDetector(
-                                  onTap: () async {
-
-                                  },
+                                  onTap: () async {},
                                   child: Icon(
                                     state == true
                                         ? Icons.check_circle

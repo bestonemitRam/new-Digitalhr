@@ -3,13 +3,12 @@ import 'package:cnattendance/widget/leave_detail_row.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class LeaveListdetailDashboard extends StatelessWidget{
+class LeaveListdetailDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final leaveData = Provider.of<LeaveProvider>(context);
     final leaves = leaveData.leaveDetailList;
-    if(leaves.length>0)
-    {
+    if (leaves.length > 0) {
       return ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           primary: false,
@@ -29,8 +28,10 @@ class LeaveListdetailDashboard extends StatelessWidget{
                   requestedAt: leaves[i].requested_date),
             );
           });
-    }else{
-      return const SizedBox(height: 50,);
+    } else {
+      return const SizedBox(
+        height: 50,
+      );
     }
   }
 }

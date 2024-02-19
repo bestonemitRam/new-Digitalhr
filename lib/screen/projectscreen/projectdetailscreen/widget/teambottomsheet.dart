@@ -8,7 +8,7 @@ class TeamBottomSheet extends StatelessWidget {
   List<Member> leaders;
   List<Member> members;
 
-  TeamBottomSheet(this.leaders,this.members);
+  TeamBottomSheet(this.leaders, this.members);
 
   @override
   Widget build(BuildContext context) {
@@ -50,9 +50,8 @@ class TeamBottomSheet extends StatelessWidget {
                   primary: false,
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                   itemCount: leaders.length,
-                  itemBuilder: (ctx, i) =>
-                      Padding(padding: EdgeInsets.all(5), child: teamCard(leaders[i]))),
-
+                  itemBuilder: (ctx, i) => Padding(
+                      padding: EdgeInsets.all(5), child: teamCard(leaders[i]))),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
@@ -68,8 +67,8 @@ class TeamBottomSheet extends StatelessWidget {
                   primary: false,
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                   itemCount: members.length,
-                  itemBuilder: (ctx, i) =>
-                      Padding(padding: EdgeInsets.all(5), child: teamCard(members[i]))),
+                  itemBuilder: (ctx, i) => Padding(
+                      padding: EdgeInsets.all(5), child: teamCard(members[i]))),
             ],
           ),
         ),
@@ -107,8 +106,7 @@ class TeamBottomSheet extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     SizedBox(height: 5),
-                    Text(member.post,
-                        style: TextStyle(color: Colors.white70)),
+                    Text(member.post, style: TextStyle(color: Colors.white70)),
                   ],
                 ),
               ),

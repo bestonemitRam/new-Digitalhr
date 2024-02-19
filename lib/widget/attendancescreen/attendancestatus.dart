@@ -24,20 +24,21 @@ class AttendanceStatus extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.only(top: 20.0),
               child: LinearPercentIndicator(
-                animation: true,
-                animationDuration: 1000,
-                lineHeight: 30.0,
-                padding: EdgeInsets.all(0),
-                percent: status['production_percent']!,
-                center: Text(
-                  status['production_hour']!,
-                  style: TextStyle(color: Colors.white),
-                ),
-                barRadius: const Radius.circular(20),
-                backgroundColor: HexColor("#3dFFFFFF"),
-                progressColor: status['check_in_at']!= "-"&&status['check_out_at'] == "-" ? HexColor(
-                    "#e82e5f").withOpacity(.5) : HexColor("#3b98cc")
-              ),
+                  animation: true,
+                  animationDuration: 1000,
+                  lineHeight: 30.0,
+                  padding: EdgeInsets.all(0),
+                  percent: status['production_percent']!,
+                  center: Text(
+                    status['production_hour']!,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  barRadius: const Radius.circular(20),
+                  backgroundColor: HexColor("#3dFFFFFF"),
+                  progressColor: status['check_in_at'] != "-" &&
+                          status['check_out_at'] == "-"
+                      ? HexColor("#e82e5f").withOpacity(.5)
+                      : HexColor("#3b98cc")),
             ),
             Container(
               padding: EdgeInsets.only(left: 10, right: 10, top: 10),

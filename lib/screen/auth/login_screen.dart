@@ -10,7 +10,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-
 class LoginScreen extends StatefulWidget {
   static const String routeName = '/login';
   @override
@@ -53,7 +52,7 @@ class loginScreenState extends State<LoginScreen> {
     }
   }
 
-/// Loader Screen
+  /// Loader Screen
   void loginUser() async {
     setState(() {
       _isLoading = true;
@@ -71,7 +70,6 @@ class loginScreenState extends State<LoginScreen> {
 
       Navigator.of(context)
           .pushNamedAndRemoveUntil(DashboardScreen.routeName, (route) => false);
-
     } catch (error) {
       print(error);
       ScaffoldMessenger.of(context)
@@ -109,8 +107,7 @@ class loginScreenState extends State<LoginScreen> {
                         child: SizedBox(
                           width: 180,
                           height: 120,
-                          child: Image.asset(
-                              'assets/icons/logo_bnw.png',
+                          child: Image.asset('assets/icons/logo_bnw.png',
                               color: Colors.white),
                         ),
                       ),
@@ -136,16 +133,32 @@ class loginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.person, color: Colors.white),
                           labelStyle: TextStyle(color: Colors.white),
-                            fillColor: Colors.white24,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
-                            focusedErrorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
-                            errorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                          fillColor: Colors.white24,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
+                          focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
+                          errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
                         ),
                       ),
                       gaps(10),
@@ -168,13 +181,29 @@ class loginScreenState extends State<LoginScreen> {
                           fillColor: Colors.white24,
                           filled: true,
                           enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
                           focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
                           focusedErrorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
                           errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10))),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(10))),
                           suffixIcon: InkWell(
                             onTap: _toggle,
                             child: Icon(
@@ -188,13 +217,15 @@ class loginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       gaps(30),
+
                       ///click on Login Button Action
                       button(),
                       gaps(20),
+
                       /// create Forget password option
                       Center(
                         child: GestureDetector(
-                            onTap: () {
+                          onTap: () {
                             openBrowserTab();
                           },
                           child: Text(
@@ -217,23 +248,21 @@ class loginScreenState extends State<LoginScreen> {
   ///MARK:- openBrowserTab Function
   openBrowserTab() async {
     await FlutterWebBrowser.openWebPage(
-        url: "https://attendance.cyclonenepal.com/password/reset",
-        customTabsOptions: const CustomTabsOptions(
+      url: "https://attendance.cyclonenepal.com/password/reset",
+      customTabsOptions: const CustomTabsOptions(
         colorScheme: CustomTabsColorScheme.dark,
         shareState: CustomTabsShareState.on,
         instantAppsEnabled: true,
         showTitle: true,
         urlBarHidingEnabled: true,
       ),
-        safariVCOptions: const SafariViewControllerOptions(
+      safariVCOptions: const SafariViewControllerOptions(
         barCollapsingEnabled: true,
         dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
         modalPresentationCapturesStatusBarAppearance: true,
       ),
     );
   }
-
-
 
   BoxDecoration backgroundDecoration() {
     return const BoxDecoration(
@@ -261,14 +290,14 @@ class loginScreenState extends State<LoginScreen> {
 
   ///MARK: - Login Button customization Design with Widget button()
   Widget button() {
-   // print("inside the login Click");
+    // print("inside the login Click");
     return Container(
       width: MediaQuery.of(context).size.width,
       child: TextButton(
-            style: TextButton.styleFrom(
+          style: TextButton.styleFrom(
             backgroundColor: HexColor("#036eb7"),
             padding: EdgeInsets.zero,
-             shape: ButtonBorder(),
+            shape: ButtonBorder(),
           ),
           onPressed: () {
             FocusManager.instance.primaryFocus?.unfocus();

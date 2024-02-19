@@ -1,6 +1,6 @@
 import 'package:cnattendance/model/mention.dart';
 
-class SendComment{
+class SendComment {
   int commentId = 0;
   int replyId = 0;
   String detail = "";

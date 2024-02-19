@@ -1,6 +1,6 @@
 import 'package:cnattendance/model/mention.dart';
 
-class Reply{
+class Reply {
   int id;
   String commentId;
   String description;

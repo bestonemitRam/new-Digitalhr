@@ -7,9 +7,8 @@ import 'package:cnattendance/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class AboutRepository{
+class AboutRepository {
   Future<Aboutresponse> getContent(String value) async {
-
     Preferences preferences = Preferences();
     String token = await preferences.getToken();
 
@@ -20,7 +19,8 @@ class AboutRepository{
     };
 
     try {
-      final response = await Connect().getResponse("${Constant.CONTENT_URL}/$value/", headers);
+      final response = await Connect()
+          .getResponse("${Constant.CONTENT_URL}/$value/", headers);
       debugPrint(response.body.toString());
 
       final responseData = json.decode(response.body);

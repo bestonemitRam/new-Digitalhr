@@ -65,7 +65,6 @@ class ProjectDashboardController extends GetxController {
             members.add(Member(member.id, member.name, member.avatar));
           }
 
-
           projectList.add(Project(
               project.id,
               project.project_name,
@@ -75,8 +74,7 @@ class ProjectDashboardController extends GetxController {
               project.status,
               project.project_progress_percent,
               project.assigned_task_count,
-              members,
-              [],[]));
+              members, [], []));
         }
 
         return "Loaded";

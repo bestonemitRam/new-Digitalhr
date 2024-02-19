@@ -20,8 +20,7 @@ class SplashState extends State<SplashScreen> {
       () async {
         Preferences preferences = Preferences();
         String result = await preferences.getToken();
-        if (result == '') 
-        {
+        if (result == '') {
           Navigator.pushReplacementNamed(context, LoginScreen.routeName);
         } else {
           Navigator.pushReplacementNamed(context, DashboardScreen.routeName);

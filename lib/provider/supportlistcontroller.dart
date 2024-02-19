@@ -91,7 +91,7 @@ class SupportListController extends GetxController {
     super.onInit();
   }
 
-  void onSupportClicked(Support support){
-    Get.to(SupportDetailScreen(support),transition: Transition.cupertino);
+  void onSupportClicked(Support support) {
+    Get.to(SupportDetailScreen(support), transition: Transition.cupertino);
   }
 }

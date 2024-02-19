@@ -32,8 +32,8 @@ class Data {
       description: json['description'],
       id: json['id'],
       mentioned: (json['mentioned'] as List)
-              .map((i) => MentionedX.fromJson(i))
-              .toList(),
+          .map((i) => MentionedX.fromJson(i))
+          .toList(),
       replies: (json['replies'] as List).map((i) => Reply.fromJson(i)).toList(),
       username: json['username'],
     );

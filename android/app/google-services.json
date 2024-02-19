@@ -1,3 +1,29 @@
 {
- Replace this file with your google-service.json file downloaded from google firebase console
+  "project_info": {
+    "project_number": "934018612864",
+    "project_id": "digitalhrm-7e9ae",
+    "storage_bucket": "digitalhrm-7e9ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934018612864:android:d095cb4d57e87bb60bb065",
+        "android_client_info": {
+          "package_name": "com.cninfotech.cnattendance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIuKQ7_uogBVz4suvjlLwn6QhlkLRc6Qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
 }

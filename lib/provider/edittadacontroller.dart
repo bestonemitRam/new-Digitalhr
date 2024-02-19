@@ -73,7 +73,8 @@ class EditTadaController extends GetxController {
         if (data != null && data.attachments != null) {
           for (var attachment in data!.attachments!) {
             count = count + 1;
-            attachmentsdata.add(Attachment(count, attachment.pathLink!, "image"));
+            attachmentsdata
+                .add(Attachment(count, attachment.pathLink!, "image"));
           }
         }
 

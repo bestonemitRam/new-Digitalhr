@@ -72,17 +72,14 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
             status: "Requesting...", maskType: EasyLoadingMaskType.black);
       });
       var status = await provider.getCheckInStatus();
-      if (status)
-       {
+      if (status) {
         bool result = await InternetConnectionChecker().hasConnection;
 
-        if (result) 
-        {
+        if (result) {
           final response = await provider.checkInAttendance();
           print("hgghhghghgh  ${response}");
           isEnabled = true;
-          if (!mounted) 
-          {
+          if (!mounted) {
             return;
           }
           setState(() {
@@ -98,8 +95,7 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
               },
             );
           });
-        } 
-        else {
+        } else {
           setState(() {
             EasyLoading.dismiss(animation: true);
             Navigator.pop(context);

@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:cnattendance/data/source/datastore/preferences.dart';
@@ -7,7 +6,7 @@ import 'package:cnattendance/data/source/network/model/teamsheet/Teamsheetrespon
 import 'package:cnattendance/utils/constant.dart';
 import 'package:flutter/material.dart';
 
-class TeamSheetRepository{
+class TeamSheetRepository {
   Future<Teamsheetresponse> getTeam() async {
     Preferences preferences = Preferences();
 
@@ -20,7 +19,8 @@ class TeamSheetRepository{
     };
 
     try {
-      final response = await Connect().getResponse(Constant.TEAM_SHEET_URL, headers);
+      final response =
+          await Connect().getResponse(Constant.TEAM_SHEET_URL, headers);
 
       final responseData = json.decode(response.body);
       if (response.statusCode == 200) {

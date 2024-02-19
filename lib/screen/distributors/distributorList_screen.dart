@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 
-class DistributorScreenListData extends StatelessWidget 
-{
+class DistributorScreenListData extends StatelessWidget {
   final int id;
   final String shopName;
   final String ownerName;
@@ -20,8 +19,7 @@ class DistributorScreenListData extends StatelessWidget
   });
 
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
@@ -37,8 +35,7 @@ class DistributorScreenListData extends StatelessWidget
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 children: [
                   Row(
-                    children: 
-                    [
+                    children: [
                       Text(
                         "Full Name : ",
                         maxLines: 1,

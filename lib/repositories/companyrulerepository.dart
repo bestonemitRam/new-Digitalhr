@@ -6,7 +6,7 @@ import 'package:cnattendance/data/source/network/model/rules/CompanyRulesReponse
 import 'package:cnattendance/utils/constant.dart';
 import 'package:flutter/material.dart';
 
-class CompanyRuleRepository{
+class CompanyRuleRepository {
   Future<CompanyRulesReponse> getContent() async {
     Preferences preferences = Preferences();
     String token = await preferences.getToken();

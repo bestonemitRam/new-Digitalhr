@@ -51,9 +51,9 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin flutter_background_service_android, id.flutter.flutter_background_service.FlutterBackgroundServicePlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new com.example.flutter_file_downloader.FlutterFileDownloaderPlugin());
+      flutterEngine.getPlugins().add(new com.odehbros.flutter_file_downloader.FlutterFileDownloaderPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_file_downloader, com.example.flutter_file_downloader.FlutterFileDownloaderPlugin", e);
+      Log.e(TAG, "Error registering plugin flutter_file_downloader, com.odehbros.flutter_file_downloader.FlutterFileDownloaderPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new com.jrai.flutter_keyboard_visibility.FlutterKeyboardVisibilityPlugin());

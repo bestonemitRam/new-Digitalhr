@@ -3,7 +3,7 @@ import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/attach
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AttachmentSection extends StatelessWidget{
+class AttachmentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TaskDetailController model = Get.find();
@@ -41,7 +41,8 @@ class AttachmentSection extends StatelessWidget{
             ],
           ),
           SizedBox(height: 10),
-          Obx(() => Row(
+          Obx(
+            () => Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -66,5 +67,4 @@ class AttachmentSection extends StatelessWidget{
       ),
     );
   }
-
 }

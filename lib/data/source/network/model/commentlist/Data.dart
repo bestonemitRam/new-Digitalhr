@@ -29,8 +29,9 @@ class Data {
       created_by_name: json['created_by_name'],
       description: json['description'],
       id: json['id'],
-      mentioned:
-          (json['mentioned'] as List).map((i) => Mentioned.fromJson(i)).toList(),
+      mentioned: (json['mentioned'] as List)
+          .map((i) => Mentioned.fromJson(i))
+          .toList(),
       replies: (json['replies'] as List).map((i) => Reply.fromJson(i)).toList(),
     );
   }

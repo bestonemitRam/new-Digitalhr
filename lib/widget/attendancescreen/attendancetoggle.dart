@@ -15,7 +15,8 @@ class AttendanceToggleState extends State<AttendanceToggle> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AttendanceReportProvider>(context,listen: true);
+    final provider =
+        Provider.of<AttendanceReportProvider>(context, listen: true);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 25),
       child: Row(
@@ -32,17 +33,17 @@ class AttendanceToggleState extends State<AttendanceToggle> {
                   isExpanded: true,
                   items: (provider.month)
                       .map((item) => DropdownMenuItem<Month>(
-                    value: item,
-                    child: Text(
-                      item.name,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ))
+                            value: item,
+                            child: Text(
+                              item.name,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ))
                       .toList(),
                   value: provider.month[provider.selectedMonth],
                   onChanged: (value) {
@@ -62,7 +63,11 @@ class AttendanceToggleState extends State<AttendanceToggle> {
                   buttonWidth: 110,
                   buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                   buttonDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(0),bottomLeft: Radius.circular(0),bottomRight: Radius.circular(10)),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(0),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(10)),
                     color: HexColor("#FFFFFF"),
                   ),
                   buttonElevation: 0,
@@ -71,7 +76,11 @@ class AttendanceToggleState extends State<AttendanceToggle> {
                   dropdownMaxHeight: 200,
                   dropdownPadding: null,
                   dropdownDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(0),topRight: Radius.circular(10),bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
                     color: HexColor("#FFFFFF"),
                   ),
                   dropdownElevation: 8,

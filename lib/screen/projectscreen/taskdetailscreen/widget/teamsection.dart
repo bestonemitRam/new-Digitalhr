@@ -44,7 +44,8 @@ class TeamSection extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Obx(() => ImageStack(
+          Obx(
+            () => ImageStack(
               imageList: List<String>.from(controller.memberImages),
               totalCount: controller.memberImages.length,
               imageRadius: 25,

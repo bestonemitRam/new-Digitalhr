@@ -49,7 +49,7 @@ class NoticeState extends State<Notice> {
             title: Text('Notices'),
           ),
           body: RefreshIndicator(
-            triggerMode: RefreshIndicatorTriggerMode.onEdge,
+              triggerMode: RefreshIndicatorTriggerMode.onEdge,
               onRefresh: () {
                 Provider.of<NoticeProvider>(context, listen: false).page = 1;
                 return getNotification();

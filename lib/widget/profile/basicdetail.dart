@@ -4,10 +4,10 @@ import 'package:cnattendance/widget/cartTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BasicDetail extends StatelessWidget{
+class BasicDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final profile  = Provider.of<ProfileProvider>(context).profile;
+    final profile = Provider.of<ProfileProvider>(context).profile;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       width: double.infinity,
@@ -31,5 +31,4 @@ class BasicDetail extends StatelessWidget{
       ),
     );
   }
-
 }

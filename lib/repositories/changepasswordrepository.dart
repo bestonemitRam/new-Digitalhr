@@ -7,7 +7,7 @@ import 'package:cnattendance/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class ChangePasswordRepository{
+class ChangePasswordRepository {
   Future<ChangePasswordResponse> changePassword(
       String old, String newPassword, String confirm) async {
     Preferences preferences = Preferences();
@@ -25,7 +25,8 @@ class ChangePasswordRepository{
     };
 
     try {
-      final response = await Connect().postResponse(Constant.CHANGE_PASSWORD_API, headers, body);
+      final response = await Connect()
+          .postResponse(Constant.CHANGE_PASSWORD_API, headers, body);
       debugPrint(response.body.toString());
 
       final responseData = json.decode(response.body);

@@ -9,8 +9,10 @@ class CommentSection extends StatelessWidget {
     final TaskDetailController controller = Get.find();
     return GestureDetector(
       onTap: () {
-        Get.to(CommentScreen(),
-            arguments: {"taskId": controller.taskDetail.value.id.toString(),"members":controller.taskDetail.value.members});
+        Get.to(CommentScreen(), arguments: {
+          "taskId": controller.taskDetail.value.id.toString(),
+          "members": controller.taskDetail.value.members
+        });
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

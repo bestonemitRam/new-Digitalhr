@@ -24,7 +24,10 @@ class SupportDetailScreen extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(10),
               child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomRight: Radius.circular(10))),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10))),
                 elevation: 0,
                 color: Colors.white24,
                 child: Padding(
@@ -45,14 +48,13 @@ class SupportDetailScreen extends StatelessWidget {
                                 color: support.status == "Pending"
                                     ? Colors.deepOrange
                                     : support.status == "In Progress"
-                                    ? Colors.orangeAccent
-                                    : Colors.green,
+                                        ? Colors.orangeAccent
+                                        : Colors.green,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15),
                           ),
                         ],
                       ),
-
                       SizedBox(
                         height: 10,
                       ),
@@ -69,7 +71,10 @@ class SupportDetailScreen extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(10),
               child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomRight: Radius.circular(10))),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10))),
                 elevation: 0,
                 color: Colors.white24,
                 child: Padding(
@@ -113,7 +118,7 @@ class SupportDetailScreen extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        support.status != "Solved"?"-":support.solved_by,
+                        support.status != "Solved" ? "-" : support.solved_by,
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -130,7 +135,7 @@ class SupportDetailScreen extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        support.status != "Solved"?"-":support.solved_at,
+                        support.status != "Solved" ? "-" : support.solved_at,
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                     ],

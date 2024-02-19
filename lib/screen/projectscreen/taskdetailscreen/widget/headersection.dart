@@ -2,7 +2,7 @@ import 'package:cnattendance/screen/projectscreen/taskdetailscreen/taskdetailcon
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HeaderSection extends StatelessWidget{
+class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TaskDetailController controller = Get.find();
@@ -23,7 +23,9 @@ class HeaderSection extends StatelessWidget{
             child: Text(
               controller.taskDetail.value.name!,
               style: TextStyle(
-                  color: Colors.white, fontSize: 21, fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 21,
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -36,7 +38,7 @@ class HeaderSection extends StatelessWidget{
                   borderRadius: BorderRadius.circular(5)),
               child: Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3),
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3),
                 child: Row(
                   children: [
                     Text(
@@ -65,7 +67,7 @@ class HeaderSection extends StatelessWidget{
                   borderRadius: BorderRadius.circular(5)),
               child: Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3),
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3),
                 child: Obx(
                   () => Text(
                     controller.taskDetail.value.status!,
@@ -79,5 +81,4 @@ class HeaderSection extends StatelessWidget{
       ],
     );
   }
-
 }

@@ -24,12 +24,11 @@ class AttendanceScreenState extends State<AttendanceScreen> {
     super.didChangeDependencies();
   }
 
-  Future<String> loadAttendanceReport() async 
-  {
+  Future<String> loadAttendanceReport() async {
     try {
       await Provider.of<AttendanceReportProvider>(context, listen: false)
           .getAttendanceReport();
-      
+
       return 'loaded';
     } catch (e) {
       return 'loaded';

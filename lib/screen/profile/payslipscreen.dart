@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_file_downloader/flutter_file_downloader.dart';
 
-
-class PaySlipScreen extends StatelessWidget{
+class PaySlipScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final list = Provider.of<PaySlipProvider>(context).paySlipList;
@@ -70,7 +69,8 @@ class PaySlipScreen extends StatelessWidget{
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed(PaySlipDetailScreen.routeName);
+                        Navigator.of(context)
+                            .pushNamed(PaySlipDetailScreen.routeName);
                       },
                       child: Container(
                         color: index % 2 == 0 ? Colors.white30 : Colors.black26,
@@ -109,9 +109,9 @@ class PaySlipScreen extends StatelessWidget{
                                   child: InkWell(
                                     onTap: () {
                                       FileDownloader.downloadFile(
-                                        url: "https://www.africau.edu/images/default/sample.pdf",
-                                        name:
-                                        '${list[index].date}.pdf',
+                                        url:
+                                            "https://www.africau.edu/images/default/sample.pdf",
+                                        name: '${list[index].date}.pdf',
                                         onDownloadCompleted: (path) {
                                           //NotificationService().flutterLocalNotificationsPlugin.show(1, "Download", "Completed", NotificationService().platform());
                                           print(path);

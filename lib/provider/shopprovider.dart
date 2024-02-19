@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'package:cnattendance/api/apiConstant.dart';
 import 'package:cnattendance/data/source/datastore/preferences.dart';
 import 'package:cnattendance/model/shop.dart';
@@ -8,19 +7,14 @@ import 'package:cnattendance/model/shopresponse.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+class ShopProvider with ChangeNotifier {
+  final List<Shop> _shoplist = [];
 
-
-class ShopProvider with ChangeNotifier 
-{
-    final List<Shop> _shoplist = [];
-
-    List<Shop> get shoplist 
-    {
+  List<Shop> get shoplist {
     return [..._shoplist];
   }
 
-  Future<ShopDataResponse> getShopList() async
-   {
+  Future<ShopDataResponse> getShopList() async {
     print("check get all shop list data ");
     var uri = Uri.parse(APIURL.SHOP_LIST);
 
@@ -38,44 +32,33 @@ class ShopProvider with ChangeNotifier
       final responseData = json.decode(response.body);
 
       print("Check leave data ${responseData}");
-    final responseJson = ShopDataResponse.fromJson(responseData);
-      if (response.statusCode == 200) 
-      {
+      final responseJson = ShopDataResponse.fromJson(responseData);
+      if (response.statusCode == 200) {
         debugPrint(responseData.toString());
 
-        
         makeShopList(responseJson.data!);
 
         return responseJson;
-      }
-       else 
-       {
+      } else {
         var errorMessage = responseData['message'];
         return responseJson;
-       }
-    } catch (error) 
-    {
+      }
+    } catch (error) {
       throw error;
     }
   }
-   void makeShopList(Data data) 
-   {
 
+  void makeShopList(Data data) {
     _shoplist.clear();
 
-    for (var shop in data.shopList!)
-     {
+    for (var shop in data.shopList!) {
       _shoplist.add(Shop(
           id: int.parse(shop.id.toString() ?? '0'),
           shopName: shop.shopName!,
           ownerName: shop.ownerName!,
-          shopAddress: shop.shopAddress!
-
-      ));
+          shopAddress: shop.shopAddress!));
     }
 
     notifyListeners();
   }
-
-
 }

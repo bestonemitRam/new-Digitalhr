@@ -9,24 +9,25 @@ import 'package:get/get.dart';
 import 'package:cnattendance/model/profile.dart' as up;
 import 'package:http/http.dart' as http;
 
-class EmployeeDetailController extends GetxController{
-  var  profile = up.Profile(
-      id: 0,
-      avatar: '',
-      name: '',
-      username: '',
-      email: '',
-      post: '',
-      phone: '',
-      dob: '',
-      gender: '',
-      address: '',
-      bankName: '',
-      bankNumber: '',
-      joinedDate: '').obs;
-  
+class EmployeeDetailController extends GetxController {
+  var profile = up.Profile(
+          id: 0,
+          avatar: '',
+          name: '',
+          username: '',
+          email: '',
+          post: '',
+          phone: '',
+          dob: '',
+          gender: '',
+          address: '',
+          bankName: '',
+          bankNumber: '',
+          joinedDate: '')
+      .obs;
+
   Future<employeedetailresponse> getEmployeeDetail(String id) async {
-    var uri = Uri.parse(Constant.EMPLOYEE_PROFILE_URL+"/$id");
+    var uri = Uri.parse(Constant.EMPLOYEE_PROFILE_URL + "/$id");
 
     Preferences preferences = Preferences();
 
@@ -40,8 +41,7 @@ class EmployeeDetailController extends GetxController{
 
     try {
       EasyLoading.show(
-          status: 'Loading....',
-          maskType: EasyLoadingMaskType.black);
+          status: 'Loading....', maskType: EasyLoadingMaskType.black);
       final response = await http.get(uri, headers: headers);
       EasyLoading.dismiss(animation: true);
       final responseData = json.decode(response.body);

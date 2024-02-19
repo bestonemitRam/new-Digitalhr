@@ -16,6 +16,16 @@ class Project {
   List<Task> tasks = [];
   List<Attachment> attachment = [];
 
-  Project(this.id, this.name, this.description, this.date, this.priority,
-      this.status, this.progress, this.noOfTask, this.members, this.leaders,this.attachment);
+  Project(
+      this.id,
+      this.name,
+      this.description,
+      this.date,
+      this.priority,
+      this.status,
+      this.progress,
+      this.noOfTask,
+      this.members,
+      this.leaders,
+      this.attachment);
 }

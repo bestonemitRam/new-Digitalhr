@@ -26,10 +26,9 @@ class CancelLeaveBottomSheetState extends State<CancelLeaveBottomSheet> {
       setState(() {
         showLoader();
       });
-      final leaveData = Provider.of<LeaveProvider>(context,listen: false);
+      final leaveData = Provider.of<LeaveProvider>(context, listen: false);
 
-      final response =
-          await leaveData.cancelLeave(id);
+      final response = await leaveData.cancelLeave(id);
 
       setState(() {
         dismissLoader();
@@ -38,7 +37,8 @@ class CancelLeaveBottomSheetState extends State<CancelLeaveBottomSheet> {
         return;
       }
       if (response.statusCode == 200 || response.statusCode == 401) {
-        NavigationService().showSnackBar("Leave Status", "Leave cancelled successfully");
+        NavigationService()
+            .showSnackBar("Leave Status", "Leave cancelled successfully");
         Navigator.pop(context);
         await leaveData.getLeaveTypeDetail();
       }

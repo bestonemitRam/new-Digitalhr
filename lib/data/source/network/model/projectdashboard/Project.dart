@@ -25,8 +25,8 @@ class Project {
   factory Project.fromJson(Map<String, dynamic> json) {
     return Project(
       assigned_member: (json['assigned_member'] as List)
-              .map((i) => AssignedMemberX.fromJson(i))
-              .toList(),
+          .map((i) => AssignedMemberX.fromJson(i))
+          .toList(),
       assigned_task_count: json['assigned_task_count'],
       end_date: json['end_date'],
       id: json['id'],

@@ -33,9 +33,9 @@ class Data {
 
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
-      assigned_member:(json['assigned_member'] as List)
-              .map((i) => AssignedMember.fromJson(i))
-              .toList(),
+      assigned_member: (json['assigned_member'] as List)
+          .map((i) => AssignedMember.fromJson(i))
+          .toList(),
       assigned_task_count: json['assigned_task_count'],
       client_name: json['client_name'],
       cover_pic: json['cover_pic'],
@@ -45,8 +45,8 @@ class Data {
       name: json['name'],
       priority: json['priority'],
       project_leader: (json['project_leader'] as List)
-              .map((i) => ProjectLeader.fromJson(i))
-              .toList(),
+          .map((i) => ProjectLeader.fromJson(i))
+          .toList(),
       start_date: json['start_date'],
       status: json['status'],
       progress_percent: json['progress_percent'],

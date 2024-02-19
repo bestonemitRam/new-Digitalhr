@@ -1,7 +1,7 @@
 import 'package:cnattendance/model/mention.dart';
 import 'package:cnattendance/model/reply.dart';
 
-class Comment{
+class Comment {
   int id;
   String description;
   String name;

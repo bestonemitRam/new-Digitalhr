@@ -10,7 +10,11 @@ class TeamSection extends StatelessWidget {
     final ProjectDetailController model = Get.find();
     return GestureDetector(
       onTap: () {
-        Get.bottomSheet(TeamBottomSheet(model.project.value.leaders,model.project.value.members,),
+        Get.bottomSheet(
+            TeamBottomSheet(
+              model.project.value.leaders,
+              model.project.value.members,
+            ),
             isDismissible: true,
             enableDrag: true,
             isScrollControlled: false,
@@ -47,7 +51,8 @@ class TeamSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Obx(() =>ImageStack(
+              Obx(
+                () => ImageStack(
                   imageList: List<String>.from(model.memberImages),
                   totalCount: model.project.value.members.length,
                   imageRadius: 25,
@@ -56,7 +61,8 @@ class TeamSection extends StatelessWidget {
                   imageBorderWidth: 1,
                 ),
               ),
-              Obx(() => ImageStack(
+              Obx(
+                () => ImageStack(
                   imageList: List<String>.from(model.leaderImages),
                   totalCount: model.project.value.leaders.length,
                   imageRadius: 25,

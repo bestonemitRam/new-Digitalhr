@@ -207,8 +207,7 @@ class LeaveProvider with ChangeNotifier {
   void makeLeaveTypeList(LeaveData leaveList) {
     _leaveDetailList.clear();
 
-    for (var leave in leaveList.leaveList!)
-     {
+    for (var leave in leaveList.leaveList!) {
       _leaveDetailList.add(LeaveDetail(
           id: leave.id!,
           name: leave.leaveTypeName!,

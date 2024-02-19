@@ -54,7 +54,7 @@ class ReportListView extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:  [
+          children: [
             Expanded(
               child: Container(
                 child: Text('Date',

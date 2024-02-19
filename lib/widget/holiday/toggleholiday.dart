@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
-class ToggleHoliday extends StatelessWidget{
+class ToggleHoliday extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<HolidayProvider>(context);
@@ -17,8 +17,7 @@ class ToggleHoliday extends StatelessWidget{
         minHeight: 45,
         initialLabelIndex: provider.toggleValue,
         totalSwitches: 2,
-        onToggle: (index) 
-        {
+        onToggle: (index) {
           provider.toggleValue = index!;
           provider.holidayListFilter();
         },
@@ -26,5 +25,4 @@ class ToggleHoliday extends StatelessWidget{
       ),
     );
   }
-
 }

@@ -6,25 +6,22 @@ import 'package:toggle_switch/toggle_switch.dart';
 
 class ToggleLeaveTime extends StatelessWidget {
   @override
-  Widget build(BuildContext context,[bool mounted = true]) 
-  {
+  Widget build(BuildContext context, [bool mounted = true]) {
     final provider = Provider.of<LeaveProvider>(context);
 
-    void onToggleChanged() async 
-    {
-      final detailResponse =  await provider.getLeaveTypeDetail();
+    void onToggleChanged() async {
+      final detailResponse = await provider.getLeaveTypeDetail();
 
       if (!mounted) return;
-      if (detailResponse.statusCode == 200)
-       {
-        if (detailResponse.data!.leaveList!.isEmpty)
-         {
+      if (detailResponse.statusCode == 200) {
+        if (detailResponse.data!.leaveList!.isEmpty) {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               padding: EdgeInsets.all(20), content: Text('No data found')));
         }
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            padding: const EdgeInsets.all(20), content: Text(detailResponse.message!)));
+            padding: const EdgeInsets.all(20),
+            content: Text(detailResponse.message!)));
       }
     }
 
@@ -42,15 +39,12 @@ class ToggleLeaveTime extends StatelessWidget {
           minHeight: 45,
           initialLabelIndex: provider.selectedMonth == 0 ? 1 : 0,
           totalSwitches: 2,
-          onToggle: (index) 
-          {
-            if (index == 0) 
-            {
+          onToggle: (index) {
+            if (index == 0) {
               DateTime now = DateTime.now();
               provider.setMonth(now.month);
               onToggleChanged();
-            } else 
-            {
+            } else {
               provider.setMonth(0);
               onToggleChanged();
             }

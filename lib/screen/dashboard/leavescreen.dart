@@ -31,9 +31,8 @@ class LeaveScreenState extends State<LeaveScreen> {
 
   Future<String> initialState() async {
     final leaveProvider = Provider.of<LeaveProvider>(context, listen: false);
-     leaveProvider.selectLeaveType();
+    leaveProvider.selectLeaveType();
     final leaveData = await leaveProvider.getLeaveType();
-   
 
     if (!mounted) {
       return "Loaded";
@@ -46,8 +45,7 @@ class LeaveScreenState extends State<LeaveScreen> {
     return "Loaded";
   }
 
-  void getLeaveDetailList() async 
-  {
+  void getLeaveDetailList() async {
     final leaveProvider = Provider.of<LeaveProvider>(context, listen: false);
     final detailResponse = await leaveProvider.getLeaveTypeDetail();
 
@@ -134,7 +132,6 @@ class LeaveScreenState extends State<LeaveScreen> {
                                   Visibility(
                                       visible: true,
                                       child: LeaveListdetailDashboard()),
-                              
                                 ],
                               ),
                             ),

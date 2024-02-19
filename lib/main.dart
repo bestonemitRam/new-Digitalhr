@@ -76,6 +76,7 @@ final dbHelper = DatabaseHelper();
 late SharedPreferences sharedPref;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   sharedPref = await SharedPreferences.getInstance();
   // initializeService();
   //BackgroundLocation.startLocationService();
@@ -101,6 +102,7 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FirebaseMessaging.onBackgroundMessage(_messageHandler);
+
   NotificationSettings settings =
       await FirebaseMessaging.instance.requestPermission(
     alert: true,
@@ -172,14 +174,13 @@ void main() async {
         ),
         context: NavigationService.navigatorKey.currentState!.context,
       );
-    } catch (e)
-     {
+    } catch (e) {
       print(e);
-     }
+    }
   });
 
   FirebaseMessaging.onMessageOpenedApp.listen((message) {
-    print('Message clicked!');
+    print('Message cxcvcvclicked! ${message}');
   });
 
   ByteData data =
@@ -192,6 +193,7 @@ void main() async {
 }
 
 Future<void> _messageHandler(RemoteMessage message) async {
+  print('Handling a background message ${message.messageId}');
   FlutterRingtonePlayer.play(
     fromAsset: "assets/sound/beep.mp3",
   );
@@ -257,8 +259,7 @@ void configLoading() {
 //   }
 // }
 
-void initBackgroundLocation()
- {
+void initBackgroundLocation() {
   print("dkfgkjdfhgjk");
   BackgroundLocation.startLocationService();
   BackgroundLocation.getLocationUpdates((location) {
@@ -516,15 +517,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                         primarySwatch: Colors.blue,
                       ),
                       initialRoute: '/',
-                      routes:
-                       {
+                      routes: {
                         '/': (_) => SplashScreen(),
                         LoginScreen.routeName: (_) => LoginScreen(),
                         DashboardScreen.routeName: (_) => DashboardScreen(),
                         ProfileScreen.routeName: (_) => ProfileScreen(),
                         EditProfileScreen.routeName: (_) => EditProfileScreen(),
                         MeetingDetailScreen.routeName: (_) =>
-                         MeetingDetailScreen(),
+                            MeetingDetailScreen(),
                         PaySlipDetailScreen.routeName: (_) =>
                             PaySlipDetailScreen(),
                       },

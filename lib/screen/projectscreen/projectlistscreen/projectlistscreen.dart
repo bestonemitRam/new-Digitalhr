@@ -26,8 +26,10 @@ class ProjectListScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(
-                        10),bottomRight: Radius.circular(10))),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10))),
                     color: Colors.white12,
                     elevation: 0,
                     margin: EdgeInsets.symmetric(horizontal: 20),
@@ -188,7 +190,8 @@ class ProjectListScreen extends StatelessWidget {
                   SizedBox(
                     height: 5,
                   ),
-                  Expanded(child: Padding(
+                  Expanded(
+                      child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: ProjectList(),
                   )),

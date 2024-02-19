@@ -19,8 +19,8 @@ class NotificationProvider with ChangeNotifier {
     return [..._notificationList];
   }
 
-  Future<NotificationResponse> getNotification() async 
-  {  print("fdjghkjdfdhg  ");
+  Future<NotificationResponse> getNotification() async {
+    print("fdjghkjdfdhg  ");
     var uri = Uri.parse(Constant.NOTIFICATION_URL).replace(queryParameters: {
       'page': page.toString(),
       'per_page': per_page.toString(),

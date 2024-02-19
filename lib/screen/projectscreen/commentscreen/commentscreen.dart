@@ -37,17 +37,27 @@ class CommentScreen extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                    top: 0, left: 10, right: 10, bottom: 90, child: Column(
+                    top: 0,
+                    left: 10,
+                    right: 10,
+                    bottom: 90,
+                    child: Column(
                       children: [
                         Expanded(child: CommentList()),
                         GestureDetector(
                           onTap: () {
                             model.getComments();
                           },
-                          child: Obx(() => model.commentList.isNotEmpty?Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text("Load More Comments",style: TextStyle(color: Colors.white),),
-                            ):SizedBox.shrink(),
+                          child: Obx(
+                            () => model.commentList.isNotEmpty
+                                ? Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "Load More Comments",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  )
+                                : SizedBox.shrink(),
                           ),
                         )
                       ],
@@ -82,13 +92,15 @@ class CommentScreen extends StatelessWidget {
                                         scrollDirection: Axis.horizontal,
                                         itemCount: model.mentionList.length,
                                         itemBuilder: (context, index) {
-                                          final member = model.mentionList[index];
+                                          final member =
+                                              model.mentionList[index];
                                           return Card(
                                             color: Colors.white54,
                                             child: Center(
                                               child: Padding(
-                                                padding: const EdgeInsets.symmetric(
-                                                    horizontal: 8.0),
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8.0),
                                                 child: Row(
                                                   children: [
                                                     Text(
@@ -101,7 +113,8 @@ class CommentScreen extends StatelessWidget {
                                                     ),
                                                     GestureDetector(
                                                       onTap: () {
-                                                        model.removeMember(member);
+                                                        model.removeMember(
+                                                            member);
                                                       },
                                                       child: Icon(
                                                         Icons.close,
@@ -159,18 +172,20 @@ class CommentScreen extends StatelessWidget {
                                 controller: model.commentController,
                                 maxLines: 1,
                                 keyboardType: TextInputType.multiline,
-                                style: TextStyle(color: Colors.white, fontSize: 15),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
                                 validator: (value) {
                                   return null;
                                 },
                                 cursorColor: Colors.white,
                                 decoration: InputDecoration(
                                     hintText: "Write your Comment",
-                                    hintStyle:
-                                        TextStyle(color: Colors.grey, fontSize: 15),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey, fontSize: 15),
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide.none,
-                                        borderRadius: BorderRadius.circular(10.0)),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0)),
                                     contentPadding:
                                         EdgeInsets.symmetric(horizontal: 10),
                                     labelStyle: TextStyle(color: Colors.white),
