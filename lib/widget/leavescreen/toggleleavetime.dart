@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/widget/radialDecorationBox.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/widget/radialDecorationBox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toggle_switch/toggle_switch.dart';

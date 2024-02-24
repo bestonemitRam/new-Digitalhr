@@ -1,6 +1,6 @@
-import 'package:cnattendance/model/task.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/taskdetailscreen.dart';
+import 'package:bmiterp/model/task.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/taskdetailscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

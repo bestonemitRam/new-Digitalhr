@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/login/Loginresponse.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/login/Loginresponse.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:cnattendance/utils/deviceuuid.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/utils/deviceuuid.dart';
+import 'package:bmiterp/utils/constant.dart';
 
 class Auth with ChangeNotifier {
   Future<Loginresponse> login(String username, String password) async {

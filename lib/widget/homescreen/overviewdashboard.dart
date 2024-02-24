@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/dashboardprovider.dart';
+import 'package:bmiterp/provider/dashboardprovider.dart';
 import 'package:flutter/material.dart';
-import 'package:cnattendance/widget/homescreen/cardoverview.dart';
+import 'package:bmiterp/widget/homescreen/cardoverview.dart';
 import 'package:provider/provider.dart';
 
 class OverviewDashboard extends StatelessWidget {

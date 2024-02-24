@@ -1,19 +1,19 @@
 import 'dart:async';
 
-import 'package:cnattendance/data/source/network/model/login/User.dart';
-import 'package:cnattendance/provider/dashboardprovider.dart';
-import 'package:cnattendance/provider/prefprovider.dart';
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/utils/locationstatus.dart';
-import 'package:cnattendance/widget/homescreen/checkattendance.dart';
-import 'package:cnattendance/widget/homescreen/overviewdashboard.dart';
-import 'package:cnattendance/widget/homescreen/weeklyreportchart.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/data/source/network/model/login/User.dart';
+import 'package:bmiterp/provider/dashboardprovider.dart';
+import 'package:bmiterp/provider/prefprovider.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/utils/locationstatus.dart';
+import 'package:bmiterp/widget/homescreen/checkattendance.dart';
+import 'package:bmiterp/widget/homescreen/overviewdashboard.dart';
+import 'package:bmiterp/widget/homescreen/weeklyreportchart.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:provider/provider.dart';
-import 'package:cnattendance/widget/headerprofile.dart';
+import 'package:bmiterp/widget/headerprofile.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -118,20 +118,10 @@ class HomeScreenState extends State<HomeScreen> {
     var fcm = await FirebaseMessaging.instance.getToken();
     print(fcm);
     try {
-      // final dashboardResponse =
-      //     await Provider.of<DashboardProvider>(context, listen: false)
-      //         .getDashboard();
       final dashboardProvider =
           await Provider.of<DashboardProvider>(context, listen: false)
               .getDashboardData();
 
-      // final user = dashboardResponse.data.user;
-      // Provider.of<PrefProvider>(context, listen: false).saveBasicUser(User(
-      //     id: user.id,
-      //     name: user.name,
-      //     email: user.email,
-      //     username: user.username,
-      //     avatar: user.avatar));
       return 'loaded';
     } catch (e) {
       print(e);
@@ -165,7 +155,7 @@ class HomeScreenState extends State<HomeScreen> {
                   HeaderProfile(),
                   CheckAttendance(),
                   OverviewDashboard(),
-                  WeeklyReportChart()
+                  // WeeklyReportChart()
                 ],
               ),
             ),

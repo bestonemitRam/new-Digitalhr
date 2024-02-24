@@ -1,7 +1,7 @@
-import 'package:cnattendance/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:cnattendance/data/source/network/model/login/Login.dart';
-import 'package:cnattendance/data/source/network/model/login/User.dart';
+import 'package:bmiterp/data/source/network/model/login/Login.dart';
+import 'package:bmiterp/data/source/network/model/login/User.dart';
 
 class PrefProvider with ChangeNotifier {
   var _userName = '';

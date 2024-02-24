@@ -1,5 +1,5 @@
-import 'package:cnattendance/screen/projectscreen/projectlistscreen/projectlistscrreencontroller.dart';
-import 'package:cnattendance/screen/projectscreen/projectlistscreen/widget/projectcard.dart';
+import 'package:bmiterp/screen/projectscreen/projectlistscreen/projectlistscrreencontroller.dart';
+import 'package:bmiterp/screen/projectscreen/projectlistscreen/widget/projectcard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

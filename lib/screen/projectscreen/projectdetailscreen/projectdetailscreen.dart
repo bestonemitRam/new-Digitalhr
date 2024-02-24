@@ -1,10 +1,10 @@
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/attachmentsection.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/descriptionsection.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/headersection.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/tasksection.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/teamsection.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/attachmentsection.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/descriptionsection.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/headersection.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/tasksection.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/teamsection.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

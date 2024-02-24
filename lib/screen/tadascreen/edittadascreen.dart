@@ -1,11 +1,16 @@
-import 'package:cnattendance/provider/createtadacontroller.dart';
-import 'package:cnattendance/provider/edittadacontroller.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/createtadacontroller.dart';
+import 'package:bmiterp/provider/edittadacontroller.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 
-class EditTadaScreen extends StatelessWidget {
+class EditTadaScreen extends StatefulWidget {
+  @override
+  State<EditTadaScreen> createState() => _EditTadaScreenState();
+}
+
+class _EditTadaScreenState extends State<EditTadaScreen> {
   @override
   Widget build(BuildContext context) {
     final model = Get.put(EditTadaController());
@@ -14,8 +19,32 @@ class EditTadaScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.transparent,
-          title: Text("Edit TADA"),
+          title: Text(
+            "Edit TA-DA",
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.edit_note,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Get.back();
+              },
+            )
+          ],
+          leading: InkWell(
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+            onTap: () {
+              Get.back();
+            },
+          ),
         ),
         bottomNavigationBar: SafeArea(
           child: Container(
@@ -196,7 +225,8 @@ class EditTadaScreen extends StatelessWidget {
                     height: 10,
                   ),
                   Obx(
-                    () => ListView.builder(
+                    () => 
+                    ListView.builder(
                       primary: false,
                       shrinkWrap: true,
                       itemCount: model.attachmentList.length,
@@ -221,7 +251,8 @@ class EditTadaScreen extends StatelessWidget {
                               style: TextStyle(color: Colors.white),
                             ),
                             trailing: GestureDetector(
-                                onTap: () {
+                                onTap: () 
+                                {
                                   model.removeAttachment(file.id, index);
                                 },
                                 child: Icon(
@@ -232,6 +263,7 @@ class EditTadaScreen extends StatelessWidget {
                         );
                       },
                     ),
+                 
                   ),
                   SizedBox(
                     height: 10,
@@ -248,7 +280,10 @@ class EditTadaScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      model.onFileClicked();
+                      showModalBottomSheet(
+                          backgroundColor: Colors.transparent,
+                          context: context,
+                          builder: (builder) => bottomSheet(model));
                     },
                     child: Card(
                         shape: CircleBorder(),
@@ -268,6 +303,7 @@ class EditTadaScreen extends StatelessWidget {
                       itemCount: model.fileList.length,
                       itemBuilder: (context, index) {
                         final file = model.fileList[index];
+                        print("check upload   ${file.name}");
                         return ListTile(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
@@ -299,6 +335,84 @@ class EditTadaScreen extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget bottomSheet(var model) {
+    return SizedBox(
+      height: 180,
+      width: MediaQuery.of(context).size.width,
+      child: Card(
+        margin: const EdgeInsets.all(18.0),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  iconCreation(Icons.insert_drive_file, Colors.indigo,
+                      "Document", model),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  iconCreation(Icons.camera_alt, Colors.pink, "Camera", model),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  iconCreation(
+                      Icons.insert_photo, Colors.purple, "Gallery", model),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget iconCreation(IconData icons, Color color, String text, var model) {
+    return InkWell(
+      onTap: () async {
+        setState(() {
+          if (text == "Camera") {
+            Navigator.of(context).pop();
+            model.showOptionDailog();
+          } else if (text == "Gallery") {
+            //  Navigator.of(context).pop();
+            // chooseImgageGa(context);
+          } else {
+            Navigator.of(context).pop();
+            // _pickFile();
+            model.onFileClicked();
+          }
+        });
+      },
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: color,
+            child: Icon(
+              icons,
+              // semanticLabel: "Help",
+              size: 29,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 12,
+              // fontWeight: FontWeight.w100,
+            ),
+          )
+        ],
       ),
     );
   }

@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:cnattendance/provider/profileUserProvider.dart';
-import 'package:cnattendance/screen/profile/editprofilescreen.dart';
-import 'package:cnattendance/utils/check_internet_connectvity.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/profileUserProvider.dart';
+import 'package:bmiterp/screen/profile/editprofilescreen.dart';
+import 'package:bmiterp/utils/check_internet_connectvity.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -74,6 +74,7 @@ class _ProfileScreenActivityState extends State<ProfileScreenActivity> {
               },
             ),
           ),
+         
           resizeToAvoidBottomInset: true,
           body: Provider.of<InternetConnectionStatus>(context) ==
                   InternetConnectionStatus.disconnected
@@ -81,68 +82,84 @@ class _ProfileScreenActivityState extends State<ProfileScreenActivity> {
               : Consumer<ProfileUserProvider>(
                   builder: ((context, profileUserProvider, child) {
                   return profileUserProvider.datanotfound
-                      ? SingleChildScrollView(
-                          child: Container(
-                            child: Center(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  CircleAvatar(
-                                    radius: 6.5.h,
-                                    backgroundColor: Colors.white,
-                                    child: CircleAvatar(
-                                      radius: 6.h,
-                                      backgroundColor:
-                                          Colors.grey.withOpacity(0.3),
-                                      child: GestureDetector(
-                                        onTap: () {},
+                      ? profileUserProvider.profileuserList.isNotEmpty
+                          ? SingleChildScrollView(
+                              child: Container(
+                                child: Center(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 6.5.h,
+                                        backgroundColor: Colors.white,
                                         child: CircleAvatar(
-                                          backgroundColor: Colors.grey,
-                                          radius: 5.5.h,
-                                          backgroundImage: profileUserProvider
-                                                      .profileuserList[0]
-                                                      .avatar !=
-                                                  null
-                                              ? NetworkImage(profileUserProvider
-                                                  .profileuserList[0].avatar!)
-                                              : AssetImage(
-                                                  'assets/images/dummy_avatar.png',
-                                                ) as ImageProvider,
+                                          radius: 6.h,
+                                          backgroundColor:
+                                              Colors.grey.withOpacity(0.3),
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: CircleAvatar(
+                                              backgroundColor: Colors.grey,
+                                              radius: 5.5.h,
+                                              backgroundImage:
+                                                  profileUserProvider
+                                                              .profileuserList[
+                                                                  0]
+                                                              .avatar !=
+                                                          null
+                                                      ? NetworkImage(
+                                                          profileUserProvider
+                                                              .profileuserList[
+                                                                  0]
+                                                              .avatar!)
+                                                      : AssetImage(
+                                                          'assets/images/dummy_avatar.png',
+                                                        ) as ImageProvider,
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                    ),
+                                      Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Text(
+                                            profileUserProvider
+                                                    .profileuserList.isNotEmpty
+                                                ? profileUserProvider
+                                                        .profileuserList[0]
+                                                        .fullName
+                                                        .toString() ??
+                                                    ''
+                                                : '',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20),
+                                          )),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 5),
+                                        child: Text(
+                                          profileUserProvider
+                                                  .profileuserList.isNotEmpty
+                                              ? profileUserProvider
+                                                      .profileuserList[0]
+                                                      .mail ??
+                                                  ''
+                                              : '',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  Padding(
-                                      padding: const EdgeInsets.all(5),
-                                      child: Text(
-                                        profileUserProvider
-                                                .profileuserList.isNotEmpty
-                                            ? profileUserProvider
-                                                    .profileuserList[0].fullName
-                                                    .toString() ??
-                                                ''
-                                            : '',
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 20),
-                                      )),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 5),
-                                    child: Text(
-                                      profileUserProvider
-                                              .profileuserList.isNotEmpty
-                                          ? profileUserProvider
-                                                  .profileuserList[0].mail ??
-                                              ''
-                                          : '',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
-                        )
+                            )
+                          : Container(
+                              child: Text(
+                                "Sorry don't have date please update profile",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            )
                       : Center(
                           child: CircularProgressIndicator(
                             color: Colors.white,

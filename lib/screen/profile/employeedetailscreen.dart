@@ -1,7 +1,7 @@
-import 'package:cnattendance/provider/employeedetailcontroller.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/cartTitle.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/employeedetailcontroller.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/cartTitle.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

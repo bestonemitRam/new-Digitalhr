@@ -1,12 +1,12 @@
-import 'package:cnattendance/provider/dashboardprovider.dart';
-import 'package:cnattendance/widget/customalertdialog.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/dashboardprovider.dart';
+import 'package:bmiterp/widget/customalertdialog.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
 
 class AttedanceBottomSheet extends StatefulWidget {
   @override
@@ -67,12 +67,18 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
     final provider = Provider.of<DashboardProvider>(context, listen: false);
     try {
       isLoading = true;
-      setState(() {
+      setState(()
+       {
         EasyLoading.show(
             status: "Requesting...", maskType: EasyLoadingMaskType.black);
       });
+      print("fjkghgh ");
       var status = await provider.getCheckInStatus();
-      if (status) {
+
+      print("fjkghgh ${status}");
+
+      if (status) 
+      {
         bool result = await InternetConnectionChecker().hasConnection;
 
         if (result) {

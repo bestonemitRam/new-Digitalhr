@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/payslipprovider.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/payslipprovider.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

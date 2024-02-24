@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/leavecalendarprovider.dart';
-import 'package:cnattendance/widget/leavecalendar/leavelistcardview.dart';
+import 'package:bmiterp/provider/leavecalendarprovider.dart';
+import 'package:bmiterp/widget/leavecalendar/leavelistcardview.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

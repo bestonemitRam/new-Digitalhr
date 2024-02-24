@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
-import 'package:cnattendance/api/app_strings.dart';
-import 'package:cnattendance/data/source/network/model/login/User.dart';
-import 'package:cnattendance/data/source/network/model/login/Login.dart';
+import 'package:bmiterp/api/app_strings.dart';
+import 'package:bmiterp/data/source/network/model/login/User.dart';
+import 'package:bmiterp/data/source/network/model/login/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

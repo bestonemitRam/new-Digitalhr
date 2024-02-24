@@ -1,4 +1,4 @@
-import 'package:cnattendance/data/source/network/model/taskdetail/Mentioned.dart';
+import 'package:bmiterp/data/source/network/model/taskdetail/Mentioned.dart';
 
 class TaskComment {
   String avatar;

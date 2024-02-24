@@ -1,5 +1,5 @@
-import 'package:cnattendance/model/attachment.dart';
-import 'package:cnattendance/utils/navigationservice.dart';
+import 'package:bmiterp/model/attachment.dart';
+import 'package:bmiterp/utils/navigationservice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_file_downloader/flutter_file_downloader.dart';
 import 'package:gallery_image_viewer/gallery_image_viewer.dart';

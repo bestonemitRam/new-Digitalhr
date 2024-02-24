@@ -20,7 +20,7 @@
 //   bool status;
 //   String message;
 //   int statusCode;
-import 'package:cnattendance/data/source/network/model/leavetype/LeaveType.dart';
+import 'package:bmiterp/data/source/network/model/leavetype/LeaveType.dart';
 
 //List<LeaveType> data;
 

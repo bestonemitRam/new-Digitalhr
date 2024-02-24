@@ -1,6 +1,6 @@
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/taskdetailcontroller.dart';
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/utils/navigationservice.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/taskdetailcontroller.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/utils/navigationservice.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_file_downloader/flutter_file_downloader.dart';

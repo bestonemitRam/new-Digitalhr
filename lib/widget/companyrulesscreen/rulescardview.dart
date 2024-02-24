@@ -1,4 +1,4 @@
-import 'package:cnattendance/widget/buttonborder.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';

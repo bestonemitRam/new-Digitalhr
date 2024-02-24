@@ -1,7 +1,7 @@
-import 'package:cnattendance/provider/holidayprovider.dart';
-import 'package:cnattendance/widget/holiday/holidaycardview.dart';
-import 'package:cnattendance/widget/holiday/toggleholiday.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/holidayprovider.dart';
+import 'package:bmiterp/widget/holiday/holidaycardview.dart';
+import 'package:bmiterp/widget/holiday/toggleholiday.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_core/src/get_main.dart';

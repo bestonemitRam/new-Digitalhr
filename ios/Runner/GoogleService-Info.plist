@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.app.cnattendance</string>
+	<string>com.app.bmiterp</string>
 	<key>PROJECT_ID</key>
 	<string>digitalhrm-7e9ae</string>
 	<key>STORAGE_BUCKET</key>

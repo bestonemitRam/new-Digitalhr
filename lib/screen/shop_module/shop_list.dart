@@ -1,7 +1,7 @@
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/provider/shopprovider.dart';
-import 'package:cnattendance/screen/shop_module/list_ui.dart';
-import 'package:cnattendance/widget/leave_detail_row.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/provider/shopprovider.dart';
+import 'package:bmiterp/screen/shop_module/list_ui.dart';
+import 'package:bmiterp/widget/leave_detail_row.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -36,7 +36,7 @@ class ShopList extends StatelessWidget {
           child: Container(
             height: 50.h,
             child: Text(
-              "Currently don't have shop ",
+              "Currently don't have a Retailers ",
               style: TextStyle(color: Colors.white),
             ),
           ),

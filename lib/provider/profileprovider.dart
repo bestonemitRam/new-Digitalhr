@@ -2,12 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/profile/Profile.dart';
-import 'package:cnattendance/data/source/network/model/profile/Profileresponse.dart';
-import 'package:cnattendance/model/profile.dart' as up;
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/profile/Profile.dart';
+import 'package:bmiterp/data/source/network/model/profile/Profileresponse.dart';
+import 'package:bmiterp/model/profile.dart' as up;
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';

@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/tadalist/tadalistresponse.dart';
-import 'package:cnattendance/model/tada.dart';
-import 'package:cnattendance/repositories/tadarepository.dart';
-import 'package:cnattendance/screen/tadascreen/createtadascreen.dart';
-import 'package:cnattendance/screen/tadascreen/edittadascreen.dart';
-import 'package:cnattendance/screen/tadascreen/tadadetailscreen.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/tadalist/tadalistresponse.dart';
+import 'package:bmiterp/model/tada.dart';
+import 'package:bmiterp/repositories/tadarepository.dart';
+import 'package:bmiterp/screen/tadascreen/createtadascreen.dart';
+import 'package:bmiterp/screen/tadascreen/edittadascreen.dart';
+import 'package:bmiterp/screen/tadascreen/tadadetailscreen.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

@@ -1,9 +1,10 @@
 import 'dart:io';
 
-import 'package:cnattendance/api/app_strings.dart';
-import 'package:cnattendance/api/updateProfile.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/api/app_strings.dart';
+import 'package:bmiterp/api/updateProfile.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import 'package:cnattendance/provider/profileprovider.dart';
+import 'package:bmiterp/provider/profileprovider.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -123,7 +124,6 @@ class EditProfileScreenState extends State<EditProfileScreen> {
       //  _addressController.text = profile.address;
       _phoneController.text = Apphelper.contact;
       _dobController.text = Apphelper.dob;
-      print('fghkjfgk ${Apphelper.USER_AVATAR}');
 
       switch (Apphelper.gendar.toLowerCase()) {
         case 'male':
@@ -200,7 +200,11 @@ class EditProfileScreenState extends State<EditProfileScreen> {
                     shape: ButtonBorder(),
                     fixedSize: Size(double.maxFinite, 55)),
                 onPressed: () {
-                  validateValue();
+                  if (imagefiles != null) {
+                    validateValue();
+                  } else {
+                    showToast("Please pic profile image");
+                  }
                 },
                 child: const Text(
                   'Update',
@@ -230,7 +234,7 @@ class EditProfileScreenState extends State<EditProfileScreen> {
                           },
                           child: CircleAvatar(
                             radius: 2.h,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Colors.black,
                             child: Icon(
                               Icons.camera_alt_outlined,
                               color: Colors.white,

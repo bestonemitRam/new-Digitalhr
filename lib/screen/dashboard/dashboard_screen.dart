@@ -1,11 +1,12 @@
 import 'dart:convert';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/provider/prefprovider.dart';
-import 'package:cnattendance/screen/dashboard/homescreen.dart';
-import 'package:cnattendance/screen/dashboard/leavescreen.dart';
-import 'package:cnattendance/screen/dashboard/attendancescreen.dart';
-import 'package:cnattendance/screen/dashboard/morescreen.dart';
-import 'package:cnattendance/screen/dashboard/projectscreen.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/provider/prefprovider.dart';
+import 'package:bmiterp/screen/dashboard/homescreen.dart';
+import 'package:bmiterp/screen/dashboard/leaveandattendance_dash.dart';
+import 'package:bmiterp/screen/dashboard/leavescreen.dart';
+import 'package:bmiterp/screen/dashboard/attendancescreen.dart';
+import 'package:bmiterp/screen/dashboard/morescreen.dart';
+import 'package:bmiterp/screen/dashboard/projectscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
@@ -29,8 +30,9 @@ class DashboardScreenState extends State<DashboardScreen> {
     return [
       HomeScreen(),
       ProjectScreen(),
-      LeaveScreen(),
-      AttendanceScreen(),
+     // LeaveScreen(),
+      AttendanceScreenHistory(),
+      // AttendanceScreen(),
       MoreScreen(),
     ];
   }
@@ -122,15 +124,15 @@ class DashboardScreenState extends State<DashboardScreen> {
         activeColorPrimary: Colors.white,
         inactiveColorPrimary: Colors.white30,
       ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.co_present_outlined),
-        title: "Attendance",
-        activeColorPrimary: Colors.white,
-        inactiveColorPrimary: Colors.white30,
-      ),
+      // PersistentBottomNavBarItem(
+      //   icon: Icon(Icons.co_present_outlined),
+      //   title: "Attendance",
+      //   activeColorPrimary: Colors.white,
+      //   inactiveColorPrimary: Colors.white30,
+      // ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.more),
-        title: "More",
+        title: "Menu",
         activeColorPrimary: Colors.white,
         inactiveColorPrimary: Colors.white30,
       ),

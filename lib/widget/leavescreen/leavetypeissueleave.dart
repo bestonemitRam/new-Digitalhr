@@ -1,5 +1,5 @@
-import 'package:cnattendance/model/leave.dart';
-import 'package:cnattendance/provider/leaveprovider.dart';
+import 'package:bmiterp/model/leave.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';

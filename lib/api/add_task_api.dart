@@ -1,5 +1,5 @@
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/utils/service.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/utils/service.dart';
 
 class UpdateTaskApi {
   final Map<String, dynamic> body;

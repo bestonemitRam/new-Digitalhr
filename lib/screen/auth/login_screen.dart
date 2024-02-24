@@ -1,7 +1,7 @@
 import 'dart:ui';
-import 'package:cnattendance/model/auth.dart';
-import 'package:cnattendance/screen/dashboard/dashboard_screen.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
+import 'package:bmiterp/model/auth.dart';
+import 'package:bmiterp/screen/dashboard/dashboard_screen.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
@@ -44,7 +44,6 @@ class loginScreenState extends State<LoginScreen> {
     return true;
   }
 
-  ///MARK: -  Validate User Value and navigate to the Login User
   validateValue() {
     final value = _form.currentState!.validate();
     if (value) {
@@ -84,13 +83,12 @@ class loginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print("dhgkjfkjkjfkg");
     return Scaffold(
-      body: Form(
-        key: _form,
-        child: Container(
-          decoration: backgroundDecoration(),
-          child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Form(
+          key: _form,
+          child: Container(
+            decoration: backgroundDecoration(),
             child: IgnorePointer(
               ignoring: _isLoading,
               child: BackdropFilter(
@@ -117,7 +115,7 @@ class loginScreenState extends State<LoginScreen> {
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       gaps(20),
-                      textHeading('Username'),
+                      textHeading('Employee Code'),
                       gaps(10),
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,

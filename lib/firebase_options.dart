@@ -65,6 +65,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'digitalhrm-7e9ae.appspot.com',
     androidClientId: '',
     iosClientId: '',
-    iosBundleId: 'com.app.cnattendance',
+    iosBundleId: 'com.app.bmiterp',
   );
 }

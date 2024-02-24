@@ -1,8 +1,8 @@
-import 'package:cnattendance/model/member.dart';
-import 'package:cnattendance/screen/projectscreen/commentscreen/commentscreencontroller.dart';
-import 'package:cnattendance/screen/projectscreen/commentscreen/widget/commentlist.dart';
-import 'package:cnattendance/screen/projectscreen/commentscreen/widget/mentionbottomsheet.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/member.dart';
+import 'package:bmiterp/screen/projectscreen/commentscreen/commentscreencontroller.dart';
+import 'package:bmiterp/screen/projectscreen/commentscreen/widget/commentlist.dart';
+import 'package:bmiterp/screen/projectscreen/commentscreen/widget/mentionbottomsheet.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mentions/flutter_mentions.dart';
 import 'package:flutter_textfield_autocomplete/flutter_textfield_autocomplete.dart';

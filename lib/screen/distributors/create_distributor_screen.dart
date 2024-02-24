@@ -1,9 +1,9 @@
-import 'package:cnattendance/model/leave.dart';
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/utils/navigationservice.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/customalertdialog.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/leave.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/utils/navigationservice.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/customalertdialog.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -144,7 +144,7 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                             },
                             cursorColor: Colors.white,
                             decoration: InputDecoration(
-                              hintText: 'Distributor Name',
+                              hintText: 'Name',
                               hintStyle: TextStyle(color: Colors.white70),
                               prefixIcon:
                                   Icon(Icons.person, color: Colors.white),
@@ -193,7 +193,7 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                             },
                             cursorColor: Colors.white,
                             decoration: InputDecoration(
-                              hintText: 'Distributor Email',
+                              hintText: 'Email',
                               hintStyle: TextStyle(color: Colors.white70),
                               prefixIcon:
                                   Icon(Icons.email, color: Colors.white),
@@ -243,7 +243,7 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                             },
                             cursorColor: Colors.white,
                             decoration: InputDecoration(
-                              hintText: 'Distributor Contact Number',
+                              hintText: 'Phone No.',
                               hintStyle: TextStyle(color: Colors.white70),
                               prefixIcon:
                                   Icon(Icons.phone, color: Colors.white),
@@ -293,7 +293,7 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                             },
                             cursorColor: Colors.white,
                             decoration: InputDecoration(
-                              hintText: 'Distributor Alternative Number',
+                              hintText: ' Alternative Phone No.',
                               hintStyle: TextStyle(color: Colors.white70),
                               prefixIcon:
                                   Icon(Icons.phone, color: Colors.white),
@@ -342,7 +342,7 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                             },
                             cursorColor: Colors.white,
                             decoration: InputDecoration(
-                              hintText: 'Distributor Address',
+                              hintText: 'Current Address',
                               hintStyle: TextStyle(color: Colors.white70),
                               prefixIcon:
                                   Icon(Icons.location_on, color: Colors.white),

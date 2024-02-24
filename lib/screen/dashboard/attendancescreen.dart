@@ -1,10 +1,10 @@
-import 'package:cnattendance/provider/attendancereportprovider.dart';
-import 'package:cnattendance/widget/headerprofile.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/attendancereportprovider.dart';
+import 'package:bmiterp/widget/headerprofile.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
-import 'package:cnattendance/widget/attendancescreen/attendancestatus.dart';
-import 'package:cnattendance/widget/attendancescreen/attendancetoggle.dart';
-import 'package:cnattendance/widget/attendancescreen/reportlistview.dart';
+import 'package:bmiterp/widget/attendancescreen/attendancestatus.dart';
+import 'package:bmiterp/widget/attendancescreen/attendancetoggle.dart';
+import 'package:bmiterp/widget/attendancescreen/reportlistview.dart';
 import 'package:provider/provider.dart';
 
 class AttendanceScreen extends StatefulWidget {
@@ -52,7 +52,7 @@ class AttendanceScreenState extends State<AttendanceScreen> {
               width: double.infinity,
               child: Column(
                 children: [
-                  HeaderProfile(),
+                  // HeaderProfile(),
                   AttendanceStatus(),
                   AttendanceToggle(),
                   ReportListView()

@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/model/shop.dart';
-import 'package:cnattendance/model/shopresponse.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/model/shop.dart';
+import 'package:bmiterp/model/shopresponse.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

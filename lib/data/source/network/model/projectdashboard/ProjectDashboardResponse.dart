@@ -1,4 +1,4 @@
-import 'package:cnattendance/data/source/network/model/projectdashboard/Data.dart';
+import 'package:bmiterp/data/source/network/model/projectdashboard/Data.dart';
 
 class ProjectDashboardResponse {
   Data data;

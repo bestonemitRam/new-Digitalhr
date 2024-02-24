@@ -1,4 +1,4 @@
-import 'package:cnattendance/data/source/network/model/tadadetail/Attachments.dart';
+import 'package:bmiterp/data/source/network/model/tadadetail/Attachments.dart';
 
 class Data {
   Attachments attachments;

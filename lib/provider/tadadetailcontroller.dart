@@ -1,6 +1,6 @@
-import 'package:cnattendance/model/attachment.dart';
-import 'package:cnattendance/model/tada.dart';
-import 'package:cnattendance/repositories/tadarepository.dart';
+import 'package:bmiterp/model/attachment.dart';
+import 'package:bmiterp/model/tada.dart';
+import 'package:bmiterp/repositories/tadarepository.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 

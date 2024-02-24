@@ -1,4 +1,4 @@
-import 'package:cnattendance/data/source/network/model/support/Data.dart';
+import 'package:bmiterp/data/source/network/model/support/Data.dart';
 
 class SupportResponse {
   Data data;

@@ -1,8 +1,8 @@
-import 'package:cnattendance/main.dart';
-import 'package:cnattendance/provider/dashboardprovider.dart';
-import 'package:cnattendance/provider/prefprovider.dart';
-import 'package:cnattendance/utils/authservice.dart';
-import 'package:cnattendance/widget/attendance_bottom_sheet.dart';
+import 'package:bmiterp/main.dart';
+import 'package:bmiterp/provider/dashboardprovider.dart';
+import 'package:bmiterp/provider/prefprovider.dart';
+import 'package:bmiterp/utils/authservice.dart';
+import 'package:bmiterp/widget/attendance_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
@@ -66,8 +66,7 @@ class CheckAttendanceState extends State<CheckAttendance> {
                         print('Location Data: $data');
 
                         if (await pref.getUserAuth()) {
-                          bool isAuthenticated =
-                              await AuthService.authenticateUser();
+                          bool isAuthenticated = await AuthService.authenticateUser();
                           if (isAuthenticated) {
                             showModalBottomSheet(
                                 context: context,

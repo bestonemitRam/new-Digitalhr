@@ -1,6 +1,6 @@
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/model/my_task.dart';
-import 'package:cnattendance/utils/service.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/model/my_task.dart';
+import 'package:bmiterp/utils/service.dart';
 import 'package:flutter/material.dart';
 
 class MyTaskProvider extends ChangeNotifier {

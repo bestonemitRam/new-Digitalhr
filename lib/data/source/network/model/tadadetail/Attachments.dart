@@ -1,5 +1,5 @@
-import 'package:cnattendance/data/source/network/model/tadadetail/File.dart';
-import 'package:cnattendance/data/source/network/model/tadadetail/Image.dart';
+import 'package:bmiterp/data/source/network/model/tadadetail/File.dart';
+import 'package:bmiterp/data/source/network/model/tadadetail/Image.dart';
 
 class Attachments {
   List<File> file;

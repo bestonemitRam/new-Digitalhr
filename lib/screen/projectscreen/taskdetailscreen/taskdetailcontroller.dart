@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/checkliststatustoggle/CheckListStatusToggleResponse.dart';
-import 'package:cnattendance/data/source/network/model/taskdetail/taskdetail.dart';
-import 'package:cnattendance/model/checklist.dart';
-import 'package:cnattendance/model/member.dart';
-import 'package:cnattendance/model/task.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/checkliststatustoggle/CheckListStatusToggleResponse.dart';
+import 'package:bmiterp/data/source/network/model/taskdetail/taskdetail.dart';
+import 'package:bmiterp/model/checklist.dart';
+import 'package:bmiterp/model/member.dart';
+import 'package:bmiterp/model/task.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

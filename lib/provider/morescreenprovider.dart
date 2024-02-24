@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/logout/Logoutresponse.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/logout/Logoutresponse.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 

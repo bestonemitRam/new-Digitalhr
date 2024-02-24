@@ -1,8 +1,8 @@
-import 'package:cnattendance/provider/dashboardprovider.dart';
-import 'package:cnattendance/utils/navigationservice.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/leavescreen/earlyleavesheet.dart';
-import 'package:cnattendance/widget/leavescreen/issueleavesheet.dart';
+import 'package:bmiterp/provider/dashboardprovider.dart';
+import 'package:bmiterp/utils/navigationservice.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/leavescreen/earlyleavesheet.dart';
+import 'package:bmiterp/widget/leavescreen/issueleavesheet.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';

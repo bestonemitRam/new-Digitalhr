@@ -1,11 +1,12 @@
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/provider/shopprovider.dart';
-import 'package:cnattendance/screen/distributors/distributorList_screen.dart';
-import 'package:cnattendance/screen/distributors/distributor_screen.dart';
-import 'package:cnattendance/screen/shop_module/list_ui.dart';
-import 'package:cnattendance/widget/leave_detail_row.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/provider/shopprovider.dart';
+import 'package:bmiterp/screen/distributors/distributorList_screen.dart';
+import 'package:bmiterp/screen/distributors/distributor_screen.dart';
+import 'package:bmiterp/screen/shop_module/list_ui.dart';
+import 'package:bmiterp/widget/leave_detail_row.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DistributorList extends StatelessWidget {
   @override
@@ -32,10 +33,12 @@ class DistributorList extends StatelessWidget {
           });
     } else {
       return Padding(
-        padding: EdgeInsets.all(20),
-        child: Text(
-          "Currently don't have shop ",
-          style: TextStyle(color: Colors.white),
+        padding: EdgeInsets.only(top: 30.h),
+        child: Center(
+          child: Text(
+            "Currently don't have shop ",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       );
     }

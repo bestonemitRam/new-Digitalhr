@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/rules/CompanyRules.dart';
-import 'package:cnattendance/data/source/network/model/rules/CompanyRulesReponse.dart';
-import 'package:cnattendance/model/content.dart';
-import 'package:cnattendance/repositories/companyrulerepository.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/rules/CompanyRules.dart';
+import 'package:bmiterp/data/source/network/model/rules/CompanyRulesReponse.dart';
+import 'package:bmiterp/model/content.dart';
+import 'package:bmiterp/repositories/companyrulerepository.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 class CompanyRulesProvider with ChangeNotifier {

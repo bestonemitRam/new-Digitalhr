@@ -1,8 +1,8 @@
-import 'package:cnattendance/provider/prefprovider.dart';
-import 'package:cnattendance/provider/profileUserProvider.dart';
-import 'package:cnattendance/screen/profile/NotificationScreen.dart';
-import 'package:cnattendance/screen/profile/new_profileScreen.dart';
-import 'package:cnattendance/screen/profile/profilescreen.dart';
+import 'package:bmiterp/provider/prefprovider.dart';
+import 'package:bmiterp/provider/profileUserProvider.dart';
+import 'package:bmiterp/screen/profile/NotificationScreen.dart';
+import 'package:bmiterp/screen/profile/new_profileScreen.dart';
+import 'package:bmiterp/screen/profile/profilescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:provider/provider.dart';

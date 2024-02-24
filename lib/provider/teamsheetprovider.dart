@@ -1,7 +1,7 @@
-import 'package:cnattendance/data/source/network/model/teamsheet/Employee.dart';
-import 'package:cnattendance/data/source/network/model/teamsheet/TeamSheet.dart';
-import 'package:cnattendance/model/team.dart';
-import 'package:cnattendance/repositories/teamsheetrepository.dart';
+import 'package:bmiterp/data/source/network/model/teamsheet/Employee.dart';
+import 'package:bmiterp/data/source/network/model/teamsheet/TeamSheet.dart';
+import 'package:bmiterp/model/team.dart';
+import 'package:bmiterp/repositories/teamsheetrepository.dart';
 import 'package:flutter/material.dart';
 
 class TeamSheetProvider with ChangeNotifier {

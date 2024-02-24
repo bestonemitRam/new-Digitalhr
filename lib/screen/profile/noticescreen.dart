@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/noticeprovider.dart';
-import 'package:cnattendance/widget/notice/noticelist.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/noticeprovider.dart';
+import 'package:bmiterp/widget/notice/noticelist.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/widget/leave_detail_row.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/widget/leave_detail_row.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

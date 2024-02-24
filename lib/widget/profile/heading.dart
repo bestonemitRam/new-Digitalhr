@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:cnattendance/provider/profileprovider.dart';
+import 'package:bmiterp/provider/profileprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:image_picker/image_picker.dart';

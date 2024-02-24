@@ -1,6 +1,6 @@
-import 'package:cnattendance/model/attachment.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/model/attachment.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gallery_image_viewer/gallery_image_viewer.dart';

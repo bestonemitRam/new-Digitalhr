@@ -1,6 +1,6 @@
-import 'package:cnattendance/model/attachment.dart';
-import 'package:cnattendance/model/member.dart';
-import 'package:cnattendance/model/task.dart';
+import 'package:bmiterp/model/attachment.dart';
+import 'package:bmiterp/model/member.dart';
+import 'package:bmiterp/model/task.dart';
 
 class Project {
   int id;

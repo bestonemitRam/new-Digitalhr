@@ -1,8 +1,8 @@
-import 'package:cnattendance/provider/attendancereportprovider.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
+import 'package:bmiterp/provider/attendancereportprovider.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:cnattendance/widget/attendancescreen/attendancecardview.dart';
+import 'package:bmiterp/widget/attendancescreen/attendancecardview.dart';
 
 class ReportListView extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
-import 'package:cnattendance/model/task.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/taskdetailscreen.dart';
-import 'package:cnattendance/screen/projectscreen/tasklistscreen/tasklistscontroller.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/task.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/taskdetailscreen.dart';
+import 'package:bmiterp/screen/projectscreen/tasklistscreen/tasklistscontroller.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';

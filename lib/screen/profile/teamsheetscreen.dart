@@ -1,8 +1,8 @@
-import 'package:cnattendance/model/team.dart';
-import 'package:cnattendance/provider/teamsheetprovider.dart';
-import 'package:cnattendance/screen/profile/employeedetailscreen.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/team.dart';
+import 'package:bmiterp/provider/teamsheetprovider.dart';
+import 'package:bmiterp/screen/profile/employeedetailscreen.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

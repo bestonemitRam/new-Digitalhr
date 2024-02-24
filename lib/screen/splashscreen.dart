@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/screen/auth/login_screen.dart';
-import 'package:cnattendance/screen/dashboard/dashboard_screen.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/screen/auth/login_screen.dart';
+import 'package:bmiterp/screen/dashboard/dashboard_screen.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

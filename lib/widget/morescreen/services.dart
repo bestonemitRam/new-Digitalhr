@@ -1,9 +1,9 @@
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/widget/log_out_bottom_sheet.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/widget/log_out_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
-import 'package:cnattendance/widget/morescreen/createissuesheet.dart';
+import 'package:bmiterp/widget/morescreen/createissuesheet.dart';
 
 class Services extends StatelessWidget {
   final String name;

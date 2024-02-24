@@ -1,4 +1,4 @@
-import 'package:cnattendance/repositories/aboutrepository.dart';
+import 'package:bmiterp/repositories/aboutrepository.dart';
 import 'package:flutter/material.dart';
 
 class AboutProvider with ChangeNotifier {

@@ -1,7 +1,7 @@
 // import 'dart:async';
 
 // import 'package:background_location/background_location.dart';
-// import 'package:cnattendance/provider/dashboardprovider.dart';
+// import 'package:bmiterp/provider/dashboardprovider.dart';
 
 // class BackgroundServicecss
 // {

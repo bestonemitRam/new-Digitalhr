@@ -1,18 +1,18 @@
 import 'dart:convert';
 
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/data/source/network/model/leaveissue/IssueLeaveResponse.dart';
-import 'package:cnattendance/data/source/network/model/leavetype/LeaveType.dart';
-import 'package:cnattendance/data/source/network/model/leavetype/Leavetyperesponse.dart';
-import 'package:cnattendance/data/source/network/model/leavetypedetail/LeaveTypeDetail.dart';
-import 'package:cnattendance/data/source/network/model/leavetypedetail/Leavetypedetailreponse.dart';
-import 'package:cnattendance/model/LeaveDetail.dart';
-import 'package:cnattendance/model/leave.dart';
-import 'package:cnattendance/model/select_leave_model.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/data/source/network/model/leaveissue/IssueLeaveResponse.dart';
+import 'package:bmiterp/data/source/network/model/leavetype/LeaveType.dart';
+import 'package:bmiterp/data/source/network/model/leavetype/Leavetyperesponse.dart';
+import 'package:bmiterp/data/source/network/model/leavetypedetail/LeaveTypeDetail.dart';
+import 'package:bmiterp/data/source/network/model/leavetypedetail/Leavetypedetailreponse.dart';
+import 'package:bmiterp/model/LeaveDetail.dart';
+import 'package:bmiterp/model/leave.dart';
+import 'package:bmiterp/model/select_leave_model.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:cnattendance/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
 
 class LeaveProvider with ChangeNotifier {
   final List<Leave> _leaveList = [];

@@ -1,11 +1,11 @@
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/provider/shopprovider.dart';
-import 'package:cnattendance/screen/shop_module/create_shop_screen.dart';
-import 'package:cnattendance/screen/shop_module/shop_list.dart';
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/widget/leavescreen/issueleavesheet.dart';
-import 'package:cnattendance/widget/leavescreen/leave_list_detail_dashboard.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/provider/shopprovider.dart';
+import 'package:bmiterp/screen/shop_module/create_shop_screen.dart';
+import 'package:bmiterp/screen/shop_module/shop_list.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/widget/leavescreen/issueleavesheet.dart';
+import 'package:bmiterp/widget/leavescreen/leave_list_detail_dashboard.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -67,7 +67,7 @@ class _MyWidgetState extends State<ShopListingScreen> {
             ),
             title: Center(
               child: Text(
-                "My Shop",
+                "Retailers List",
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -99,7 +99,7 @@ class _MyWidgetState extends State<ShopListingScreen> {
                           EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                       color: Colors.white24,
                       child: Text(
-                        "Add Shop",
+                        "Add ",
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
                     ),

@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/companyrulesprovider.dart';
-import 'package:cnattendance/widget/companyrulesscreen/rulescardview.dart';
+import 'package:bmiterp/provider/companyrulesprovider.dart';
+import 'package:bmiterp/widget/companyrulesscreen/rulescardview.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

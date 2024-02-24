@@ -157,27 +157,30 @@ class OfficeData {
 }
 
 class EmployeeAttendanceData {
-  dynamic? checkIn;
-  dynamic? checkOut;
-  dynamic? productionHour;
-  dynamic? productionTime;
+  dynamic checkIn;
+  dynamic checkOut;
+  double? productionTime;
+  String? production_hour;
 
   EmployeeAttendanceData(
-      {this.checkIn, this.checkOut, this.productionHour, this.productionTime});
+      {this.checkIn, this.checkOut, this.productionTime, this.production_hour});
 
   EmployeeAttendanceData.fromJson(Map<dynamic, dynamic> json) {
     checkIn = json['check-in'];
     checkOut = json['check-out'];
-    productionHour = json['production_hour'];
+
     productionTime = json['production-time'];
+    production_hour = json['production_hour'];
   }
 
   Map<dynamic, dynamic> toJson() {
     final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
     data['check-in'] = this.checkIn;
     data['check-out'] = this.checkOut;
-    data['production_hour'] = this.productionHour;
+
     data['production-time'] = this.productionTime;
+    data['production_hour'] = this.production_hour;
+
     return data;
   }
 }

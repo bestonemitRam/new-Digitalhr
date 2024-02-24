@@ -1,12 +1,12 @@
-import 'package:cnattendance/provider/profileprovider.dart';
-import 'package:cnattendance/screen/profile/editprofilescreen.dart';
-import 'package:cnattendance/widget/profile/basicdetail.dart';
-import 'package:cnattendance/widget/profile/bankdetail.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/profileprovider.dart';
+import 'package:bmiterp/screen/profile/editprofilescreen.dart';
+import 'package:bmiterp/widget/profile/basicdetail.dart';
+import 'package:bmiterp/widget/profile/bankdetail.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:cnattendance/widget/profile/heading.dart';
+import 'package:bmiterp/widget/profile/heading.dart';
 
 class ProfileScreen extends StatefulWidget {
   static const routeName = '/profile';

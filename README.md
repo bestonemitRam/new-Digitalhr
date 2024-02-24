@@ -1,5 +1,5 @@
 
-# cnattendance
+# bmiterp
 
 An attendance application to manage in a organization to check in and check out with multiple functions to manupulate inside a office to record the basic functionality
 

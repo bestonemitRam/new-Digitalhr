@@ -1,5 +1,5 @@
-import 'package:cnattendance/model/mention.dart';
-import 'package:cnattendance/model/reply.dart';
+import 'package:bmiterp/model/mention.dart';
+import 'package:bmiterp/model/reply.dart';
 
 class Comment {
   int id;

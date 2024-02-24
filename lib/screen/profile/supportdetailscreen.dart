@@ -1,5 +1,5 @@
-import 'package:cnattendance/model/support.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/support.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 
 class SupportDetailScreen extends StatelessWidget {

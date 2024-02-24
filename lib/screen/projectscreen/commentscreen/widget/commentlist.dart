@@ -1,7 +1,7 @@
-import 'package:cnattendance/model/comment.dart';
-import 'package:cnattendance/model/reply.dart';
-import 'package:cnattendance/screen/profile/employeedetailscreen.dart';
-import 'package:cnattendance/screen/projectscreen/commentscreen/commentscreencontroller.dart';
+import 'package:bmiterp/model/comment.dart';
+import 'package:bmiterp/model/reply.dart';
+import 'package:bmiterp/screen/profile/employeedetailscreen.dart';
+import 'package:bmiterp/screen/projectscreen/commentscreen/commentscreencontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:html/parser.dart';

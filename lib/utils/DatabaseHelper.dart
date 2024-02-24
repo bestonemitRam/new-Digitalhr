@@ -37,7 +37,9 @@ class DatabaseHelper {
     await db.insert('location_data', {'latitude': latitude, 'longitude': longitude, 'timestamp': timestamp}, conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
-  Future<List<Map<String, dynamic>>> fetchLocationData() async {
+  Future<List<Map<String, dynamic>>> fetchLocationData() 
+  async 
+  {
     final db = await database;
     return await db.query('location_data');
   }

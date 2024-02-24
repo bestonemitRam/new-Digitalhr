@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/connect.dart';
-import 'package:cnattendance/data/source/network/model/about/Aboutresponse.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/connect.dart';
+import 'package:bmiterp/data/source/network/model/about/Aboutresponse.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

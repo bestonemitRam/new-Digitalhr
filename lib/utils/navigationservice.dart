@@ -5,7 +5,8 @@ import 'package:in_app_notification/in_app_notification.dart';
 class NavigationService {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-  void showSnackBar(String title, String desc) {
+  void showSnackBar(String title, String desc)
+   {
     try {
       InAppNotification.show(
         child: Card(

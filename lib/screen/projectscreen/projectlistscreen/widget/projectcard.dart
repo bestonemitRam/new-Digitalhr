@@ -1,6 +1,6 @@
-import 'package:cnattendance/model/project.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/projectdetailscreen.dart';
-import 'package:cnattendance/screen/projectscreen/projectlistscreen/projectlistscrreencontroller.dart';
+import 'package:bmiterp/model/project.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/projectdetailscreen.dart';
+import 'package:bmiterp/screen/projectscreen/projectlistscreen/projectlistscrreencontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';

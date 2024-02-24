@@ -1,8 +1,8 @@
-import 'package:cnattendance/api/add_task_api.dart';
-import 'package:cnattendance/provider/taskprovider.dart';
-import 'package:cnattendance/utils/check_internet_connectvity.dart';
-import 'package:cnattendance/widget/customalertdialog.dart';
-import 'package:cnattendance/widget/task_status/pending_task_widegt.dart';
+import 'package:bmiterp/api/add_task_api.dart';
+import 'package:bmiterp/provider/taskprovider.dart';
+import 'package:bmiterp/utils/check_internet_connectvity.dart';
+import 'package:bmiterp/widget/customalertdialog.dart';
+import 'package:bmiterp/widget/task_status/pending_task_widegt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

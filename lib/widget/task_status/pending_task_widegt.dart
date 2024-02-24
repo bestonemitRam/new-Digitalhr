@@ -1,7 +1,7 @@
-import 'package:cnattendance/api/add_task_api.dart';
-import 'package:cnattendance/model/my_task.dart';
-import 'package:cnattendance/provider/taskprovider.dart';
-import 'package:cnattendance/widget/customalertdialog.dart';
+import 'package:bmiterp/api/add_task_api.dart';
+import 'package:bmiterp/model/my_task.dart';
+import 'package:bmiterp/provider/taskprovider.dart';
+import 'package:bmiterp/widget/customalertdialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:intl/intl.dart';

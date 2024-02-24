@@ -1,5 +1,5 @@
-import 'package:cnattendance/data/source/network/model/commentsaveresponse/MentionedX.dart';
-import 'package:cnattendance/data/source/network/model/commentsaveresponse/Reply.dart';
+import 'package:bmiterp/data/source/network/model/commentsaveresponse/MentionedX.dart';
+import 'package:bmiterp/data/source/network/model/commentsaveresponse/Reply.dart';
 
 class Data {
   String avatar;

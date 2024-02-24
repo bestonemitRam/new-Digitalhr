@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/meetingprovider.dart';
-import 'package:cnattendance/widget/meeting/meetingcard.dart';
+import 'package:bmiterp/provider/meetingprovider.dart';
+import 'package:bmiterp/widget/meeting/meetingcard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 

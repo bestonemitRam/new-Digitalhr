@@ -1,4 +1,4 @@
-import 'package:cnattendance/model/attachment.dart';
+import 'package:bmiterp/model/attachment.dart';
 import 'package:flutter/material.dart';
 
 class FilesListBottom extends StatelessWidget {

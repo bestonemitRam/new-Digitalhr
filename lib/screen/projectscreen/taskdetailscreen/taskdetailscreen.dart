@@ -1,12 +1,12 @@
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/taskdetailcontroller.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/attachmentsection.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/commentsection.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/checklistsection.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/confirmbottomsheet.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/descriptionsection.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/headersection.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/teamsection.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/taskdetailcontroller.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/attachmentsection.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/commentsection.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/checklistsection.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/confirmbottomsheet.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/descriptionsection.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/headersection.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/teamsection.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

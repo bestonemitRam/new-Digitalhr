@@ -1,7 +1,7 @@
-import 'package:cnattendance/model/department.dart';
-import 'package:cnattendance/provider/supportcontroller.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/department.dart';
+import 'package:bmiterp/provider/supportcontroller.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

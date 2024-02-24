@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/meetingprovider.dart';
-import 'package:cnattendance/widget/meeting/meetinglistview.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/meetingprovider.dart';
+import 'package:bmiterp/widget/meeting/meetinglistview.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:provider/provider.dart';

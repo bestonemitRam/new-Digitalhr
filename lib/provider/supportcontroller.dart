@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/departmentlistresponse/departmentlistresponse.dart';
-import 'package:cnattendance/data/source/network/model/support/SupportResponse.dart';
-import 'package:cnattendance/model/department.dart';
-import 'package:cnattendance/screen/profile/supportlistscreen.dart';
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/widget/customalertdialog.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/departmentlistresponse/departmentlistresponse.dart';
+import 'package:bmiterp/data/source/network/model/support/SupportResponse.dart';
+import 'package:bmiterp/model/department.dart';
+import 'package:bmiterp/screen/profile/supportlistscreen.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/widget/customalertdialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

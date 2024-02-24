@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/employeeleavecalendar/Employeeleavecalendarresponse.dart';
-import 'package:cnattendance/data/source/network/model/employeeleavecalendarbyday/EmployeeLeavesByDay.dart';
-import 'package:cnattendance/data/source/network/model/employeeleavecalendarbyday/EmployeeLeavesByDayResponse.dart';
-import 'package:cnattendance/model/LeaveByDay.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/employeeleavecalendar/Employeeleavecalendarresponse.dart';
+import 'package:bmiterp/data/source/network/model/employeeleavecalendarbyday/EmployeeLeavesByDay.dart';
+import 'package:bmiterp/data/source/network/model/employeeleavecalendarbyday/EmployeeLeavesByDayResponse.dart';
+import 'package:bmiterp/model/LeaveByDay.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

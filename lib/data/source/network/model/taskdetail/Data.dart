@@ -1,7 +1,7 @@
-import 'package:cnattendance/data/source/network/model/taskdetail/AssignedMember.dart';
-import 'package:cnattendance/data/source/network/model/taskdetail/Attachment.dart';
-import 'package:cnattendance/data/source/network/model/taskdetail/Checklists.dart';
-import 'package:cnattendance/data/source/network/model/taskdetail/TaskComment.dart';
+import 'package:bmiterp/data/source/network/model/taskdetail/AssignedMember.dart';
+import 'package:bmiterp/data/source/network/model/taskdetail/Attachment.dart';
+import 'package:bmiterp/data/source/network/model/taskdetail/Checklists.dart';
+import 'package:bmiterp/data/source/network/model/taskdetail/TaskComment.dart';
 
 class Data {
   List<AssignedMember> assigned_member;

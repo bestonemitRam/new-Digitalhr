@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/projectlist/projectlistresponse.dart';
-import 'package:cnattendance/model/member.dart';
-import 'package:cnattendance/model/project.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/projectdetailscreen.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/projectlist/projectlistresponse.dart';
+import 'package:bmiterp/model/member.dart';
+import 'package:bmiterp/model/project.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/projectdetailscreen.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';

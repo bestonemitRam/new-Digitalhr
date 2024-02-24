@@ -1,21 +1,26 @@
 import 'package:geolocator/geolocator.dart';
 
-class LocationStatus{
+class LocationStatus {
   Future<Position> determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
 
     // Test if location services are enabled.
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    print("cehck ${serviceEnabled}");
     if (!serviceEnabled) {
       // Location services are not enabled don't continue
       // accessing the position and request users of the
       // App to enable the location services.
-      return Future.error('Please enable your location, it seems to be turned off.');
+      return Future.error(
+          'Please enable your location, it seems to be turned off.');
     }
+    print("cehck fgggh  ");
 
     permission = await Geolocator.checkPermission();
+
     if (permission == LocationPermission.denied) {
+      print("cehck fgggh ${permission}  ${LocationPermission.denied}");
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         // Permissions are denied, next time you could try
@@ -26,6 +31,7 @@ class LocationStatus{
         return Future.error('Location permissions are denied');
       }
     }
+    print("cehck fgggedeeh ${permission}  ${LocationPermission.deniedForever}");
 
     if (permission == LocationPermission.deniedForever) {
       // Permissions are denied forever, handle appropriately.
@@ -33,8 +39,17 @@ class LocationStatus{
           'Location permissions are permanently denied, we cannot request permissions. Please give permission and try again.');
     }
 
+    print(
+        "cehck fgeeeeeggh ${permission}  ${LocationPermission.deniedForever}");
+    print(
+        "cehck ddsdf ${permission}  ${Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)}");
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+
+    print("cehck fdgfdgfdgh ${permission}  ${position.latitude}");
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
-    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.medium);
+    return await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
   }
 }

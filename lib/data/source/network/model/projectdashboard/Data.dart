@@ -1,6 +1,6 @@
-import 'package:cnattendance/data/source/network/model/projectdashboard/AssignedTask.dart';
-import 'package:cnattendance/data/source/network/model/projectdashboard/Progres.dart';
-import 'package:cnattendance/data/source/network/model/projectdashboard/Project.dart';
+import 'package:bmiterp/data/source/network/model/projectdashboard/AssignedTask.dart';
+import 'package:bmiterp/data/source/network/model/projectdashboard/Progres.dart';
+import 'package:bmiterp/data/source/network/model/projectdashboard/Project.dart';
 
 class Data {
   List<AssignedTask> assigned_task;

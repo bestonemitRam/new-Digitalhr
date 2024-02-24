@@ -1,5 +1,5 @@
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/taskdetailcontroller.dart';
-import 'package:cnattendance/screen/projectscreen/taskdetailscreen/widget/attachmentbottomsheet.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/taskdetailcontroller.dart';
+import 'package:bmiterp/screen/projectscreen/taskdetailscreen/widget/attachmentbottomsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,4 +1,4 @@
-import 'package:cnattendance/data/source/network/model/projectdashboard/AssignedMemberX.dart';
+import 'package:bmiterp/data/source/network/model/projectdashboard/AssignedMemberX.dart';
 
 class Project {
   List<AssignedMemberX> assigned_member;

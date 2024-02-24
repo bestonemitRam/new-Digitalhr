@@ -1,4 +1,4 @@
-import 'package:cnattendance/widget/buttonborder.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
 import 'package:flutter/material.dart';
 
 class AttendanceCardView extends StatelessWidget {

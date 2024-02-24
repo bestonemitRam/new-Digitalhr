@@ -1,4 +1,4 @@
-import 'package:cnattendance/data/source/network/model/supportlistresponse/DataX.dart';
+import 'package:bmiterp/data/source/network/model/supportlistresponse/DataX.dart';
 
 class Data {
   List<DataX> data;

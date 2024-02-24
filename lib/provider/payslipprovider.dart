@@ -1,5 +1,5 @@
-import 'package:cnattendance/model/payslip.dart';
-import 'package:cnattendance/model/payslipattribute.dart';
+import 'package:bmiterp/model/payslip.dart';
+import 'package:bmiterp/model/payslipattribute.dart';
 import 'package:flutter/cupertino.dart';
 
 class PaySlipProvider with ChangeNotifier {

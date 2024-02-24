@@ -1,6 +1,6 @@
-import 'package:cnattendance/data/source/network/model/meeting/Participator.dart';
-import 'package:cnattendance/screen/profile/meetingdetailscreen.dart';
-import 'package:cnattendance/widget/meeting/meetingparticipator.dart';
+import 'package:bmiterp/data/source/network/model/meeting/Participator.dart';
+import 'package:bmiterp/screen/profile/meetingdetailscreen.dart';
+import 'package:bmiterp/widget/meeting/meetingparticipator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

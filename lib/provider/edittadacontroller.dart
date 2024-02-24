@@ -1,28 +1,30 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/leaveissue/IssueLeaveResponse.dart';
-import 'package:cnattendance/data/source/network/model/tadadetail/tadadetailresponse.dart';
-import 'package:cnattendance/model/attachment.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/leaveissue/IssueLeaveResponse.dart';
+import 'package:bmiterp/data/source/network/model/tadadetail/tadadetailresponse.dart';
+import 'package:bmiterp/model/attachment.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:html/parser.dart';
 import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EditTadaController extends GetxController {
-  var fileList = <PlatformFile>[].obs;
+  var fileList = [].obs;
   var attachmentList = <Attachment>[].obs;
   String id = "";
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
   final expensesController = TextEditingController();
   final key = GlobalKey<FormState>();
+
   void onFileClicked() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
     final platformFile = result?.files.single;
@@ -31,7 +33,22 @@ class EditTadaController extends GetxController {
     }
   }
 
-  void checkForm(String id) {
+  showOptionDailog() async {
+    final ImagePicker picker = ImagePicker();
+    try {
+      final XFile? image =
+          await picker.pickImage(source: ImageSource.camera, imageQuality: 60);
+      if (image != null) {
+        fileList.add(image);
+      }
+    } on Exception catch (e)
+     {
+      print("cxjkbjvkbsdjv" + e.toString());
+    }
+  }
+
+  void checkForm(String id)
+   {
     if (key.currentState!.validate()) {
       print("kdfhgjdfhgk");
       editTada(id);

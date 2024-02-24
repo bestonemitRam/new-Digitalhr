@@ -1,4 +1,4 @@
-import 'package:cnattendance/data/source/network/model/commentlist/Mentioned.dart';
+import 'package:bmiterp/data/source/network/model/commentlist/Mentioned.dart';
 
 class Reply {
   String avatar;

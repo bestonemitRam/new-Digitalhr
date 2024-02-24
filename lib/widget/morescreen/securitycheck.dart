@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/prefprovider.dart';
-import 'package:cnattendance/utils/authservice.dart';
+import 'package:bmiterp/provider/prefprovider.dart';
+import 'package:bmiterp/utils/authservice.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

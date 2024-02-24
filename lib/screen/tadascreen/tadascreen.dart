@@ -1,9 +1,9 @@
-import 'package:cnattendance/model/tada.dart';
-import 'package:cnattendance/provider/tadalistcontroller.dart';
-import 'package:cnattendance/screen/tadascreen/edittadascreen.dart';
-import 'package:cnattendance/utils/check_internet_connectvity.dart';
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/tada.dart';
+import 'package:bmiterp/provider/tadalistcontroller.dart';
+import 'package:bmiterp/screen/tadascreen/edittadascreen.dart';
+import 'package:bmiterp/utils/check_internet_connectvity.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -24,7 +24,7 @@ class TadaScreen extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.transparent,
           title: Text(
-            "TADA",
+            "TA-DA",
             style: TextStyle(color: Colors.white),
           ),
           leading: InkWell(
@@ -99,7 +99,7 @@ class TadaScreen extends StatelessWidget {
                                       onTap: () {
                                         if (item.status == "Accepted") {
                                           showToast(
-                                              "Accepted TADA can't be edited");
+                                              "Accepted TA-DA can't be edited");
                                         } else {
                                           model.onTadaEditClicked(
                                               item.id.toString());
@@ -141,7 +141,7 @@ class TadaScreen extends StatelessWidget {
                           : Center(
                               child: Container(
                                 child: Text(
-                                  "Sorry Don't have tada list !",
+                                  "Sorry Don't have ta-da list !",
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),

@@ -1,5 +1,5 @@
-import 'package:cnattendance/data/source/network/model/projectlist/AssignedMember.dart';
-import 'package:cnattendance/data/source/network/model/projectlist/ProjectLeader.dart';
+import 'package:bmiterp/data/source/network/model/projectlist/AssignedMember.dart';
+import 'package:bmiterp/data/source/network/model/projectlist/ProjectLeader.dart';
 
 class Data {
   List<AssignedMember> assigned_member;

@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/profileprovider.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/cartTitle.dart';
+import 'package:bmiterp/provider/profileprovider.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/cartTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/dashboardprovider.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
+import 'package:bmiterp/provider/dashboardprovider.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:provider/provider.dart';

@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/payslipprovider.dart';
-import 'package:cnattendance/screen/profile/payslipdetailscreen.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/payslipprovider.dart';
+import 'package:bmiterp/screen/profile/payslipdetailscreen.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_file_downloader/flutter_file_downloader.dart';

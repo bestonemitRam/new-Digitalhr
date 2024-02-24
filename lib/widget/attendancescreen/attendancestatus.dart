@@ -1,4 +1,4 @@
-import 'package:cnattendance/provider/attendancereportprovider.dart';
+import 'package:bmiterp/provider/attendancereportprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -10,7 +10,7 @@ class AttendanceStatus extends StatelessWidget {
     final status = Provider.of<AttendanceReportProvider>(context).todayReport;
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(0),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(

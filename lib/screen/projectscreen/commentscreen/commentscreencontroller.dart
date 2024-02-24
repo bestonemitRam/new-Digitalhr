@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/commentlist/commentlistresponse.dart';
-import 'package:cnattendance/data/source/network/model/commentsaveresponse/commentsaveresponse.dart';
-import 'package:cnattendance/data/source/network/model/login/User.dart';
-import 'package:cnattendance/model/comment.dart';
-import 'package:cnattendance/model/member.dart';
-import 'package:cnattendance/model/mention.dart';
-import 'package:cnattendance/model/reply.dart';
-import 'package:cnattendance/model/sendcomment.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/commentlist/commentlistresponse.dart';
+import 'package:bmiterp/data/source/network/model/commentsaveresponse/commentsaveresponse.dart';
+import 'package:bmiterp/data/source/network/model/login/User.dart';
+import 'package:bmiterp/model/comment.dart';
+import 'package:bmiterp/model/member.dart';
+import 'package:bmiterp/model/mention.dart';
+import 'package:bmiterp/model/reply.dart';
+import 'package:bmiterp/model/sendcomment.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_mentions/flutter_mentions.dart' as FM;

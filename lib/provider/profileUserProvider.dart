@@ -1,19 +1,19 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/api/app_strings.dart';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/dashboard/User.dart';
-import 'package:cnattendance/data/source/network/model/login/Login.dart';
-import 'package:cnattendance/data/source/network/model/profile/Profileresponse.dart';
-import 'package:cnattendance/model/ProfileUserModel.dart';
-import 'package:cnattendance/provider/prefprovider.dart';
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/utils/service.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/api/app_strings.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/dashboard/User.dart';
+import 'package:bmiterp/data/source/network/model/login/Login.dart';
+import 'package:bmiterp/data/source/network/model/profile/Profileresponse.dart';
+import 'package:bmiterp/model/ProfileUserModel.dart';
+import 'package:bmiterp/provider/prefprovider.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/utils/service.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:cnattendance/model/profile.dart' as up;
+import 'package:bmiterp/model/profile.dart' as up;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

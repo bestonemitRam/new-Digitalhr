@@ -1,4 +1,4 @@
-import 'package:cnattendance/model/mention.dart';
+import 'package:bmiterp/model/mention.dart';
 
 class Reply {
   int id;

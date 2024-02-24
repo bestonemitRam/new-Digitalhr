@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/companyrulesprovider.dart';
-import 'package:cnattendance/widget/companyrulesscreen/ruleslist.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/companyrulesprovider.dart';
+import 'package:bmiterp/widget/companyrulesscreen/ruleslist.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

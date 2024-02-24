@@ -1,4 +1,4 @@
-import 'package:cnattendance/widget/buttonborder.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -43,7 +43,10 @@ class CustomAlertDialog extends StatelessWidget {
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),
-                  child: Text("Close"),
+                  child: Text(
+                    "Close",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 )),
           )
         ],

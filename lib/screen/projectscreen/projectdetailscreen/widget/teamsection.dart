@@ -1,5 +1,5 @@
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/teambottomsheet.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/teambottomsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_stack/image_stack.dart';

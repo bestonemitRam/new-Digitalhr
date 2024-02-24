@@ -1,9 +1,9 @@
-import 'package:cnattendance/model/leave.dart';
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/utils/navigationservice.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/customalertdialog.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/leave.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/utils/navigationservice.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/customalertdialog.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -240,7 +240,55 @@ class CreateShopScreenState extends State<CreateShopScreen> {
                           },
                           cursorColor: Colors.white,
                           decoration: InputDecoration(
-                            hintText: 'Address',
+                            hintText: 'Phone No.',
+                            hintStyle: TextStyle(color: Colors.white70),
+                            prefixIcon: Icon(Icons.phone, color: Colors.white),
+                            labelStyle: TextStyle(color: Colors.white),
+                            fillColor: Colors.white24,
+                            filled: true,
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(0),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(10))),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(0),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(10))),
+                            focusedErrorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(0),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(10))),
+                            errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(0),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(10))),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          controller: _addressController,
+                          keyboardType: TextInputType.streetAddress,
+                          style: TextStyle(color: Colors.white),
+                          validator: (value) {
+                            if (!validateField(value!)) {
+                              return "Empty Field";
+                            }
+
+                            return null;
+                          },
+                          cursorColor: Colors.white,
+                          decoration: InputDecoration(
+                            hintText: 'Current Address',
                             hintStyle: TextStyle(color: Colors.white70),
                             prefixIcon:
                                 Icon(Icons.location_on, color: Colors.white),

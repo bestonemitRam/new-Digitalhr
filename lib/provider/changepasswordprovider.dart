@@ -1,5 +1,5 @@
-import 'package:cnattendance/data/source/network/model/changepassword/ChangePasswordResponse.dart';
-import 'package:cnattendance/repositories/changepasswordrepository.dart';
+import 'package:bmiterp/data/source/network/model/changepassword/ChangePasswordResponse.dart';
+import 'package:bmiterp/repositories/changepasswordrepository.dart';
 import 'package:flutter/cupertino.dart';
 
 class ChangePasswordProvider with ChangeNotifier {

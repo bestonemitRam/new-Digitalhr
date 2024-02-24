@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/profile/Profileresponse.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/profile/Profileresponse.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -45,9 +45,10 @@ class UpdateProfiles {
         try {
           final streamedResponse = await request.send();
           final response = await http.Response.fromStream(streamedResponse);
-          print("kdjfhggf ${response.statusCode}");
+          print("kdjfhggf  ${response.statusCode}");
 
           var out = jsonDecode(response.body);
+          print("check profile update ${out}");
 
           if (response.statusCode == 201) {
             Fluttertoast.showToast(
@@ -56,6 +57,7 @@ class UpdateProfiles {
                 gravity: ToastGravity.CENTER,
                 timeInSecForIosWeb: 1,
                 fontSize: 16.0);
+            Get.back();
             Get.back();
             EasyLoading.dismiss(animation: true);
 

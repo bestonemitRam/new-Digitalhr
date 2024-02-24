@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/holidayprovider.dart';
-import 'package:cnattendance/widget/holiday/holidaycard.dart';
+import 'package:bmiterp/provider/holidayprovider.dart';
+import 'package:bmiterp/widget/holiday/holidaycard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

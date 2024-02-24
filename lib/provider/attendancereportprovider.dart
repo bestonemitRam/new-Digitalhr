@@ -1,9 +1,9 @@
-import 'package:cnattendance/data/source/network/model/attendancereport/EmployeeAttendance.dart';
-import 'package:cnattendance/data/source/network/model/attendancereport/EmployeeTodayAttendance.dart';
-import 'package:cnattendance/model/employeeattendancereport.dart';
-import 'package:cnattendance/model/month.dart';
-import 'package:cnattendance/repositories/attendancereportrepository.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/network/model/attendancereport/EmployeeAttendance.dart';
+import 'package:bmiterp/data/source/network/model/attendancereport/EmployeeTodayAttendance.dart';
+import 'package:bmiterp/model/employeeattendancereport.dart';
+import 'package:bmiterp/model/month.dart';
+import 'package:bmiterp/repositories/attendancereportrepository.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

@@ -1,4 +1,4 @@
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/projectdetailcontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

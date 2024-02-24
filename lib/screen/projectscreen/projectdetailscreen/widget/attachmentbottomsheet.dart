@@ -1,6 +1,6 @@
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/fileslistbottom.dart';
-import 'package:cnattendance/screen/projectscreen/projectdetailscreen/widget/imagelistbottom.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/fileslistbottom.dart';
+import 'package:bmiterp/screen/projectscreen/projectdetailscreen/widget/imagelistbottom.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -5,18 +5,18 @@ import 'dart:math';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:background_location/background_location.dart';
-import 'package:cnattendance/api/apiConstant.dart';
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/attendancestatus/AttendanceStatusResponse.dart';
-import 'package:cnattendance/data/source/network/model/dashboard/Dashboardresponse.dart';
-import 'package:cnattendance/data/source/network/model/dashboard/EmployeeTodayAttendance.dart';
-import 'package:cnattendance/data/source/network/model/dashboard/Overview.dart';
-import 'package:cnattendance/main.dart';
-import 'package:cnattendance/model/home_page_model.dart';
-import 'package:cnattendance/utils/background_services.dart';
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/utils/locationstatus.dart';
-import 'package:cnattendance/utils/wifiinfo.dart';
+import 'package:bmiterp/api/apiConstant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/attendancestatus/AttendanceStatusResponse.dart';
+import 'package:bmiterp/data/source/network/model/dashboard/Dashboardresponse.dart';
+import 'package:bmiterp/data/source/network/model/dashboard/EmployeeTodayAttendance.dart';
+import 'package:bmiterp/data/source/network/model/dashboard/Overview.dart';
+import 'package:bmiterp/main.dart';
+import 'package:bmiterp/model/home_page_model.dart';
+import 'package:bmiterp/utils/background_services.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/utils/locationstatus.dart';
+import 'package:bmiterp/utils/wifiinfo.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -81,57 +81,57 @@ class DashboardProvider with ChangeNotifier {
     showingBarGroups.addAll(rawBarGroups);
   }
 
-  Future<Dashboardresponse> getDashboard() async {
-    var uri = Uri.parse(Constant.DASHBOARD_URL);
-    Preferences preferences = Preferences();
-    String token = await preferences.getToken();
-    print("Dasboard API token is - :$token");
-    var fcm = await FirebaseMessaging.instance.getToken();
+  // Future<Dashboardresponse> getDashboard() async {
+  //   var uri = Uri.parse(Constant.DASHBOARD_URL);
+  //   Preferences preferences = Preferences();
+  //   String token = await preferences.getToken();
+  //   print("Dasboard API token is - :$token");
+  //   var fcm = await FirebaseMessaging.instance.getToken();
 
-    Map<String, String> headers = {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json; charset=UTF-8',
-      'user_token': '$token',
-      'fcm_token': fcm ?? ""
-    };
-    print("Dasboard API token is - :$token");
-    try {
-      final response = await http.get(uri, headers: headers);
-      debugPrint(response.body.toString());
-      final responseData = json.decode(response.body);
+  //   Map<String, String> headers = {
+  //     'Content-Type': 'application/json',
+  //     'Accept': 'application/json; charset=UTF-8',
+  //     'user_token': '$token',
+  //     'fcm_token': fcm ?? ""
+  //   };
+  //   print("Dasboard API token is - :$token");
+  //   try {
+  //     final response = await http.get(uri, headers: headers);
+  //     debugPrint(response.body.toString());
+  //     final responseData = json.decode(response.body);
 
-      print("fdjgkjfgk  ${response.statusCode}");
+  //     print("fdjgkjfgk  ${response.statusCode}");
 
-      if (response.statusCode == 200) {
-        final dashboardResponse = Dashboardresponse.fromJson(responseData);
-        debugPrint(dashboardResponse.toString());
-        //updateAttendanceStatus(dashboardResponse.data.employeeTodayAttendance);
-        // updateOverView(dashboardResponse.data.overview);
-        makeWeeklyReport(dashboardResponse.data.employeeWeeklyReport);
-        DateTime startTime = DateFormat("hh:mm a")
-            .parse(dashboardResponse.data.officeTime.startTime);
-        DateTime endTime = DateFormat("hh:mm a")
-            .parse(dashboardResponse.data.officeTime.endTime);
+  //     if (response.statusCode == 200) {
+  //       final dashboardResponse = Dashboardresponse.fromJson(responseData);
+  //       debugPrint(dashboardResponse.toString());
+  //       //updateAttendanceStatus(dashboardResponse.data.employeeTodayAttendance);
+  //       // updateOverView(dashboardResponse.data.overview);
+  //       makeWeeklyReport(dashboardResponse.data.employeeWeeklyReport);
+  //       DateTime startTime = DateFormat("hh:mm a")
+  //           .parse(dashboardResponse.data.officeTime.startTime);
+  //       DateTime endTime = DateFormat("hh:mm a")
+  //           .parse(dashboardResponse.data.officeTime.endTime);
 
-        await AwesomeNotifications().cancelAllSchedules();
-        for (var shift in dashboardResponse.data.shift_dates) {
-          scheduleNewNotification(shift, "Please check in on time ⏱️⌛️",
-              startTime.hour, startTime.minute);
-          scheduleNewNotification(
-              shift,
-              "Almost done with your shift 😄⌛️ Remember to checkout ⏱️",
-              endTime.hour,
-              endTime.minute);
-        }
-        return dashboardResponse;
-      } else {
-        var errorMessage = responseData['message'];
-        throw errorMessage;
-      }
-    } catch (e) {
-      throw e;
-    }
-  }
+  //       await AwesomeNotifications().cancelAllSchedules();
+  //       for (var shift in dashboardResponse.data.shift_dates) {
+  //         scheduleNewNotification(shift, "Please check in on time ⏱️⌛️",
+  //             startTime.hour, startTime.minute);
+  //         scheduleNewNotification(
+  //             shift,
+  //             "Almost done with your shift 😄⌛️ Remember to checkout ⏱️",
+  //             endTime.hour,
+  //             endTime.minute);
+  //       }
+  //       return dashboardResponse;
+  //     } else {
+  //       var errorMessage = responseData['message'];
+  //       throw errorMessage;
+  //     }
+  //   } catch (e) {
+  //     throw e;
+  //   }
+  // }
 
   Future<HomeScreenModel> getDashboardData() async {
     var uri = Uri.parse(APIURL.HOME_PAGE_URL);
@@ -164,6 +164,8 @@ class DashboardProvider with ChangeNotifier {
         final dashboardResponse = HomeScreenModel.fromJson(responseData);
         debugPrint(dashboardResponse.toString());
         updateOverView(dashboardResponse.data!.counts!);
+
+        print("ldkfjghfg ${dashboardResponse.data!.employeeAttendanceData!}");
         updateAttendanceStatus(dashboardResponse.data!.employeeAttendanceData!);
 
         // makeWeeklyReport(dashboardResponse.data.employeeAttendanceData!);
@@ -219,11 +221,14 @@ class DashboardProvider with ChangeNotifier {
 
   void updateAttendanceStatus(EmployeeAttendanceData employeeTodayAttendance) {
     _attendanceList.update('production-time',
-        (value) => calculateProdHour(employeeTodayAttendance.productionTime));
+        (value) => calculateProdHour(employeeTodayAttendance.productionTime!));
+
     _attendanceList.update(
         'check-out', (value) => employeeTodayAttendance.checkOut);
-    _attendanceList.update('production_hour',
-        (value) => calculateHourText(employeeTodayAttendance.productionHour));
+
+    _attendanceList.update(
+        'production_hour', (value) => employeeTodayAttendance.production_hour!);
+
     _attendanceList.update(
         'check-in', (value) => employeeTodayAttendance.checkIn);
     notifyListeners();
@@ -245,13 +250,13 @@ class DashboardProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  double calculateProdHour(int value) {
+  double calculateProdHour(double value) {
     double hour = value / 60;
     double hr = hour / Constant.TOTAL_WORKING_HOUR;
     return hr > 1 ? 1 : hr;
   }
 
-  String calculateHourText(int value) {
+  String calculateHourText(double value) {
     double second = value * 60.toDouble();
     double min = second / 60;
     int minGone = (min % 60).toInt();
@@ -261,10 +266,16 @@ class DashboardProvider with ChangeNotifier {
   }
 
   Future<bool> getCheckInStatus() async {
+
     try {
+     
       final position = await LocationStatus().determinePosition();
+      print("dkjfgkjjkfgg 1 ${position}");
       locationStatus.update('latitude', (value) => position.latitude);
+      print("dkjfgkjjkfgg3 ");
       locationStatus.update('longitude', (value) => position.longitude);
+      print("dkjfgkjjkfgg 4");
+
       if (locationStatus['latitude'] != 0.0 &&
           locationStatus['longitude'] != 0.0) {
         return true;
@@ -274,6 +285,7 @@ class DashboardProvider with ChangeNotifier {
         return false;
       }
     } catch (e) {
+      print("dkjfgkjjkfgg ${e}");
       rethrow;
     }
   }
@@ -301,6 +313,8 @@ class DashboardProvider with ChangeNotifier {
       'check_in_longitude': locationStatus['longitude'].toString(),
     };
 
+    print("fkjdhgkdfkjg ${body}");
+
     try {
       final response = await http.post(uri, headers: headers, body: body);
       final responseData = json.decode(response.body);
@@ -311,14 +325,14 @@ class DashboardProvider with ChangeNotifier {
 
       print(
           "check data response >>>  ${attendanceResponse.data.checkInAt}  ${attendanceResponse.data.checkOutAt}  ${attendanceResponse.data.productiveTimeInMin}");
+
       if (responseData['status'] == true) {
         bgLocationTask();
 
         updateAttendanceStatus(EmployeeAttendanceData(
             checkIn: attendanceResponse.data.checkInAt.toString(),
-            checkOut: attendanceResponse.data.checkOutAt.toString(),
-            productionTime:
-                attendanceResponse.data.productiveTimeInMin.toString()));
+            checkOut: attendanceResponse.data.checkInAt.toString(),
+            productionTime: attendanceResponse.data.productiveTimeInMin));
 
         return attendanceResponse;
       } else {
@@ -364,7 +378,9 @@ class DashboardProvider with ChangeNotifier {
   void stopLocationService() {
     print("stop service");
     BackgroundLocation.stopLocationService();
+     BackgroundLocation.stopLocationService();
   }
+  
 
   void initBackgroundLocation() {
     BackgroundLocation.startLocationService();
@@ -498,12 +514,12 @@ class DashboardProvider with ChangeNotifier {
 
       if (response.statusCode == 200) {
         stopLocationService();
+
         if (responseData['status'] == true) {
           updateAttendanceStatus(EmployeeAttendanceData(
               checkIn: attendanceResponse.data.checkInAt.toString(),
               checkOut: attendanceResponse.data.checkOutAt.toString(),
-              productionTime:
-                  attendanceResponse.data.productiveTimeInMin.toString()));
+              productionTime: attendanceResponse.data.productiveTimeInMin));
         }
 
         return attendanceResponse;

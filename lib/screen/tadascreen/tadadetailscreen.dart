@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/tadadetailcontroller.dart';
-import 'package:cnattendance/screen/tadascreen/widget/attachmentbottomsheet.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/provider/tadadetailcontroller.dart';
+import 'package:bmiterp/screen/tadascreen/widget/attachmentbottomsheet.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:html/parser.dart';

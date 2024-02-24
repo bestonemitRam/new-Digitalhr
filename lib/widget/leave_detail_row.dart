@@ -1,6 +1,6 @@
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/widget/cancel_leave_bottom_sheet.dart';
-import 'package:cnattendance/widget/log_out_bottom_sheet.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/widget/cancel_leave_bottom_sheet.dart';
+import 'package:bmiterp/widget/log_out_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';

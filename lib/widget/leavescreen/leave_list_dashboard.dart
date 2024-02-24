@@ -1,5 +1,5 @@
-import 'package:cnattendance/provider/leaveprovider.dart';
-import 'package:cnattendance/widget/leave_row.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
+import 'package:bmiterp/widget/leave_row.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -27,9 +27,9 @@ class LeaveListDashboard extends StatelessWidget {
               ));
     } else {
       return Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(10),
         child: Text(
-          "Currently don't have leave ",
+          "Currently don't have a leave ",
           style: TextStyle(color: Colors.white),
         ),
       );

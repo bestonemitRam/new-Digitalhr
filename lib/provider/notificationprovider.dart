@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:cnattendance/data/source/datastore/preferences.dart';
-import 'package:cnattendance/data/source/network/model/notification/NotifiactionDomain.dart';
-import 'package:cnattendance/data/source/network/model/notification/NotificationResponse.dart';
-import 'package:cnattendance/utils/constant.dart';
+import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/notification/NotifiactionDomain.dart';
+import 'package:bmiterp/data/source/network/model/notification/NotificationResponse.dart';
+import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'package:cnattendance/model/notification.dart' as Not;
+import 'package:bmiterp/model/notification.dart' as Not;
 import 'package:intl/intl.dart';
 
 class NotificationProvider with ChangeNotifier {

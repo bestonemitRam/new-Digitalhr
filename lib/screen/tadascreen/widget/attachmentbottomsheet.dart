@@ -1,7 +1,7 @@
-import 'package:cnattendance/model/attachment.dart';
-import 'package:cnattendance/screen/tadascreen/widget/fileslistbottom.dart';
-import 'package:cnattendance/screen/tadascreen/widget/imagelistbottom.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/model/attachment.dart';
+import 'package:bmiterp/screen/tadascreen/widget/fileslistbottom.dart';
+import 'package:bmiterp/screen/tadascreen/widget/imagelistbottom.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

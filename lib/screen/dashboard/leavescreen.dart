@@ -1,15 +1,15 @@
-import 'package:cnattendance/utils/constant.dart';
-import 'package:cnattendance/widget/buttonborder.dart';
-import 'package:cnattendance/widget/headerprofile.dart';
-import 'package:cnattendance/widget/leavescreen/leave_list_dashboard.dart';
-import 'package:cnattendance/widget/leavescreen/leave_list_detail_dashboard.dart';
-import 'package:cnattendance/widget/leavescreen/leavebutton.dart';
-import 'package:cnattendance/widget/leavescreen/leavetypefilter.dart';
-import 'package:cnattendance/widget/leavescreen/toggleleavetime.dart';
-import 'package:cnattendance/widget/radialDecoration.dart';
+import 'package:bmiterp/utils/constant.dart';
+import 'package:bmiterp/widget/buttonborder.dart';
+import 'package:bmiterp/widget/headerprofile.dart';
+import 'package:bmiterp/widget/leavescreen/leave_list_dashboard.dart';
+import 'package:bmiterp/widget/leavescreen/leave_list_detail_dashboard.dart';
+import 'package:bmiterp/widget/leavescreen/leavebutton.dart';
+import 'package:bmiterp/widget/leavescreen/leavetypefilter.dart';
+import 'package:bmiterp/widget/leavescreen/toggleleavetime.dart';
+import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:cnattendance/provider/leaveprovider.dart';
+import 'package:bmiterp/provider/leaveprovider.dart';
 
 class LeaveScreen extends StatefulWidget {
   @override
@@ -80,15 +80,16 @@ class LeaveScreenState extends State<LeaveScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HeaderProfile(),
-                  Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      width: double.infinity,
-                      child: const Text(
-                        'Leave',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
-                      )),
+                  // HeaderProfile(),
+
+                  // Container(
+                  //     padding:
+                  //         EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  //     width: double.infinity,
+                  //     child: const Text(
+                  //       'Leave',
+                  //       style: TextStyle(fontSize: 20, color: Colors.white),
+                  //     )),
                   LeaveListDashboard(),
                   Visibility(
                     visible: true,
@@ -127,7 +128,7 @@ class LeaveScreenState extends State<LeaveScreen> {
                                     child: Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 20.0, vertical: 10),
-                                        child: LeavetypeFilter()),
+                                        child: Filter()),
                                   ),
                                   Visibility(
                                       visible: true,

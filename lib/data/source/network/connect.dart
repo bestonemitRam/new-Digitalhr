@@ -6,9 +6,10 @@ class Connect {
     return http.get(uri, headers: headers);
   }
 
-  Future<http.Response> postResponse(
-      String url, Map<String, String> headers, Map<String, String> body) {
-    var uri = Uri.parse(url);
-    return http.post(uri, headers: headers, body: body);
-  }
+  Future<http.Response> postResponse
+  ( String url, Map<String, String> headers, Map<String, String> body) 
+      {
+      var uri = Uri.parse(url);
+      return http.post(uri, headers: headers, body: body);
+      }
 }
