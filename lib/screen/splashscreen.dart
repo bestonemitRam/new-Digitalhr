@@ -17,12 +17,15 @@ class SplashState extends State<SplashScreen> {
   void initState() {
     Timer(
       const Duration(milliseconds: 1000),
-      () async {
+      () async 
+      {
         Preferences preferences = Preferences();
         String result = await preferences.getToken();
-        if (result == '') {
+        if (result == '') 
+        {
           Navigator.pushReplacementNamed(context, LoginScreen.routeName);
-        } else {
+        }
+         else {
           Navigator.pushReplacementNamed(context, DashboardScreen.routeName);
         }
       },

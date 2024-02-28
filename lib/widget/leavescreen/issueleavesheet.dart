@@ -37,12 +37,13 @@ class IssueLeaveSheetState extends State<IssueLeaveSheet> {
             await Provider.of<LeaveProvider>(context, listen: false).issueLeave(
                 startDate.text, endDate.text, reason.text, selectedValue!.id);
 
-        if (!mounted) {
+        if (!mounted)
+         {
           return;
-        }
+         }
         dismissLoader();
         Navigator.of(context).pop();
-        Navigator.pop(context);
+
         isLoading = false;
         showDialog(
           context: context,

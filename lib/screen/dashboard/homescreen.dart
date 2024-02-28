@@ -20,13 +20,14 @@ class HomeScreen extends StatefulWidget {
   State<StatefulWidget> createState() => HomeScreenState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen>
+ {
   @override
-  late DashboardProvider dashboardResponse;
+  //late DashboardProvider dashboardResponse;
   void initState() {
     super.initState();
     // initializeService();
-    dashboardResponse = Provider.of<DashboardProvider>(context, listen: false);
+   //dashboardResponse = Provider.of<DashboardProvider>(context, listen: false);
   }
   //
   // Future<void> initializeService() async {
@@ -115,12 +116,10 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
   Future<String> loadDashboard() async {
-    var fcm = await FirebaseMessaging.instance.getToken();
-    print(fcm);
+   //var fcm = await FirebaseMessaging.instance.getToken();
+   // print(fcm);
     try {
-      final dashboardProvider =
-          await Provider.of<DashboardProvider>(context, listen: false)
-              .getDashboardData();
+      final dashboardProvider = await Provider.of<DashboardProvider>(context, listen: false).getDashboardData();
 
       return 'loaded';
     } catch (e) {
@@ -131,8 +130,7 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // FlutterBackgroundService()
-    //     .sendData({"action": "setAsBackground"});
+   
     return Container(
       decoration: RadialDecoration(),
       child: Scaffold(

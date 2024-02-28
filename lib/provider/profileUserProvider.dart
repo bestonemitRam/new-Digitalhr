@@ -42,30 +42,30 @@ class ProfileUserProvider with ChangeNotifier {
         var profileuser = profileuserModel.data!.profileData;
         _profileuserlist.add(profileuser!);
         parseUser(profileuserModel.data!.profileData!);
-        Apphelper.dob = profileuserModel.data!.profileData!.dob!;
-        Apphelper.gendar = profileuserModel.data!.profileData!.gender!;
-        Apphelper.contact = profileuserModel.data!.profileData!.contact!;
+        Apphelper.USER_DOB = profileuserModel.data!.profileData!.dob!;
+        Apphelper.USER_GENDAR = profileuserModel.data!.profileData!.gender!;
+        Apphelper.USER_CONTACT = profileuserModel.data!.profileData!.contact!;
         Apphelper.USER_AVATAR = profileuserModel.data!.profileData!.avatar!;
-        Apphelper.name = profileuserModel.data!.profileData!.fullName!;
+        Apphelper.USER_NAME = profileuserModel.data!.profileData!.fullName!;
         final prefs = await SharedPreferences.getInstance();
 
         await prefs.setString(
             Apphelper.USER_AVATAR, profileuserModel.data!.profileData!.avatar!);
         await prefs.setString(
             Apphelper.USER_EMAIL, profileuserModel.data!.profileData!.mail!);
-        await prefs.setString(Apphelper.USER_FULLNAME,
+        await prefs.setString(Apphelper.USER_NAME,
             profileuserModel.data!.profileData!.fullName!);
         await prefs.setString(
-            Apphelper.gendar, profileuserModel.data!.profileData!.gender!);
+            Apphelper.USER_GENDAR, profileuserModel.data!.profileData!.gender!);
         await prefs.setString(
-            Apphelper.contact, profileuserModel.data!.profileData!.contact!);
+            Apphelper.USER_CONTACT, profileuserModel.data!.profileData!.contact!);
         await prefs.setString(
-            Apphelper.dob, profileuserModel.data!.profileData!.dob!);
-        Apphelper.dob = profileuserModel.data!.profileData!.dob!;
-        Apphelper.gendar = profileuserModel.data!.profileData!.gender!;
-        Apphelper.contact = profileuserModel.data!.profileData!.contact!;
+            Apphelper.USER_DOB, profileuserModel.data!.profileData!.dob!);
+        Apphelper.USER_DOB = profileuserModel.data!.profileData!.dob!;
+        Apphelper.USER_GENDAR = profileuserModel.data!.profileData!.gender!;
+        Apphelper.USER_CONTACT = profileuserModel.data!.profileData!.contact!;
         Apphelper.USER_AVATAR = profileuserModel.data!.profileData!.avatar!;
-        Apphelper.name = profileuserModel.data!.profileData!.fullName!;
+        Apphelper.USER_NAME = profileuserModel.data!.profileData!.fullName!;
       }
     }
     datanotfound = true;

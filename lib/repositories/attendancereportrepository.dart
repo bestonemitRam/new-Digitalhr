@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:bmiterp/api/apiConstant.dart';
 import 'package:bmiterp/data/source/datastore/preferences.dart';
 import 'package:bmiterp/data/source/network/connect.dart';
 import 'package:bmiterp/data/source/network/model/attendancereport/AttendanceReportResponse.dart';
@@ -10,27 +11,32 @@ class AttendanceReportRepository {
       int selectedMonth) async {
     Preferences preferences = Preferences();
     String token = await preferences.getToken();
-
+    int getUserID = await preferences.getUserId();
+    print('response');
     Map<String, String> headers = {
-      'Content-Type': 'application/json',
       'Accept': 'application/json; charset=UTF-8',
-      'Authorization': 'Bearer $token'
+      'user_token': '$token',
+      'user_id': '$getUserID',
     };
+
     try {
       final response = await Connect().getResponse(
-          Constant.ATTENDANCE_REPORT_URL + "?month=${selectedMonth + 1}",
-          headers);
+          APIURL.ATTENDANCC_HISTORY + "${selectedMonth + 1}", headers);
 
       final responseData = json.decode(response.body);
+
+      final responseJson = AttendanceReportResponse.fromJson(responseData);
+      print("kdjfhgkjdfgkj  ${responseData} ${response.statusCode}");
+
       if (response.statusCode == 200) {
         print(responseData.toString());
 
-        final responseJson = AttendanceReportResponse.fromJson(responseData);
-
         return responseJson;
-      } else {
+      } 
+      else {
         var errorMessage = responseData['message'];
-        throw errorMessage;
+        //throw errorMessage;
+        return responseJson;
       }
     } catch (error) {
       throw error;

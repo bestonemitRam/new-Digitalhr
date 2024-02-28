@@ -119,13 +119,14 @@ class EditProfileScreenState extends State<EditProfileScreen> {
   @override
   void didChangeDependencies() {
     if (initial) {
-      _nameController.text = Apphelper.name;
-      _emailController.text = Apphelper.email;
+      _nameController.text = Apphelper.USER_NAME;
+      _emailController.text = Apphelper.USER_EMAIL;
       //  _addressController.text = profile.address;
-      _phoneController.text = Apphelper.contact;
-      _dobController.text = Apphelper.dob;
+      _phoneController.text = Apphelper.USER_CONTACT;
+      _dobController.text = Apphelper.USER_DOB;
 
-      switch (Apphelper.gendar.toLowerCase()) {
+      switch (Apphelper.USER_GENDAR.toLowerCase())
+       {
         case 'male':
           genderIndex = 0;
           break;

@@ -19,7 +19,7 @@ class Constant {
   static const LOGIN_URL = "$API_URL/login";
   static const LOGOUT_URL = "$API_URL/logout";
   static const DASHBOARD_URL = "$API_URL/dashboard";
-  static const CHECK_IN_URL = "$API_URL/employees/check-in";
+  //static const CHECK_IN_URL = "$API_URL/employees/check-in";
   static const CHECK_OUT_URL = "$API_URL/employees/check-out";
   static const ATTENDANCE_REPORT_URL = "$API_URL/employees/attendance-detail";
   static const LEAVE_TYPE_URL = "$API_URL/leave-types";

@@ -30,7 +30,7 @@ class DashboardScreenState extends State<DashboardScreen> {
     return [
       HomeScreen(),
       ProjectScreen(),
-     // LeaveScreen(),
+      // LeaveScreen(),
       AttendanceScreenHistory(),
       // AttendanceScreen(),
       MoreScreen(),
@@ -42,7 +42,6 @@ class DashboardScreenState extends State<DashboardScreen> {
     // checklocation();
     super.initState();
     _handleLocationPermission();
-    print("inside the initState");
   }
 
   Future<bool> _handleLocationPermission() async {
@@ -78,8 +77,9 @@ class DashboardScreenState extends State<DashboardScreen> {
       PersistentTabController(initialIndex: 0);
   @override
   Widget build(BuildContext context) {
+    print("djkgjkdfgkfjdfghkj");
     final prefProvider = Provider.of<PrefProvider>(context);
-    prefProvider.getUser();
+    // prefProvider.getUser();
     return Scaffold(
       body: PersistentTabView(context,
           controller: _controller,

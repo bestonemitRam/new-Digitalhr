@@ -59,7 +59,8 @@ class _ProfileScreenActivityState extends State<ProfileScreenActivity> {
                   Icons.edit_note,
                   color: Colors.white,
                 ),
-                onPressed: () {
+                onPressed: () 
+                {
                   Navigator.of(context).pushNamed(EditProfileScreen.routeName);
                 },
               )

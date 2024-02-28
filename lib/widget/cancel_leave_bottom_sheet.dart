@@ -36,7 +36,8 @@ class CancelLeaveBottomSheetState extends State<CancelLeaveBottomSheet> {
       if (!mounted) {
         return;
       }
-      if (response.statusCode == 200 || response.statusCode == 401) {
+      if (response.status == true) 
+      {
         NavigationService()
             .showSnackBar("Leave Status", "Leave cancelled successfully");
         Navigator.pop(context);

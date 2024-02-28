@@ -52,20 +52,20 @@ class loginScreenState extends State<LoginScreen> {
   }
 
   /// Loader Screen
-  void loginUser() async {
-    setState(() {
+  void loginUser() async 
+  {
+    setState(() 
+    {
       _isLoading = true;
-      EasyLoading.show(
-          status: 'Signing in..', maskType: EasyLoadingMaskType.black);
+      EasyLoading.show(status: 'Signing in..', maskType: EasyLoadingMaskType.black);
     });
 
     try {
       final response = await Provider.of<Auth>(context, listen: false)
-          .login(_usernameController.text, _passwordController.text);
+         .login(_usernameController.text, _passwordController.text);
 
       if (!mounted) return;
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(response.message)));
+      ScaffoldMessenger.of(context) .showSnackBar(SnackBar(content: Text(response.message)));
 
       Navigator.of(context)
           .pushNamedAndRemoveUntil(DashboardScreen.routeName, (route) => false);

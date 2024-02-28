@@ -12,7 +12,8 @@ class AttendanceScreen extends StatefulWidget {
   State<StatefulWidget> createState() => AttendanceScreenState();
 }
 
-class AttendanceScreenState extends State<AttendanceScreen> {
+class AttendanceScreenState extends State<AttendanceScreen> 
+{
   var initial = true;
 
   @override
@@ -53,7 +54,7 @@ class AttendanceScreenState extends State<AttendanceScreen> {
               child: Column(
                 children: [
                   // HeaderProfile(),
-                  AttendanceStatus(),
+                  // AttendanceStatus(),
                   AttendanceToggle(),
                   ReportListView()
                 ],

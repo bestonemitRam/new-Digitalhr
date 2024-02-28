@@ -436,27 +436,27 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   WidgetsBinding.instance.removeObserver(this);
+  //   super.dispose();
+  // }
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    print('AppLifecycleState changed to: $state');
+  // @override
+  // void didChangeAppLifecycleState(AppLifecycleState state) {
+  //   print('AppLifecycleState changed to: $state');
 
-    // You can handle different lifecycle states here
-    switch (state) {
-      case AppLifecycleState.resumed:
-        //stopLocationService();
-        break;
-      case AppLifecycleState.paused:
-        //bgLocationTask();
+  //   // You can handle different lifecycle states here
+  //   switch (state) {
+  //     case AppLifecycleState.resumed:
+  //       //stopLocationService();
+  //       break;
+  //     case AppLifecycleState.paused:
+  //       //bgLocationTask();
 
-        break;
-    }
-  }
+  //       break;
+  //   }
+  // }
 
   // This widget is the root of your application.
   @override

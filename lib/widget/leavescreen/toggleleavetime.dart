@@ -11,18 +11,23 @@ class ToggleLeaveTime extends StatelessWidget {
 
     void onToggleChanged() async {
       final detailResponse = await provider.getLeaveTypeDetail();
+      print("checkData   ${detailResponse} ");
 
       if (!mounted) return;
-      if (detailResponse.statusCode == 200) {
-        if (detailResponse.data!.leaveList!.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              padding: EdgeInsets.all(20), content: Text('No data found')));
-        }
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            padding: const EdgeInsets.all(20),
-            content: Text(detailResponse.message!)));
-      }
+      // if (detailResponse.statusCode == 200)
+      //  {
+      //   if (detailResponse.data!.leaveList!.isEmpty)
+      //   {
+      //     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      //         padding: EdgeInsets.all(20), content: Text('No data found')));
+      //   }
+      // }
+      // else
+      //  {
+      //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      //       padding: const EdgeInsets.all(20),
+      //       content: Text(detailResponse.message!)));
+      // }
     }
 
     return Container(

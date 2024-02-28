@@ -5,6 +5,7 @@ import 'package:bmiterp/widget/radialDecoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -96,8 +97,20 @@ class ChangePasswordState extends State<ChangePassword> {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           elevation: 0,
-          title: Text('Change Password'),
           backgroundColor: Colors.transparent,
+          title: Text(
+            "Change Password",
+            style: TextStyle(color: Colors.white),
+          ),
+          leading: InkWell(
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+            onTap: () {
+              Get.back();
+            },
+          ),
         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(20),

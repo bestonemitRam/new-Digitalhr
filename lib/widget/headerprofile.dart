@@ -1,3 +1,5 @@
+import 'package:bmiterp/api/app_strings.dart';
+import 'package:bmiterp/main.dart';
 import 'package:bmiterp/provider/prefprovider.dart';
 import 'package:bmiterp/provider/profileUserProvider.dart';
 import 'package:bmiterp/screen/profile/NotificationScreen.dart';
@@ -17,6 +19,11 @@ class HeaderState extends State<HeaderProfile> {
   Widget build(BuildContext context) {
     final provider = Provider.of<PrefProvider>(context);
 
+    //  final prefProvider = Provider.of<PrefProvider>(context);
+    //provider.getUser();
+
+    print("lkfjghkljfgh  ${sharedPref.getString(Apphelper.USER_NAME) ?? ""}");
+
     return GestureDetector(
       onTap: () {
         pushNewScreen(context,
@@ -35,7 +42,7 @@ class HeaderState extends State<HeaderProfile> {
             ClipRRect(
               borderRadius: BorderRadius.circular(25),
               child: Image.network(
-                provider.avatar,
+                Apphelper.USER_AVATAR.toString(),
                 width: 50,
                 height: 50,
                 fit: BoxFit.cover,
@@ -59,15 +66,12 @@ class HeaderState extends State<HeaderProfile> {
                     'Hello There',
                     style: TextStyle(color: Colors.white, fontSize: 12),
                   ),
-                  if (provider.fullname != 'null')
-                    Text(
-                      provider.fullname != 'null'
-                          ? provider.fullname
-                          : "" ?? " ",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                    ),
                   Text(
-                    provider.userName,
+                    sharedPref.getString(Apphelper.USER_NAME) ?? "",
+                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  ),
+                  Text(
+                    sharedPref.getString(Apphelper.USER_EMP_CODE) ?? "",
                     style: TextStyle(color: Colors.white, fontSize: 12),
                   ),
                 ],

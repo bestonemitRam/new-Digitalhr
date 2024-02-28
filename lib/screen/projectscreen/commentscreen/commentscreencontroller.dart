@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:bmiterp/data/source/datastore/preferences.dart';
 import 'package:bmiterp/data/source/network/model/commentlist/commentlistresponse.dart';
 import 'package:bmiterp/data/source/network/model/commentsaveresponse/commentsaveresponse.dart';
+import 'package:bmiterp/data/source/network/model/login/Loginresponse.dart';
 import 'package:bmiterp/data/source/network/model/login/User.dart';
 import 'package:bmiterp/model/comment.dart';
 import 'package:bmiterp/model/member.dart';
@@ -23,7 +24,7 @@ class CommentScreenController extends GetxController {
   Preferences preferences = Preferences();
   var focusNode = FocusNode();
 
-  var user = User(id: 0, name: "", email: "", username: "", avatar: "").obs;
+  var user = User(id: 0, fullName: "", mail: "", employeeCode: "", avatar: "").obs;
 
   var sendComment = SendComment();
 

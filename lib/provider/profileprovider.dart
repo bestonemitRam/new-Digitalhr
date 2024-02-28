@@ -90,9 +90,9 @@ class ProfileProvider with ChangeNotifier {
 
   void checkValueInPref(Preferences preferences) async {
     final user = await preferences.getUser();
-    _profile.name = user.name;
-    _profile.username = user.username;
-    _profile.email = user.email;
+    _profile.name = user.fullName;
+    _profile.username = user.fullName;
+    _profile.email = user.mail;
     _profile.avatar = user.avatar;
     notifyListeners();
   }

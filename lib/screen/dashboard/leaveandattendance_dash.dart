@@ -41,54 +41,56 @@ class _TaskStatusScreenState extends State<AttendanceScreenHistory> {
                   height: 2.h,
                 ),
                 SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.transparent,
-                    ),
-                    child: TabBar(
-                      isScrollable:
-                          true, // Set this to true for scrollable tabs
-                      indicator: BoxDecoration(
-                        color: Colors.white10,
+                  // scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 2.w),
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent,
                       ),
-                      labelColor: Colors.transparent,
-                      dividerColor: Colors.transparent,
-                      tabs: [
-                        Tab(
-                          child: Container(
-                            padding: EdgeInsets.only(bottom: 10),
-                            color: Colors.transparent,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 50.0, right: 50),
-                              child: Text(
-                                "Leave",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18),
+                      child: TabBar(
+                        // Set this to true for scrollable tabs
+                        indicator: BoxDecoration(
+                          color: Colors.white10,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        labelColor: Colors.transparent,
+                        dividerColor: Colors.transparent,
+                        tabs: [
+                          Tab(
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 10),
+                              color: Colors.transparent,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 10.0, right: 10),
+                                child: Text(
+                                  "Leave",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Tab(
-                          child: Container(
-                            padding: EdgeInsets.only(bottom: 10),
-                            //   color: Colors.transparent,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10.0, right: 10),
-                              child: Text(
-                                'Attendance History',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18),
+                          Tab(
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 10),
+                              //   color: Colors.transparent,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 10.0, right: 10),
+                                child: Text(
+                                  'Attendance History',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 15),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

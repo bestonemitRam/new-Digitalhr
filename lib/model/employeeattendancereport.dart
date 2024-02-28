@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class EmployeeAttendanceReport with ChangeNotifier {
   int id;
-  String attendance_date;
-  String week_day;
-  String check_in;
-  String check_out;
+  dynamic attendance_date;
+  dynamic total_working_hour;
+  dynamic check_in;
+  dynamic check_out;
 
   EmployeeAttendanceReport(
       {required this.id,
-      required this.attendance_date,
-      required this.week_day,
-      required this.check_in,
-      required this.check_out});
+      this.attendance_date,
+      this.total_working_hour,
+      this.check_in,
+      this.check_out});
 }

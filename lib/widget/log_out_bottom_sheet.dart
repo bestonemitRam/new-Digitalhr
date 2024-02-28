@@ -92,7 +92,7 @@ class LogOutBottomSheetState extends State<LogOutBottomSheet> {
             const Padding(
               padding: EdgeInsets.only(bottom: 8.0),
               child: Text(
-                'Are you sure you wanna logout from the application?',
+                'Are you sure you want to  logout from the application?',
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),

@@ -16,6 +16,8 @@ class CheckAttendance extends StatefulWidget {
 }
 
 class CheckAttendanceState extends State<CheckAttendance> {
+
+   
   @override
   Widget build(BuildContext context) {
     final attendanceList =
@@ -66,7 +68,8 @@ class CheckAttendanceState extends State<CheckAttendance> {
                         print('Location Data: $data');
 
                         if (await pref.getUserAuth()) {
-                          bool isAuthenticated = await AuthService.authenticateUser();
+                          bool isAuthenticated =
+                              await AuthService.authenticateUser();
                           if (isAuthenticated) {
                             showModalBottomSheet(
                                 context: context,
@@ -137,6 +140,7 @@ class CheckAttendanceState extends State<CheckAttendance> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
+                    
                     attendanceList['check-in']!,
                     style: TextStyle(color: Colors.white),
                   ),

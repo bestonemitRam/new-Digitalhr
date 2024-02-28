@@ -3,13 +3,17 @@ import 'package:bmiterp/widget/buttonborder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:bmiterp/widget/attendancescreen/attendancecardview.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ReportListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final attendanceList =
         Provider.of<AttendanceReportProvider>(context).attendanceReport;
-    if (attendanceList.length > 0) {
+
+    print("check length ${attendanceList}");
+
+    if (attendanceList.isNotEmpty) {
       return SingleChildScrollView(
         child: Container(
             padding: EdgeInsets.all(20),
@@ -21,27 +25,38 @@ class ReportListView extends StatelessWidget {
                     primary: false,
                     itemCount: attendanceList.length,
                     itemBuilder: (ctx, i) {
+                      print("checkdata  ${i}  ${attendanceList.length}");
                       return AttendanceCardView(
                         i,
-                        attendanceList[i].attendance_date,
-                        attendanceList[i].week_day,
-                        attendanceList[i].check_in,
-                        attendanceList[i].check_out,
+                        attendanceList[i].attendance_date!,
+                        attendanceList[i].total_working_hour!,
+                        attendanceList[i].check_in!,
+                        attendanceList[i].check_out!,
                       );
                     }),
               ],
             )),
       );
     } else {
-      return Visibility(
-        visible: Provider.of<AttendanceReportProvider>(context).isLoading
-            ? true
-            : false,
-        child: const Padding(
-          padding: EdgeInsets.all(20),
-          child: CircularProgressIndicator(),
-        ),
-      );
+      return Provider.of<AttendanceReportProvider>(context).isLoading
+          ? Visibility(
+              visible: Provider.of<AttendanceReportProvider>(context).isLoading
+                  ? true
+                  : false,
+              child: const Padding(
+                padding: EdgeInsets.all(20),
+                child: CircularProgressIndicator(),
+              ),
+            )
+          : Container(
+              height: 50.h,
+              child: Center(
+                child: Text(
+                  "Sorry don't have attendance ",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            );
     }
   }
 

@@ -464,6 +464,42 @@
       "languageVersion": "2.15"
     },
     {
+      "name": "google_maps",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/google_maps-6.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_maps_flutter",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/google_maps_flutter-2.5.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "google_maps_flutter_android",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/google_maps_flutter_android-2.6.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "google_maps_flutter_ios",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/google_maps_flutter_ios-2.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "google_maps_flutter_platform_interface",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/google_maps_flutter_platform_interface-2.4.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "google_maps_flutter_web",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/google_maps_flutter_web-0.5.4+3",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "hexcolor",
       "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/hexcolor-2.0.7",
       "packageUri": "lib/",
@@ -570,6 +606,12 @@
       "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/js-0.6.7",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "js_wrapping",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/js_wrapping-0.7.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "json_annotation",
@@ -878,6 +920,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "sanitize_html",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/sanitize_html-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "shared_preferences",
       "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/shared_preferences-2.2.2",
       "packageUri": "lib/",
@@ -972,6 +1020,12 @@
       "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/stream_channel-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "stream_transform",
+      "rootUri": "file:///Users/rajeevsingh/.pub-cache/hosted/pub.dev/stream_transform-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "string_scanner",
@@ -1124,7 +1178,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2024-02-24T11:31:27.141464Z",
+  "generated": "2024-02-28T09:32:16.444800Z",
   "generator": "pub",
   "generatorVersion": "3.3.0"
 }

@@ -1,3 +1,4 @@
+
 // class HomeScreenModel {
 //   dynamic? message;
 //   bool? status;
@@ -26,15 +27,48 @@
 // }
 
 // class HomeData {
+//   Counts? counts;
+//   OfficeData? officeData;
+//   EmployeeAttendanceData? employeeAttendanceData;
+
+//   HomeData({this.counts, this.officeData, this.employeeAttendanceData});
+
+//   HomeData.fromJson(Map<dynamic, dynamic> json) {
+//     counts =
+//         json['Counts'] != null ? new Counts.fromJson(json['Counts']) : null;
+//     officeData = json['OfficeData'] != null
+//         ? new OfficeData.fromJson(json['OfficeData'])
+//         : null;
+//     employeeAttendanceData = json['EmployeeAttendanceData'] != null
+//         ? new EmployeeAttendanceData.fromJson(json['EmployeeAttendanceData'])
+//         : null;
+//   }
+
+//   Map<dynamic, dynamic> toJson() {
+//     final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
+//     if (this.counts != null) {
+//       data['Counts'] = this.counts!.toJson();
+//     }
+//     if (this.officeData != null) {
+//       data['OfficeData'] = this.officeData!.toJson();
+//     }
+//     if (this.employeeAttendanceData != null) {
+//       data['EmployeeAttendanceData'] = this.employeeAttendanceData!.toJson();
+//     }
+//     return data;
+//   }
+// }
+
+// class Counts {
 //   dynamic? presentCount;
 //   dynamic? holidayCount;
 //   dynamic? leaveCount;
 //   dynamic? taskCount;
 
-//   HomeData(
+//   Counts(
 //       {this.presentCount, this.holidayCount, this.leaveCount, this.taskCount});
 
-//   HomeData.fromJson(Map<dynamic, dynamic> json) {
+//   Counts.fromJson(Map<dynamic, dynamic> json) {
 //     presentCount = json['presentCount'];
 //     holidayCount = json['holidayCount'];
 //     leaveCount = json['leaveCount'];
@@ -51,136 +85,165 @@
 //   }
 // }
 
-class HomeScreenModel {
-  dynamic? message;
+// class OfficeData {
+//   dynamic? openingTime;
+//   dynamic? closingTime;
+
+//   OfficeData({this.openingTime, this.closingTime});
+
+//   OfficeData.fromJson(Map<dynamic, dynamic> json) {
+//     openingTime = json['opening_time'];
+//     closingTime = json['closing_time'];
+//   }
+
+//   Map<dynamic, dynamic> toJson() {
+//     final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
+//     data['opening_time'] = this.openingTime;
+//     data['closing_time'] = this.closingTime;
+//     return data;
+//   }
+// }
+
+// class EmployeeAttendanceData {
+//   dynamic checkIn;
+//   dynamic checkOut;
+//   dynamic? productionTime;
+//   dynamic? production_hour;
+
+//   EmployeeAttendanceData(
+//       {this.checkIn, this.checkOut, this.productionTime, this.production_hour});
+
+//   EmployeeAttendanceData.fromJson(Map<dynamic, dynamic> json) {
+//     checkIn = json['check-in'];
+//     checkOut = json['check-out'];
+
+//     productionTime = json['production-time'];
+//     production_hour = json['production_hour'];
+//   }
+
+//   Map<dynamic, dynamic> toJson() {
+//     final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
+//     data['check-in'] = this.checkIn;
+//     data['check-out'] = this.checkOut;
+
+//     data['production-time'] = this.productionTime;
+//     data['production_hour'] = this.production_hour;
+
+//     return data;
+//   }
+// }
+
+
+class HomeScreenModel 
+{
   bool? status;
-  dynamic? statusCode;
-  HomeData? data;
+  String? message;
+ HomeData? data;
 
-  HomeScreenModel({this.message, this.status, this.statusCode, this.data});
+  HomeScreenModel({this.status, this.message, this.data});
 
-  HomeScreenModel.fromJson(Map<dynamic, dynamic> json) {
-    message = json['message'];
+  HomeScreenModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
-    statusCode = json['statusCode'];
-    data = json['data'] != null ? new HomeData.fromJson(json['data']) : null;
+    message = json['message'];
+    data =
+        json['result'] != null ? new HomeData.fromJson(json['result']) : null;
   }
 
-  Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
-    data['message'] = this.message;
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['status'] = this.status;
-    data['statusCode'] = this.statusCode;
+    data['message'] = this.message;
     if (this.data != null) {
-      data['data'] = this.data!.toJson();
+      data['result'] = this.data!.toJson();
     }
     return data;
   }
 }
 
-class HomeData {
-  Counts? counts;
-  OfficeData? officeData;
-  EmployeeAttendanceData? employeeAttendanceData;
+class HomeData
+ {
+  int? presentCount;
+  int? holidayCount;
+  OfficeTime? officeTime;
+  EmployeeAttendanceData? punchData;
+  int? taskCount;
+  int? leaveCount;
 
-  HomeData({this.counts, this.officeData, this.employeeAttendanceData});
+  HomeData(
+      {this.presentCount,
+      this.holidayCount,
+      this.officeTime,
+      this.punchData,
+      this.taskCount,
+      this.leaveCount});
 
-  HomeData.fromJson(Map<dynamic, dynamic> json) {
-    counts =
-        json['Counts'] != null ? new Counts.fromJson(json['Counts']) : null;
-    officeData = json['OfficeData'] != null
-        ? new OfficeData.fromJson(json['OfficeData'])
-        : null;
-    employeeAttendanceData = json['EmployeeAttendanceData'] != null
-        ? new EmployeeAttendanceData.fromJson(json['EmployeeAttendanceData'])
-        : null;
-  }
-
-  Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
-    if (this.counts != null) {
-      data['Counts'] = this.counts!.toJson();
-    }
-    if (this.officeData != null) {
-      data['OfficeData'] = this.officeData!.toJson();
-    }
-    if (this.employeeAttendanceData != null) {
-      data['EmployeeAttendanceData'] = this.employeeAttendanceData!.toJson();
-    }
-    return data;
-  }
-}
-
-class Counts {
-  dynamic? presentCount;
-  dynamic? holidayCount;
-  dynamic? leaveCount;
-  dynamic? taskCount;
-
-  Counts(
-      {this.presentCount, this.holidayCount, this.leaveCount, this.taskCount});
-
-  Counts.fromJson(Map<dynamic, dynamic> json) {
+  HomeData.fromJson(Map<String, dynamic> json) {
     presentCount = json['presentCount'];
     holidayCount = json['holidayCount'];
-    leaveCount = json['leaveCount'];
+    officeTime = json['officeTime'] != null
+        ? new OfficeTime.fromJson(json['officeTime'])
+        : null;
+    punchData = json['punch_data'] != null
+        ? new EmployeeAttendanceData.fromJson(json['punch_data'])
+        : null;
     taskCount = json['taskCount'];
+    leaveCount = json['leaveCount'];
   }
 
-  Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['presentCount'] = this.presentCount;
     data['holidayCount'] = this.holidayCount;
-    data['leaveCount'] = this.leaveCount;
+    if (this.officeTime != null) {
+      data['officeTime'] = this.officeTime!.toJson();
+    }
+    if (this.punchData != null) {
+      data['punch_data'] = this.punchData!.toJson();
+    }
     data['taskCount'] = this.taskCount;
+    data['leaveCount'] = this.leaveCount;
     return data;
   }
 }
 
-class OfficeData {
-  dynamic? openingTime;
-  dynamic? closingTime;
+class OfficeTime {
+  String? startTime;
+  String? endTime;
 
-  OfficeData({this.openingTime, this.closingTime});
+  OfficeTime({this.startTime, this.endTime});
 
-  OfficeData.fromJson(Map<dynamic, dynamic> json) {
-    openingTime = json['opening_time'];
-    closingTime = json['closing_time'];
+  OfficeTime.fromJson(Map<String, dynamic> json) {
+    startTime = json['start_time'];
+    endTime = json['end_time'];
   }
 
-  Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
-    data['opening_time'] = this.openingTime;
-    data['closing_time'] = this.closingTime;
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['start_time'] = this.startTime;
+    data['end_time'] = this.endTime;
     return data;
   }
 }
 
 class EmployeeAttendanceData {
-  dynamic checkIn;
-  dynamic checkOut;
-  double? productionTime;
-  String? production_hour;
+  String? punchInTime;
+  String? punchOutTime;
+  String? totalWorkingHours;
 
-  EmployeeAttendanceData(
-      {this.checkIn, this.checkOut, this.productionTime, this.production_hour});
+  EmployeeAttendanceData({this.punchInTime, this.punchOutTime, this.totalWorkingHours});
 
-  EmployeeAttendanceData.fromJson(Map<dynamic, dynamic> json) {
-    checkIn = json['check-in'];
-    checkOut = json['check-out'];
-
-    productionTime = json['production-time'];
-    production_hour = json['production_hour'];
+  EmployeeAttendanceData.fromJson(Map<String, dynamic> json) {
+    punchInTime = json['punch_in_time'];
+    punchOutTime = json['punch_out_time'];
+    totalWorkingHours = json['total_working_hours'];
   }
 
-  Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
-    data['check-in'] = this.checkIn;
-    data['check-out'] = this.checkOut;
-
-    data['production-time'] = this.productionTime;
-    data['production_hour'] = this.production_hour;
-
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['punch_in_time'] = this.punchInTime;
+    data['punch_out_time'] = this.punchOutTime;
+    data['total_working_hours'] = this.totalWorkingHours;
     return data;
   }
 }
+

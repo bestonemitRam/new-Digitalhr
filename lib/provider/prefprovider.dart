@@ -1,4 +1,5 @@
 import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:bmiterp/data/source/network/model/login/Loginresponse.dart';
 import 'package:flutter/material.dart';
 import 'package:bmiterp/data/source/network/model/login/Login.dart';
 import 'package:bmiterp/data/source/network/model/login/User.dart';
@@ -26,11 +27,13 @@ class PrefProvider with ChangeNotifier {
   }
 
   void getUser() async {
+    print("kjfdhgkfgkg");
     Preferences preferences = Preferences();
     _userName = await preferences.getUsername();
     _fullname = await preferences.getFullName();
     _avatar = await preferences.getAvatar();
-    await preferences.getEmail();
+
+     await preferences.getEmail();
     notifyListeners();
   }
 
@@ -39,7 +42,7 @@ class PrefProvider with ChangeNotifier {
     return await preferences.getUserAuth();
   }
 
-  void saveUser(Login data) async {
+  void saveUser(Result data) async {
     Preferences preferences = Preferences();
     preferences.saveUser(data);
     notifyListeners();
@@ -52,7 +55,6 @@ class PrefProvider with ChangeNotifier {
   }
 
   void saveAuth(bool value) async {
-    print('sdlkfhdfhgfdg ${value}');
     Preferences preferences = Preferences();
     preferences.saveUserAuth(value);
     _auth = await preferences.getUserAuth();

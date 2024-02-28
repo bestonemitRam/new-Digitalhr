@@ -74,7 +74,7 @@ class LeaveProvider with ChangeNotifier {
         debugPrint(responseData.toString());
 
         final responseJson = Leavetyperesponse.fromJson(responseData);
-        makeLeaveList(responseJson.data!);
+        makeLeaveList(responseJson.result!);
 
         return responseJson;
       } else {
@@ -89,9 +89,9 @@ class LeaveProvider with ChangeNotifier {
   void makeLeaveList(Data data) {
     _leaveList.clear();
 
-    for (var leave in data.leaveTypeData!) {
+    for (var leave in data.leavesData!) {
       _leaveList.add(Leave(
-          id: int.parse(leave.id.toString() ?? '0'),
+          id: int.parse('0'),
           name: leave.leaveTypeName!,
           allocated: int.parse(leave.taken.toString() ?? "0"),
           total: int.parse(leave.available.toString() ?? "0"),
@@ -108,7 +108,7 @@ class LeaveProvider with ChangeNotifier {
     Preferences preferences = Preferences();
     String token = await preferences.getToken();
     int getUserID = await preferences.getUserId();
-    print('response');
+    print('dlsfjkghkgfhkhdfgkj');
     Map<String, String> headers = {
       'Accept': 'application/json; charset=UTF-8',
       'user_token': '$token',
@@ -119,13 +119,13 @@ class LeaveProvider with ChangeNotifier {
 
       final responseData = json.decode(response.body);
 
-      print("Check leafdgdfgdfve data ${responseData}");
+      print("Check leafdgdfgfddfdfve data ${responseData}");
 
       if (response.statusCode == 200) {
         debugPrint(responseData.toString());
 
         final responseJson = SelectLeaveTypeModel.fromJson(responseData);
-        selectLeaveList(responseJson.data!);
+        selectLeaveList(responseJson.result!);
 
         return responseJson;
       } else {
@@ -137,15 +137,15 @@ class LeaveProvider with ChangeNotifier {
     }
   }
 
-  void selectLeaveList(Datas data) {
+  void selectLeaveList(Result data) {
     _selectleaveList.clear();
 
-    for (var leave in data.leaveTypeList!) {
+    for (var leave in data.leaveTypes!) {
       _selectleaveList.add(Leave(
-          id: int.parse(leave.leaveTypeId.toString() ?? '0'),
+          id: int.parse(leave.id.toString() ?? '0'),
           name: leave.leaveTypeName!,
           allocated: int.parse("0"),
-          total: int.parse(leave.available.toString() ?? "0"),
+          total: int.parse("0"),
           status: true,
           isEarlyLeave: true));
     }
@@ -154,8 +154,19 @@ class LeaveProvider with ChangeNotifier {
   }
 
   Future<Leavetypedetailreponse> getLeaveTypeDetail() async {
-    var uri = Uri.parse(APIURL.LEAVE_LIST_DETAILS_API +
-        "${_selectedMonth == 0 ? "year" : "month"}/${_selectedType}");
+    var uri;
+
+    if (_selectedType == 0) {
+      
+      uri = Uri.parse(APIURL.LEAVE_LIST_DETAILS_API +
+          "fetchType=${_selectedMonth == 0 ? "year" : "month"}");
+    } else {
+   
+      uri = Uri.parse(APIURL.LEAVE_LIST_DETAILS_API +
+          "fetchType=${_selectedMonth == 0 ? "year" : "month"}&leaveTypeID=${_selectedType}");
+    }
+
+    print("dfgfdfggfdh  ${uri}");
 
     //     .replace(queryParameters:
     //     {
@@ -169,7 +180,7 @@ class LeaveProvider with ChangeNotifier {
     //   'leave_type': _selectedType != 0 ? _selectedType.toString() : '',
     // });
 
-    print("check leave details ${uri}     ${_selectedMonth}");
+    print("check leave detailsd ${uri}     ${_selectedMonth}");
 
     Preferences preferences = Preferences();
     String token = await preferences.getToken();
@@ -185,14 +196,15 @@ class LeaveProvider with ChangeNotifier {
       final response = await http.get(uri, headers: headers);
 
       final responseData = json.decode(response.body);
-      print("check api response ${responseData}");
-      if (response.statusCode == 200) {
+      print("check api dsfdfresponse ${responseData}");
+      if (response.statusCode == 200) 
+      {
         debugPrint(responseData.toString());
 
         final responseJson = Leavetypedetailreponse.fromJson(responseData);
         print("check pase data in model ${responseJson}");
 
-        makeLeaveTypeList(responseJson.data!);
+        makeLeaveTypeList(responseJson!);
 
         return responseJson;
       } else {
@@ -204,12 +216,13 @@ class LeaveProvider with ChangeNotifier {
     }
   }
 
-  void makeLeaveTypeList(LeaveData leaveList) {
+  void makeLeaveTypeList(Leavetypedetailreponse leaveList) {
     _leaveDetailList.clear();
 
-    for (var leave in leaveList.leaveList!) {
+    for (var leave in leaveList.result!) 
+    {
       _leaveDetailList.add(LeaveDetail(
-          id: leave.id!,
+          id: 1,
           name: leave.leaveTypeName!,
           leave_from: leave.leaveFrom!,
           leave_to: leave.leaveTo!,
@@ -240,13 +253,14 @@ class LeaveProvider with ChangeNotifier {
         'leave_from': from,
         'leave_to': to,
         'leave_type_id': leaveId.toString(),
-        'leave_reason': reason,
+        'reason': reason,
       });
 
       final responseData = json.decode(response.body);
+
+      print("checkData  ${responseData} ${response.statusCode}");
       if (response.statusCode == 200) {
         final responseJson = IssueLeaveResponse.fromJson(responseData);
-
         debugPrint(responseJson.toString());
         return responseJson;
       } else {

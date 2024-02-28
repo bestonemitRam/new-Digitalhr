@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bmiterp/data/source/network/model/attendancereport/EmployeeAttendance.dart';
 import 'package:bmiterp/data/source/network/model/attendancereport/EmployeeTodayAttendance.dart';
 import 'package:bmiterp/model/employeeattendancereport.dart';
@@ -6,6 +8,8 @@ import 'package:bmiterp/repositories/attendancereportrepository.dart';
 import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import '../data/source/network/model/attendancereport/AttendanceReportResponse.dart';
 
 class AttendanceReportProvider with ChangeNotifier {
   final List<EmployeeAttendanceReport> _attendanceReport = [];
@@ -34,6 +38,9 @@ class AttendanceReportProvider with ChangeNotifier {
   ];
 
   var isLoading = false;
+  get loader {
+    return isLoading;
+  }
 
   int selectedMonth = DateTime.now().month - 1;
 
@@ -46,29 +53,46 @@ class AttendanceReportProvider with ChangeNotifier {
   }
 
   Future<void> getAttendanceReport() async {
-    isLoading = true;
+    loaderbar(true);
+    _attendanceReport.clear();
+
     try {
       final responseJson = await repository.getAttendanceReport(selectedMonth);
-      isLoading = false;
-      makeTodayReport(responseJson.data.employeeTodayAttendance);
-      makeAttendanceReport(responseJson.data.employeeAttendance);
-      getProdHour(responseJson.data.employeeTodayAttendance.checkInAt,
-          responseJson.data.employeeTodayAttendance.checkOutAt);
-    } catch (error) {
+      print("jdfgkjgf ${responseJson.status}");
+
+      if (responseJson.status == true) {
+        makeAttendanceReport(responseJson.result!.attendanceList!);
+        loaderbar(false);
+      } else {
+        makeAttendanceReport(responseJson.result!.attendanceList!);
+        loaderbar(false);
+      }
+
+      // getProdHour(responseJson.data.employeeTodayAttendance.checkInAt,responseJson.data.employeeTodayAttendance.checkOutAt);
+    } catch (error) 
+    {
       isLoading = false;
       throw error;
     }
   }
 
-  void makeAttendanceReport(List<EmployeeAttendance> employeeAttendance) {
+  loaderbar(bool isLoading) {
+    isLoading = isLoading;
+
+    notifyListeners();
+  }
+
+  void makeAttendanceReport(List<AttendanceList> employeeAttendance) {
     _attendanceReport.clear();
     for (var item in employeeAttendance) {
+      print("fkjghkfhg   ${item.totalWorkingHours}");
+
       _attendanceReport.add(EmployeeAttendanceReport(
-          id: item.id,
-          attendance_date: item.attendanceDate,
-          week_day: item.weekDay,
-          check_in: item.checkIn,
-          check_out: item.checkOut));
+          id: item.id!,
+          attendance_date: item.attendanceDate ?? '0',
+          total_working_hour: item.totalWorkingHours ?? 'In progress',
+          check_in: item.punchInTime ?? '0',
+          check_out: item.punchOutTime ?? 'working'));
     }
 
     notifyListeners();
