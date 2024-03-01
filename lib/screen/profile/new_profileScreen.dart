@@ -120,6 +120,7 @@ class _ProfileScreenActivityState extends State<ProfileScreenActivity> {
                                           ),
                                         ),
                                       ),
+                                    
                                       Padding(
                                           padding: const EdgeInsets.all(5),
                                           child: Text(

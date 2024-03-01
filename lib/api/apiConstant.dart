@@ -29,4 +29,8 @@ class APIURL {
   static const String LEAVE_REQUEST_API = "$API_URL/leave/applyLeave";
   static const String LEAVE_LIST_DETAILS_API = "$API_URL/leave/list?";
   static const String SHOP_LIST = "$API_URL/employee/shopsList";
+  static const String DISTRIBUTOR_LIST = "$API_URL/sales/distributors/list";
+  static const String DISTRIBUTOR_STATE_LIST = "$API_URL/sales/states";
+  static const String DISTRIBUTOR_DISTRICT_LIST = "$API_URL/sales/districts/";
+  static const String CREATE_DISTRIBUTOR = "$API_URL/sales/distributors/save";
 }

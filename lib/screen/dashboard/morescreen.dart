@@ -1,4 +1,5 @@
 import 'package:bmiterp/map/google_map_screen.dart';
+import 'package:bmiterp/map/map_route.dart';
 import 'package:bmiterp/provider/profileUserProvider.dart';
 import 'package:bmiterp/provider/shopprovider.dart';
 import 'package:bmiterp/provider/taskprovider.dart';
@@ -71,6 +72,12 @@ class MoreScreen extends StatelessWidget {
                     ChangeNotifierProvider<ShopProvider>(
                         create: (BuildContext context) => ShopProvider(),
                         child: GoogleMapScreen())),
+                Services(
+                    'Map Area',
+                    Icons.shop,
+                    ChangeNotifierProvider<ShopProvider>(
+                        create: (BuildContext context) => ShopProvider(),
+                        child: MapRoute())),
 
                 Services(
                     'Distributors',

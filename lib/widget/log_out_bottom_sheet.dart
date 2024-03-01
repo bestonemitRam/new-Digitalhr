@@ -29,7 +29,8 @@ class LogOutBottomSheetState extends State<LogOutBottomSheet> {
       if (!mounted) {
         return;
       }
-      if (response.statusCode == 200 || response.statusCode == 401) {
+      if (response.status.toString() == "true" ||
+          response.status.toString() == "false") {
         Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (BuildContext context) {

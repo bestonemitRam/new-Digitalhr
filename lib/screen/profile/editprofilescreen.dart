@@ -118,7 +118,8 @@ class EditProfileScreenState extends State<EditProfileScreen> {
 
   @override
   void didChangeDependencies() {
-    if (initial) {
+    if (initial)
+     {
       _nameController.text = Apphelper.USER_NAME;
       _emailController.text = Apphelper.USER_EMAIL;
       //  _addressController.text = profile.address;
@@ -247,6 +248,7 @@ class EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                 ),
+               
                 Form(
                   key: _form,
                   child: SingleChildScrollView(

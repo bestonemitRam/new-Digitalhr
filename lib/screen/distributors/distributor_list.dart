@@ -8,27 +8,38 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class DistributorList extends StatelessWidget {
+class DistributorList extends StatelessWidget 
+{
   @override
   Widget build(BuildContext context) {
     final leaveData = Provider.of<ShopProvider>(context, listen: true);
-    final shops = leaveData.shoplist;
-    if (shops.isNotEmpty) {
+    final distributor = leaveData.distributor;
+   
+    if (distributor.isNotEmpty) 
+    {
       return ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           primary: false,
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: shops.length,
+          itemCount: distributor.length,
           itemBuilder: (ctx, i) {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: DistributorScreenListData(
-                id: shops[i].id,
-                shopName: shops[i].shopName,
-                ownerName: shops[i].ownerName,
-                shopAddress: shops[i].shopAddress,
-              ),
+                  id: distributor[i].id!,
+                  distributorAvatar: distributor[i].distributorAvatar!,
+                  distributorOrgName: distributor[i].distributorOrgName!,
+                  fullName: distributor[i].fullName!,
+                  address: distributor[i].address!,
+                  mail: distributor[i].mail!,
+                  contact: distributor[i].contact!,
+                  isActive: distributor[i].isActive!,
+                  createdAt: distributor[i].createdAt!,
+                  updatedAt: distributor[i].updatedAt!,
+                  stateName: distributor[i].stateName!,
+                  districtName: distributor[i].districtName!,
+                  is_varified: distributor[i].is_varified!),
             );
           });
     } else {
@@ -36,7 +47,7 @@ class DistributorList extends StatelessWidget {
         padding: EdgeInsets.only(top: 30.h),
         child: Center(
           child: Text(
-            "Currently don't have shop ",
+            "",
             style: TextStyle(color: Colors.white),
           ),
         ),

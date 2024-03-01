@@ -8,6 +8,7 @@ import 'package:background_location/background_location.dart';
 import 'package:bmiterp/api/apiConstant.dart';
 import 'package:bmiterp/data/source/datastore/preferences.dart';
 import 'package:bmiterp/data/source/network/model/attendancestatus/AttendanceStatusResponse.dart';
+import 'package:bmiterp/data/source/network/model/attendancestatus/checkoutmodel.dart';
 import 'package:bmiterp/data/source/network/model/dashboard/Dashboardresponse.dart';
 import 'package:bmiterp/data/source/network/model/dashboard/EmployeeTodayAttendance.dart';
 import 'package:bmiterp/data/source/network/model/dashboard/Overview.dart';
@@ -173,8 +174,7 @@ class DashboardProvider with ChangeNotifier {
     List<String> parts = employeeTodayAttendance.punchInTime!.split(' ');
     List<String> partdata = employeeTodayAttendance.punchOutTime!.split(' ');
 
-    // int hours = int.parse(parts[0]);
-    //int minutes = int.parse(parts[1]);
+    
 
     _attendanceList.update(
         'production-time',
@@ -301,12 +301,17 @@ class DashboardProvider with ChangeNotifier {
       if (responseData['status'] == true) {
         bgLocationTask();
 
+        // updateAttendanceStatus(EmployeeAttendanceData(
+        //     punchInTime: attendanceResponse.data!.attendanceData!.punchInTime!,
+        //     punchOutTime:
+        //         attendanceResponse.data!.attendanceData!.punchOutTime ??
+        //             "0000-00-00 00:00:00",
+        //     totalWorkingHours: "00:00:00"));
+
         updateAttendanceStatus(EmployeeAttendanceData(
-            punchInTime: attendanceResponse.data!.attendanceData!.punchInTime,
-            punchOutTime: attendanceResponse.data!.attendanceData!.punchOutTime,
-            totalWorkingHours: attendanceResponse
-                .data!.attendanceData!.totalWorkingHours
-                .toString()));
+            punchInTime: attendanceResponse.data!.attendanceData!.punchInTime!,
+            punchOutTime: "0000-00-00 00:00:00",
+            totalWorkingHours: "00:00:00"));
 
         return attendanceResponse;
       } else {
@@ -360,7 +365,6 @@ class DashboardProvider with ChangeNotifier {
     });
   }
 
-  ///MARK: - Schedule Notification
   Future<void> scheduleNewNotification(
       String date, String message, int hour, int minute) async {
     final convertedDate = new DateFormat('yyyy-MM-dd').parse(date);
@@ -389,8 +393,7 @@ class DashboardProvider with ChangeNotifier {
                 convertedDate.day, hour, minute - 15)));
   }
 
-  checklocation(double lat, double long) async {
-    print("dkfgjkfcdsjghkjgh");
+  checklocation(double long, double lat) async {
     Preferences preferences = Preferences();
     String token = await preferences.getToken();
     int getUserID = await preferences.getUserId();
@@ -445,7 +448,7 @@ class DashboardProvider with ChangeNotifier {
   }
 
   ///MARK: - CheckOut API Implementation
-  Future<AttendanceStatusResponse> checkOutAttendance() async {
+  Future<CheckOutModel> checkOutAttendance() async {
     print("dkfjhgkljfghkfgk   ");
     var uri = Uri.parse(APIURL.CHECK_Out_URL);
     Preferences preferences = Preferences();
@@ -473,8 +476,7 @@ class DashboardProvider with ChangeNotifier {
       debugPrint(response.body.toString());
       final responseData = json.decode(response.body);
 
-      final attendanceResponse =
-          AttendanceStatusResponse.fromJson(responseData);
+      final attendanceResponse = CheckOutModel.fromJson(responseData);
 
       print("klfgjhkjhfgkh  ${responseData}   ${attendanceResponse}");
 
@@ -482,10 +484,14 @@ class DashboardProvider with ChangeNotifier {
         stopLocationService();
 
         if (responseData['status'] == true) {
-          // updateAttendanceStatus(EmployeeAttendanceData(
-          //     checkIn: attendanceResponse.data.checkInAt.toString(),
-          //     checkOut: attendanceResponse.data.checkOutAt.toString(),
-          //     productionTime: attendanceResponse.data.productiveTimeInMin));
+          updateAttendanceStatus(EmployeeAttendanceData(
+              punchInTime:
+                  attendanceResponse.result!.attendanceData!.punchInTime,
+              punchOutTime:
+                  attendanceResponse.result!.attendanceData!.punchOutTime ??
+                      "0000-00-00 00:00:00",
+              totalWorkingHours: attendanceResponse
+                  .result!.attendanceData!.totalWorkingHours));
         }
 
         return attendanceResponse;

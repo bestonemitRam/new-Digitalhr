@@ -12,7 +12,8 @@ class CommentList extends StatelessWidget {
     final CommentScreenController model = Get.find();
 
     return Obx(
-      () => ListView.builder(
+      () => 
+      ListView.builder(
         controller: model.scrollController,
         itemCount: model.commentList.length,
         primary: false,

@@ -7,8 +7,7 @@ import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-class MoreScreenProvider with ChangeNotifier 
-{
+class MoreScreenProvider with ChangeNotifier {
   Future<Logoutresponse> logout() async {
     var uri = Uri.parse(APIURL.LOG_OUT);
 
@@ -33,8 +32,7 @@ class MoreScreenProvider with ChangeNotifier
 
       final responseData = json.decode(response.body);
 
-      if (response.statusCode == 200 || response.statusCode == 401) 
-      {
+      if (response.statusCode == 200 || response.statusCode == 401) {
         final jsonResponse = Logoutresponse.fromJson(responseData);
         print("Logout is Successfully");
         preferences.clearPrefs();

@@ -36,7 +36,8 @@ class Services extends StatelessWidget {
                 showModalBottomSheet(
                     context: context,
                     useRootNavigator: true,
-                    builder: (context) {
+                    builder: (context) 
+                    {
                       return LogOutBottomSheet();
                     });
               } else if (name == 'Issue Ticket') {

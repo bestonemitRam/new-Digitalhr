@@ -51,21 +51,18 @@ class _TaskStatusScreenState extends State<AttendanceScreenHistory> {
                         color: Colors.transparent,
                       ),
                       child: TabBar(
-                        // Set this to true for scrollable tabs
-                        indicator: BoxDecoration(
-                          color: Colors.white10,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        labelColor: Colors.transparent,
-                        dividerColor: Colors.transparent,
-                        tabs: [
-                          Tab(
-                            child: Container(
-                              padding: EdgeInsets.only(bottom: 10),
-                              color: Colors.transparent,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10.0, right: 10),
+                          unselectedLabelColor: Colors.redAccent,
+                          indicatorSize: TabBarIndicatorSize.tab,
+                          dividerColor: Colors.transparent,
+                          indicator: BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [Colors.white10, Colors.white38]),
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.redAccent),
+                          tabs: [
+                            Tab(
+                              child: Align(
+                                alignment: Alignment.center,
                                 child: Text(
                                   "Leave",
                                   style: TextStyle(
@@ -73,24 +70,17 @@ class _TaskStatusScreenState extends State<AttendanceScreenHistory> {
                                 ),
                               ),
                             ),
-                          ),
-                          Tab(
-                            child: Container(
-                              padding: EdgeInsets.only(bottom: 10),
-                              //   color: Colors.transparent,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10.0, right: 10),
+                            Tab(
+                              child: Align(
+                                alignment: Alignment.center,
                                 child: Text(
                                   'Attendance History',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 15),
+                                      color: Colors.white, fontSize: 18),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
+                          ]),
                     ),
                   ),
                 ),

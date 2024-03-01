@@ -4,6 +4,7 @@ import 'package:bmiterp/api/app_strings.dart';
 import 'package:bmiterp/data/source/network/model/login/Loginresponse.dart';
 import 'package:bmiterp/data/source/network/model/login/User.dart';
 import 'package:bmiterp/data/source/network/model/login/Login.dart';
+import 'package:bmiterp/model/check_auth_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,6 +23,34 @@ class Preferences with ChangeNotifier {
     await prefs.setString(Apphelper.USER_CONTACT, user.contact);
     await prefs.setString(Apphelper.USER_DOB, user.dob);
     await prefs.setString(Apphelper.USER_GENDAR, user.gender);
+    Apphelper.USER_DOB = user.dob!;
+    Apphelper.USER_GENDAR = user.gender!;
+    Apphelper.USER_CONTACT = user.contact!;
+    Apphelper.USER_AVATAR = user.avatar;
+    Apphelper.USER_NAME = user.fullName!;
+    notifyListeners();
+    return true;
+  }
+
+  Future<bool> checkAuth(UserDatas data) async {
+    // Obtain shared preferences.
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(Apphelper.USER_TOKEN, data.userToken!);
+    await prefs.setInt(Apphelper.USER_ID, data.id!);
+    //await prefs.setString(Apphelper.USER_AVATAR, data.avatar);
+    await prefs.setString(Apphelper.USER_EMAIL, data.mail!);
+    await prefs.setString(Apphelper.USER_NAME, data.fullName!);
+    // await prefs.setString(Apphelper.USER_EMP_CODE, data.employeeCode);
+    await prefs.setString(Apphelper.USER_CONTACT, data.contact!);
+    await prefs.setString(Apphelper.USER_DOB, data.dob!);
+    await prefs.setString(Apphelper.USER_GENDAR, data.gender!);
+    Apphelper.USER_DOB = data.dob!;
+    Apphelper.USER_GENDAR = data.gender!;
+    Apphelper.USER_CONTACT = data.contact!;
+    //Apphelper.USER_AVATAR = data.avatar;
+    Apphelper.USER_NAME = data.fullName!;
+    Apphelper.USER_EMAIL = data.mail!;
+
     notifyListeners();
     return true;
   }
@@ -101,8 +130,7 @@ class Preferences with ChangeNotifier {
   }
 
   ///USER_ID
-  Future<int> getUserId() async
-   {
+  Future<int> getUserId() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getInt(Apphelper.USER_ID) ?? 0;
   }

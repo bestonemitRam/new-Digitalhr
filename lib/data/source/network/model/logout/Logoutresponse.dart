@@ -1,27 +1,18 @@
 class Logoutresponse {
-  Logoutresponse({
-    required this.status,
-    required this.message,
-    required this.statusCode,
-  });
+  bool? status;
+  String? message;
 
-  factory Logoutresponse.fromJson(dynamic json) {
-    return Logoutresponse(
-      status: json['status'],
-      message: json['message'],
-      statusCode: json['statusCode'],
-    );
+  Logoutresponse({this.status, this.message});
+
+  Logoutresponse.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    message = json['message'];
   }
 
-  bool status;
-  String message;
-  int statusCode;
-
   Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['status'] = status;
-    map['message'] = message;
-    map['statusCode'] = statusCode;
-    return map;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['status'] = this.status;
+    data['message'] = this.message;
+    return data;
   }
 }

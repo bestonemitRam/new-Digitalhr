@@ -33,17 +33,21 @@ class _MyWidgetState extends State<DistributorScreen> {
     super.didChangeDependencies();
   }
 
-  Future<String> initialState() async {
+  Future<String> initialState() async 
+  {
     EasyLoading.show(status: "Loading", maskType: EasyLoadingMaskType.black);
     final leaveProvider = Provider.of<ShopProvider>(context, listen: false);
-    final leaveData = await leaveProvider.getShopList();
+    final leaveData = await leaveProvider.getDistributorList();
+    final stateList = await leaveProvider.getStateList();
+    
     EasyLoading.dismiss(animation: true);
 
     if (!mounted) {
       return "Loaded";
     }
 
-    if (leaveData.statusCode != 200) {
+    if (leaveData == 200)
+     {
       showToast(leaveData!.message!);
     }
 
@@ -88,7 +92,8 @@ class _MyWidgetState extends State<DistributorScreen> {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20),
                                 topRight: Radius.circular(20))),
-                        builder: (context) {
+                        builder: (context) 
+                        {
                           return Padding(
                             padding: MediaQuery.of(context).viewInsets,
                             child: CreateDistributorScreen(),

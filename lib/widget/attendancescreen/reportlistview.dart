@@ -38,9 +38,9 @@ class ReportListView extends StatelessWidget {
             )),
       );
     } else {
-      return Provider.of<AttendanceReportProvider>(context).isLoading
+      return Provider.of<AttendanceReportProvider>(context).loader
           ? Visibility(
-              visible: Provider.of<AttendanceReportProvider>(context).isLoading
+              visible: Provider.of<AttendanceReportProvider>(context).loader
                   ? true
                   : false,
               child: const Padding(
@@ -52,7 +52,7 @@ class ReportListView extends StatelessWidget {
               height: 50.h,
               child: Center(
                 child: Text(
-                  "Sorry don't have attendance ",
+                  "",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

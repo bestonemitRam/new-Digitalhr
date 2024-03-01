@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:bmiterp/api/apiConstant.dart';
 import 'package:bmiterp/data/source/datastore/preferences.dart';
 import 'package:bmiterp/data/source/network/model/login/Loginresponse.dart';
+import 'package:bmiterp/model/check_auth_model.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -70,28 +71,29 @@ class Auth with ChangeNotifier {
       'user_id': '$getUserID',
     };
     try {
-      // var fcm = await FirebaseMessaging.instance.getToken();
-      // print("FCM is :$fcm");
+    
 
       final response = await http.get(uri, headers: headers);
       print("Login Response is  :$response");
       final responseData = json.decode(response.body);
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200) 
+      {
         print("Response Status Code is - :${response.statusCode}");
         print(" inside the Response Status  :$responseData");
 
         print(responseData.toString());
-        final responseJson = Loginresponse.fromJson(responseData);
+        final responseJson = CheckAuthModel.fromJson(responseData);
         Preferences preferences = Preferences();
 
-        await preferences.saveUser(responseJson.result!);
+        await preferences.checkAuth(responseJson.result!.userData!);
       } else 
       {
         Preferences preferences = Preferences();
         preferences.clearPrefs();
       }
-    } catch (error) {
+    } catch (error)
+     {
       throw error;
-    }
+     }
   }
 }

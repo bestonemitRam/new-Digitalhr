@@ -89,8 +89,8 @@ class AttendanceData {
   dynamic punchInLatitude;
   dynamic punchInLongitude;
   dynamic attendanceStatus;
-  int? totalWorkingHours;
-  int? isActive;
+  dynamic totalWorkingHours;
+  dynamic isActive;
   dynamic createdAt;
 
   AttendanceData(

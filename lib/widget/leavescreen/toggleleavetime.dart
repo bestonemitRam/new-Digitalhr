@@ -6,7 +6,8 @@ import 'package:toggle_switch/toggle_switch.dart';
 
 class ToggleLeaveTime extends StatelessWidget {
   @override
-  Widget build(BuildContext context, [bool mounted = true]) {
+  Widget build(BuildContext context, [bool mounted = true]) 
+  {
     final provider = Provider.of<LeaveProvider>(context);
 
     void onToggleChanged() async {
@@ -30,7 +31,8 @@ class ToggleLeaveTime extends StatelessWidget {
       // }
     }
 
-    return Container(
+    return 
+    Container(
       decoration: RadialDecorationBox(),
       child: Card(
         elevation: 0,

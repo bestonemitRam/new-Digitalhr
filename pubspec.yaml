@@ -71,6 +71,7 @@ dependencies:
   flutter_textfield_autocomplete: ^1.0.2
   path_provider: ^2.0.15
   background_location: 
+  expansion_tile_card: ^3.0.0
 
   flutter_background_service: ^0.2.4
   workmanager: ^0.5.2

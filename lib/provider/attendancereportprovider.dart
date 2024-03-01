@@ -38,7 +38,8 @@ class AttendanceReportProvider with ChangeNotifier {
   ];
 
   var isLoading = false;
-  get loader {
+  get loader
+   {
     return isLoading;
   }
 
@@ -52,7 +53,8 @@ class AttendanceReportProvider with ChangeNotifier {
     return _todayReport;
   }
 
-  Future<void> getAttendanceReport() async {
+  Future<void> getAttendanceReport() async
+  {
     loaderbar(true);
     _attendanceReport.clear();
 

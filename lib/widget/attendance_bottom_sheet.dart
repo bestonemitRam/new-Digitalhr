@@ -38,7 +38,8 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
           isLoading = false;
           showDialog(
             context: context,
-            builder: (context) {
+            builder: (context)
+             {
               return Dialog(
                 child: CustomAlertDialog(response.message),
               );
@@ -81,7 +82,8 @@ class AttendanceBottomSheetState extends State<AttedanceBottomSheet> {
       {
         bool result = await InternetConnectionChecker().hasConnection;
 
-        if (result) {
+        if (result) 
+        {
           final response = await provider.checkInAttendance();
           print("hgghhghghgh  ${response}");
           isEnabled = true;
