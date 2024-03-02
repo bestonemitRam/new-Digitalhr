@@ -53,8 +53,9 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
   }
 
   late DisStateModel disStateModel;
+  List<DistrictData> districtListdata = [];
 
-  DistrictModel? districtModel;
+  late DistrictModel districtModel;
   bool datafoundList = false;
   bool districtdatafoundList = false;
 
@@ -109,11 +110,24 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
         districtdatafoundList = true;
       });
       districtModel = DistrictModel.fromJson(responseData);
+      makeCityList(districtModel);
     } else {
       setState(() {
         districtdatafoundList = true;
+        districtModel = DistrictModel.fromJson(responseData);
+        makeCityList(districtModel);
       });
-      districtModel = DistrictModel.fromJson(responseData);
+    }
+  }
+
+  makeCityList(DistrictModel data) {
+    print("kdjfgjkkfgfdgjkdfgk");
+    setState(() {
+      districtListdata.clear();
+    });
+
+    for (var leave in data.resultData!) {
+      districtListdata.add(leave);
     }
   }
 
@@ -187,7 +201,7 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
             });
             Get.back();
             final leaveData = Provider.of<ShopProvider>(context, listen: true);
-            final distributor = leaveData.distributor;
+            await leaveData.getDistributorList();
             Get.back();
 
             //   ScaffoldMessenger.of(context)
@@ -205,11 +219,18 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                 fontSize: 16.0);
           }
         } catch (e) {
+          setState(() {
+            EasyLoading.dismiss(animation: true);
+          });
           print(e);
         }
 
         return Future.error('error');
-      } else {}
+      } else {
+        setState(() {
+          EasyLoading.dismiss(animation: true);
+        });
+      }
     } catch (error) {
       throw error;
     }
@@ -335,6 +356,7 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                                     onChanged: (StateDataList? selectedItem) {
                                       setState(() {
                                         getCityList(selectedItem!.id!);
+
                                         print(selectedItem?.stateName);
                                         stateDataList = selectedItem;
                                       });
@@ -374,72 +396,80 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                               )
                             : SizedBox(),
                         districtdatafoundList
-                            ? districtModel!.resultData!.isNotEmpty
-                                ? Container(
-                                    height: 50,
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white24,
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          bottomRight: Radius.circular(10)),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(15.0),
-                                      child: DropdownButton<DistrictData>(
-                                        isExpanded: true,
-                                        hint: Row(
-                                          children: const [
-                                            Expanded(
-                                              child: Text(
-                                                'Select Districts',
-                                                style: TextStyle(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.white70,
+                            ? districtListdata.isNotEmpty
+                                ? districtListdata != null
+                                    ? Container(
+                                        height: 50,
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white24,
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10)),
+                                        ),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(15.0),
+                                          child: DropdownButton<DistrictData>(
+                                            isExpanded: true,
+                                            hint: Row(
+                                              children: const [
+                                                Expanded(
+                                                  child: Text(
+                                                    'Select Districts',
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.white70,
+                                                    ),
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                  ),
                                                 ),
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
+                                              ],
                                             ),
-                                          ],
+                                            value: districtData,
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                            icon: const Icon(
+                                              Icons.arrow_drop_down,
+                                            ),
+                                            onChanged:
+                                                (DistrictData? selectedItem) {
+                                              setState(() {
+                                                print(
+                                                    'kjdfhgjkhdf  ${selectedItem?.districtName}');
+                                                districtData = selectedItem;
+                                              });
+                                            },
+                                            underline: SizedBox(),
+                                            items: districtListdata!
+                                                .map((DistrictData item) {
+                                              return DropdownMenuItem<
+                                                  DistrictData>(
+                                                value: item,
+                                                child: Text(item.districtName!,
+                                                    style: TextStyle(
+                                                        color: Colors.black)),
+                                              );
+                                            }).toList(),
+                                            selectedItemBuilder:
+                                                (BuildContext context) {
+                                              return districtListdata!
+                                                  .map<Widget>(
+                                                      (DistrictData item) {
+                                                return Text(
+                                                  item.districtName!,
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                );
+                                              }).toList();
+                                            },
+                                          ),
                                         ),
-                                        value: districtData,
-                                        style: TextStyle(color: Colors.black),
-                                        icon: const Icon(
-                                          Icons.arrow_drop_down,
-                                        ),
-                                        onChanged:
-                                            (DistrictData? selectedItem) {
-                                          setState(() {
-                                            print(
-                                                'kjdfhgjkhdf  ${selectedItem?.districtName}');
-                                            districtData = selectedItem;
-                                          });
-                                        },
-                                        underline: SizedBox(),
-                                        items: districtModel!.resultData!
-                                            .map((DistrictData item) {
-                                          return DropdownMenuItem<DistrictData>(
-                                            value: item,
-                                            child: Text(item.districtName!,
-                                                style: TextStyle(
-                                                    color: Colors.black)),
-                                          );
-                                        }).toList(),
-                                        selectedItemBuilder:
-                                            (BuildContext context) {
-                                          return districtModel!.resultData!
-                                              .map<Widget>((DistrictData item) {
-                                            return Text(
-                                              item.districtName!,
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            );
-                                          }).toList();
-                                        },
-                                      ),
-                                    ),
-                                  )
+                                      )
+                                    : Center()
                                 : Center()
                             : Center(),
                         SizedBox(
@@ -857,7 +887,11 @@ class CreateDistributorScreenState extends State<CreateDistributorScreen> {
                     ),
                     onPressed: () {
                       if (_form.currentState!.validate()) {
-                        RegisterDistributor();
+                        if (stateDataList!.id != null) {
+                        } else if (districtData!.id != null) {
+                        } else {
+                          RegisterDistributor();
+                        }
                       }
                     },
                     child: Padding(

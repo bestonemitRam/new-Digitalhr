@@ -33,4 +33,6 @@ class APIURL {
   static const String DISTRIBUTOR_STATE_LIST = "$API_URL/sales/states";
   static const String DISTRIBUTOR_DISTRICT_LIST = "$API_URL/sales/districts/";
   static const String CREATE_DISTRIBUTOR = "$API_URL/sales/distributors/save";
+  static const String CREATE_RETAILER = "$API_URL/sales/retailers/add";
+  static const String GET_RETAILER_LIST = "$API_URL/sales/retailers/list";
 }

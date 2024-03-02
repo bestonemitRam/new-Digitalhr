@@ -9,7 +9,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class ShopList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final leaveData = Provider.of<ShopProvider>(context, listen: true);
+    final leaveData = Provider.of<LeaveProvider>(context, listen: true);
     final shops = leaveData.shoplist;
     if (shops.isNotEmpty) {
       return ListView.builder(
@@ -23,9 +23,13 @@ class ShopList extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: ListUi(
                 id: shops[i].id,
-                shopName: shops[i].shopName,
-                ownerName: shops[i].ownerName,
-                shopAddress: shops[i].shopAddress,
+                retailerName: shops[i].retailerName,
+                retailerShopName: shops[i].retailerShopName,
+                retailerAddress: shops[i].retailerAddress,
+                retailerLatitude: shops[i].retailerLatitude,
+                retailerLongitude: shops[i].retailerLongitude,
+                retailerShopImage: shops[i].retailerShopImage,
+                isVarified: shops[i].isVarified,
               ),
             );
           });
@@ -36,7 +40,7 @@ class ShopList extends StatelessWidget {
           child: Container(
             height: 50.h,
             child: Text(
-              "Currently don't have a Retailers ",
+              "",
               style: TextStyle(color: Colors.white),
             ),
           ),

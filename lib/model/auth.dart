@@ -78,8 +78,8 @@ class Auth with ChangeNotifier {
       final responseData = json.decode(response.body);
       if (response.statusCode == 200) 
       {
-        print("Response Status Code is - :${response.statusCode}");
-        print(" inside the Response Status  :$responseData");
+        print("Responsecvvcv Status Code is - :${response.statusCode}");
+        print(" insidecvcv the Response Status  :$responseData");
 
         print(responseData.toString());
         final responseJson = CheckAuthModel.fromJson(responseData);

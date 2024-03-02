@@ -37,7 +37,7 @@ class _MyWidgetState extends State<OrderGenerate> {
 
   Future<String> initialState() async {
     EasyLoading.show(status: "Loading", maskType: EasyLoadingMaskType.black);
-    final leaveProvider = Provider.of<ShopProvider>(context, listen: false);
+    final leaveProvider = Provider.of<LeaveProvider>(context, listen: false);
     final leaveData = await leaveProvider.getShopList();
     EasyLoading.dismiss(animation: true);
 
@@ -45,9 +45,9 @@ class _MyWidgetState extends State<OrderGenerate> {
       return "Loaded";
     }
 
-    if (leaveData.statusCode != 200) {
-      showToast(leaveData!.message!);
-    }
+    // if (leaveData.statusCode != 200) {
+    //   showToast(leaveData!.message!);
+    // }
 
     return "Loaded";
   }

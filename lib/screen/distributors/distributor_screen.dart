@@ -61,7 +61,7 @@ class _MyWidgetState extends State<DistributorScreen> {
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            //automaticallyImplyLeading: true,
+           
             leading: InkWell(
               child: Icon(
                 Icons.arrow_back_ios,

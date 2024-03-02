@@ -7,7 +7,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class DistributorScreenListData extends StatelessWidget {
+class DistributorScreenListData extends StatelessWidget
+ {
   final int id;
   final String distributorAvatar;
   final String distributorOrgName;

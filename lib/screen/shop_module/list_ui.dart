@@ -6,16 +6,23 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 
 class ListUi extends StatelessWidget {
-  final int id;
-  final String shopName;
-  final String ownerName;
-  final String shopAddress;
-
+  int? id;
+  dynamic retailerName;
+  dynamic retailerShopName;
+  dynamic retailerAddress;
+  dynamic retailerLatitude;
+  dynamic retailerLongitude;
+  dynamic retailerShopImage;
+  int? isVarified;
   ListUi({
     required this.id,
-    required this.shopName,
-    required this.ownerName,
-    required this.shopAddress,
+    required this.retailerName,
+    required this.retailerShopName,
+    required this.retailerAddress,
+    required this.retailerLatitude,
+    required this.retailerLongitude,
+    required this.retailerShopImage,
+    required this.isVarified,
   });
 
   @override
@@ -44,7 +51,7 @@ class ListUi extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width / 2,
                         child: Text(
-                          "$shopName",
+                          "$retailerName",
                           overflow: TextOverflow.ellipsis,
                           maxLines: 10,
                           style: TextStyle(
@@ -60,7 +67,7 @@ class ListUi extends StatelessWidget {
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                       Text(
-                        "$ownerName",
+                        "$retailerName",
                         style:
                             TextStyle(color: HexColor("#036eb7"), fontSize: 14),
                       ),
@@ -75,7 +82,7 @@ class ListUi extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width / 2,
                         child: Text(
-                          "$shopAddress",
+                          "$retailerName",
                           overflow: TextOverflow.ellipsis,
                           maxLines: 10,
                           style: TextStyle(

@@ -56,6 +56,11 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin flutter_file_downloader, com.odehbros.flutter_file_downloader.FlutterFileDownloaderPlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new com.fluttercandies.flutter_image_compress.ImageCompressPlugin());
+    } catch (Exception e) {
+      Log.e(TAG, "Error registering plugin flutter_image_compress, com.fluttercandies.flutter_image_compress.ImageCompressPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new com.jrai.flutter_keyboard_visibility.FlutterKeyboardVisibilityPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin flutter_keyboard_visibility, com.jrai.flutter_keyboard_visibility.FlutterKeyboardVisibilityPlugin", e);
@@ -81,6 +86,11 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin fluttertoast, io.github.ponnamkarthik.toast.fluttertoast.FlutterToastPlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new com.baseflow.geocoding.GeocodingPlugin());
+    } catch (Exception e) {
+      Log.e(TAG, "Error registering plugin geocoding_android, com.baseflow.geocoding.GeocodingPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new com.baseflow.geolocator.GeolocatorPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin geolocator_android, com.baseflow.geolocator.GeolocatorPlugin", e);
@@ -94,6 +104,11 @@ public final class GeneratedPluginRegistrant {
       flutterEngine.getPlugins().add(new com.ggichure.github.hexcolor.HexcolorPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin hexcolor, com.ggichure.github.hexcolor.HexcolorPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new id.co.eyro.image_compression_flutter.ImageCompressionFlutterPlugin());
+    } catch (Exception e) {
+      Log.e(TAG, "Error registering plugin image_compression_flutter, id.co.eyro.image_compression_flutter.ImageCompressionFlutterPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new io.flutter.plugins.imagepicker.ImagePickerPlugin());

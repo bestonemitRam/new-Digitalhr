@@ -6,13 +6,18 @@ import 'package:bmiterp/data/source/network/model/leavetype/LeaveType.dart';
 import 'package:bmiterp/data/source/network/model/leavetype/Leavetyperesponse.dart';
 import 'package:bmiterp/data/source/network/model/leavetypedetail/LeaveTypeDetail.dart';
 import 'package:bmiterp/data/source/network/model/leavetypedetail/Leavetypedetailreponse.dart';
+import 'package:bmiterp/data/source/network/model/retailer/reatailer_model.dart';
 import 'package:bmiterp/model/LeaveDetail.dart';
 import 'package:bmiterp/model/leave.dart';
 import 'package:bmiterp/model/select_leave_model.dart';
+import 'package:bmiterp/model/shop.dart';
+import 'package:bmiterp/model/shopresponse.dart';
 import 'package:bmiterp/utils/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:http/http.dart' as http;
 import 'package:bmiterp/data/source/datastore/preferences.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class LeaveProvider with ChangeNotifier {
   final List<Leave> _leaveList = [];
@@ -63,26 +68,33 @@ class LeaveProvider with ChangeNotifier {
       'user_token': '$token',
       'user_id': '$getUserID',
     };
-    try {
-      final response = await http.get(uri, headers: headers);
+    bool result = await InternetConnectionChecker().hasConnection;
 
-      final responseData = json.decode(response.body);
+    if (result == true) {
+      try {
+        final response = await http.get(uri, headers: headers);
 
-      print("Check leave data ${responseData}");
+        final responseData = json.decode(response.body);
 
-      if (response.statusCode == 200) {
-        debugPrint(responseData.toString());
+        print("Check leave data ${responseData}");
 
-        final responseJson = Leavetyperesponse.fromJson(responseData);
-        makeLeaveList(responseJson.result!);
+        if (response.statusCode == 200) {
+          debugPrint(responseData.toString());
 
-        return responseJson;
-      } else {
-        var errorMessage = responseData['message'];
-        throw errorMessage;
+          final responseJson = Leavetyperesponse.fromJson(responseData);
+          makeLeaveList(responseJson.result!);
+
+          return responseJson;
+        } else {
+          var errorMessage = responseData['message'];
+          throw errorMessage;
+        }
+      } catch (error) {
+        throw error;
       }
-    } catch (error) {
-      throw error;
+    } else {
+      var errorMessage = "Please check your internet connection! ";
+      throw errorMessage;
     }
   }
 
@@ -157,11 +169,9 @@ class LeaveProvider with ChangeNotifier {
     var uri;
 
     if (_selectedType == 0) {
-      
       uri = Uri.parse(APIURL.LEAVE_LIST_DETAILS_API +
           "fetchType=${_selectedMonth == 0 ? "year" : "month"}");
     } else {
-   
       uri = Uri.parse(APIURL.LEAVE_LIST_DETAILS_API +
           "fetchType=${_selectedMonth == 0 ? "year" : "month"}&leaveTypeID=${_selectedType}");
     }
@@ -197,8 +207,7 @@ class LeaveProvider with ChangeNotifier {
 
       final responseData = json.decode(response.body);
       print("check api dsfdfresponse ${responseData}");
-      if (response.statusCode == 200) 
-      {
+      if (response.statusCode == 200) {
         debugPrint(responseData.toString());
 
         final responseJson = Leavetypedetailreponse.fromJson(responseData);
@@ -219,8 +228,7 @@ class LeaveProvider with ChangeNotifier {
   void makeLeaveTypeList(Leavetypedetailreponse leaveList) {
     _leaveDetailList.clear();
 
-    for (var leave in leaveList.result!) 
-    {
+    for (var leave in leaveList.result!) {
       _leaveDetailList.add(LeaveDetail(
           id: 1,
           name: leave.leaveTypeName!,
@@ -301,5 +309,79 @@ class LeaveProvider with ChangeNotifier {
       debugPrint(error.toString());
       throw error;
     }
+  }
+
+  final List<Shop> _shoplist = [];
+
+  List<Shop> get shoplist {
+    return [..._shoplist];
+  }
+
+  Future<RetailerModel> getShopList() async {
+    print("check get all shop list data ");
+    var uri = Uri.parse(APIURL.GET_RETAILER_LIST);
+
+    Preferences preferences = Preferences();
+    String token = await preferences.getToken();
+    int getUserID = await preferences.getUserId();
+    print('response >> ');
+    Map<String, String> headers = {
+      'Accept': 'application/json; charset=UTF-8',
+      'user_token': '$token',
+      'user_id': '$getUserID',
+    };
+    bool result = await InternetConnectionChecker().hasConnection;
+
+    if (result == true) {
+      try {
+        EasyLoading.show(
+            status: "Loading", maskType: EasyLoadingMaskType.black);
+        final response = await http.get(uri, headers: headers);
+        final responseData = json.decode(response.body);
+
+        print("Check leave data ${responseData}");
+        final responseJson = RetailerModel.fromJson(responseData);
+        if (response.statusCode == 200) 
+        {
+          debugPrint(responseData.toString());
+
+          makeShopList(responseJson.result!);
+          EasyLoading.dismiss(animation: true);
+
+          return responseJson;
+        } else {
+          EasyLoading.dismiss(animation: true);
+          var errorMessage = responseData['message'];
+          return responseJson;
+        }
+      } catch (error) {
+        EasyLoading.dismiss(animation: true);
+        throw error;
+      }
+    } else {
+      EasyLoading.dismiss(animation: true);
+      var errorMessage = "Please check your internet connection! ";
+      throw errorMessage;
+    }
+  }
+
+  void makeShopList(ResultData data) {
+    _shoplist.clear();
+
+    print("dfgjkfgh    ${data.retailersList}");
+
+    for (var shop in data.retailersList!) {
+      _shoplist.add(Shop(
+          id: int.parse(shop.id.toString() ?? '0'),
+          retailerName: shop.retailerName ?? " "!,
+          retailerShopName: shop.retailerShopName ?? " "!,
+          retailerAddress: shop.retailerAddress ?? " "!,
+          retailerLatitude: shop.retailerLatitude ?? " "!,
+          retailerLongitude: shop.retailerLongitude ?? " "!,
+          retailerShopImage: shop.retailerShopImage ?? " "!,
+          isVarified: shop.isVarified ?? 0!));
+    }
+
+    notifyListeners();
   }
 }

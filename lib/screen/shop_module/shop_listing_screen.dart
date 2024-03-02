@@ -1,5 +1,6 @@
+import 'package:bmiterp/map/map_route.dart';
 import 'package:bmiterp/provider/leaveprovider.dart';
-import 'package:bmiterp/provider/shopprovider.dart';
+
 import 'package:bmiterp/screen/shop_module/create_shop_screen.dart';
 import 'package:bmiterp/screen/shop_module/shop_list.dart';
 import 'package:bmiterp/utils/constant.dart';
@@ -32,8 +33,7 @@ class _MyWidgetState extends State<ShopListingScreen> {
   }
 
   Future<String> initialState() async {
-    EasyLoading.show(status: "Loading", maskType: EasyLoadingMaskType.black);
-    final leaveProvider = Provider.of<ShopProvider>(context, listen: false);
+    final leaveProvider = Provider.of<LeaveProvider>(context, listen: false);
     final leaveData = await leaveProvider.getShopList();
     EasyLoading.dismiss(animation: true);
 
@@ -41,9 +41,9 @@ class _MyWidgetState extends State<ShopListingScreen> {
       return "Loaded";
     }
 
-    if (leaveData.statusCode != 200) {
-      showToast(leaveData!.message!);
-    }
+    // if (leaveData.statusCode != 200) {
+    //   showToast(leaveData!.message!);
+    // }
 
     return "Loaded";
   }
@@ -72,6 +72,15 @@ class _MyWidgetState extends State<ShopListingScreen> {
               ),
             ),
             actions: [
+              InkWell(
+                onTap: () {
+                  Get.to(MapRoute());
+                },
+                child: Icon(
+                  Icons.location_on_outlined,
+                  color: Colors.red,
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: GestureDetector(

@@ -2,7 +2,7 @@ class ShopDataResponse {
   bool? status;
   int? statusCode;
   String? message;
-  Data? data;
+  Datass? data;
 
   ShopDataResponse({this.status, this.statusCode, this.message, this.data});
 
@@ -10,7 +10,7 @@ class ShopDataResponse {
     status = json['status'];
     statusCode = json['statusCode'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? new Datass.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -25,12 +25,12 @@ class ShopDataResponse {
   }
 }
 
-class Data {
+class Datass {
   List<ShopList>? shopList;
 
-  Data({this.shopList});
+  Datass({this.shopList});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  Datass.fromJson(Map<String, dynamic> json) {
     if (json['shopList'] != null) {
       shopList = <ShopList>[];
       json['shopList'].forEach((v) {
